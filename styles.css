@@ -533,12 +533,11 @@ p { max-width: 680px; }
 .split-visual {
   background: var(--slate-100);
   border-radius: var(--radius-lg);
-  aspect-ratio: 4/3;
+  min-height: 400px;
   display: flex;
   align-items: center;
   justify-content: center;
   border: 1px solid var(--slate-200);
-  overflow: hidden;
   position: relative;
 }
 .section--dark .split-content p { color: var(--text-inverse-muted); }

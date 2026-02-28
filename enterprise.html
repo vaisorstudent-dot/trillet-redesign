@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trillet Enterprise — Deploy Voice AI Across Your Network</title>
+  <meta name="description" content="One custom agent template. Thousands of endpoints. API-driven deployment across your franchise, network, or platform. Voice AI at scale.">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Enterprise page overrides */
+    .process-flow .process-node {
+      position: relative;
+    }
+    .process-node .step-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: rgba(20,184,166,0.15);
+      color: var(--teal-400);
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: 0.875rem;
+      margin-bottom: 8px;
+    }
+
+    .vertical-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    .vertical-tag {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 100px;
+      padding: 10px 20px;
+      font-size: 0.875rem;
+      color: var(--slate-300);
+    }
+    .vertical-tag--featured {
+      background: rgba(20,184,166,0.1);
+      border-color: rgba(20,184,166,0.25);
+      color: var(--teal-400);
+      font-weight: 600;
+    }
+
+    .timeline-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .timeline-step {
+      text-align: center;
+      position: relative;
+    }
+    .timeline-step::after {
+      content: '→';
+      position: absolute;
+      right: -18px;
+      top: 28px;
+      color: var(--slate-400);
+      font-size: 1.25rem;
+    }
+    .timeline-step:last-child::after {
+      content: none;
+    }
+    .timeline-week {
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--teal-500);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .timeline-label {
+      font-weight: 700;
+      font-size: 0.9375rem;
+      margin-bottom: 4px;
+      color: var(--navy-950);
+    }
+    .timeline-desc {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .compliance-card {
+      background: var(--white);
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      padding: 28px 24px;
+      text-align: center;
+    }
+    .compliance-card h4 {
+      font-size: 0.9375rem;
+      margin: 12px 0 6px;
+    }
+    .compliance-card p {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+      margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      .timeline-steps {
+        grid-template-columns: 1fr 1fr;
+      }
+      .timeline-step::after {
+        content: none;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <span class="logo-dot"></span>
+        trillet
+      </a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="agency.html">For Agencies</a>
+        <a href="enterprise.html" class="active">Enterprise</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="#">Industries</a>
+        <a href="#">Blog</a>
+        <a href="architecture.html" style="color:var(--amber-400); border-left:1px solid rgba(255,255,255,0.08); padding-left:36px; margin-left:0; font-size:0.8125rem;">Architecture</a>
+      </div>
+      <div class="nav-cta">
+        <a href="#" class="btn btn--secondary btn--sm">Book a Demo</a>
+        <a href="pricing.html" class="btn btn--primary btn--sm">Get Started</a>
+      </div>
+      <button class="nav-mobile-toggle" aria-label="Menu">☰</button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" style="padding-bottom:100px;">
+    <div class="container">
+      <div class="hero-content">
+        <div class="section-label" style="color:var(--teal-400); margin-bottom:20px;">Pro SaaS &middot; $1,497/mo + per-endpoint</div>
+        <h1>Build one agent.<br>Deploy it to<br><span class="highlight">every location in your network.</span></h1>
+        <p>We build a custom voice AI agent for your vertical. You deploy it across your entire network — franchises, clinics, branches, affiliates — through a single API call. Each agent auto-configures from local context.</p>
+        <div class="btn-group" style="justify-content:center;">
+          <a href="#" class="btn btn--primary btn--lg">Book a discovery call</a>
+          <a href="pricing.html" class="btn btn--secondary btn--lg">See all plans</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW IT WORKS — PROCESS FLOW ===== -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">How it works</div>
+        <h2>Build once. Deploy everywhere.</h2>
+        <p>We build the template. Your systems deploy it.</p>
+      </div>
+      <div class="process-flow scroll-animate">
+        <div class="process-node">
+          <div class="step-num">1</div>
+          <h4>Custom Build</h4>
+          <p>We design your vertical agent — workflows, terminology, compliance, integrations</p>
+        </div>
+        <div class="process-arrow">→</div>
+        <div class="process-node">
+          <div class="step-num">2</div>
+          <h4>Template Lock</h4>
+          <p>Agent becomes a deployable template, exclusive to your network</p>
+        </div>
+        <div class="process-arrow">→</div>
+        <div class="process-node">
+          <div class="step-num">3</div>
+          <h4>API Connect</h4>
+          <p>Integrate with your platform, ERP, or CRM — one endpoint, one call</p>
+        </div>
+        <div class="process-arrow">→</div>
+        <div class="process-node">
+          <div class="step-num">4</div>
+          <h4>Network Goes Live</h4>
+          <p>Each location gets a configured agent auto-built from its web presence</p>
+        </div>
+      </div>
+      <div style="text-align:center; margin-top:32px;">
+        <p style="color:var(--slate-400); font-size:0.9375rem; max-width:600px; margin:0 auto;">No manual setup per location. Each agent reads the endpoint's website — services, hours, pricing, team — and configures itself in under 5 minutes.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== THE CASE STUDY — DENTAL NETWORK ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="split scroll-animate">
+        <div class="split-content">
+          <div class="section-label">Real deployment</div>
+          <h2>How a dental network deployed 25 clinics in a week.</h2>
+          <p style="margin-bottom:20px;">One orthodontic network needed every clinic answering calls with AI — same quality, same workflows, same compliance. They didn't want to configure 25 agents manually.</p>
+          <div style="background:var(--slate-50); border-radius:var(--radius); padding:20px; margin-bottom:16px;">
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+              <div>
+                <div style="font-family:var(--font-display); font-weight:800; font-size:1.5rem; color:var(--navy-950);">25</div>
+                <div style="font-size:0.8125rem; color:var(--text-muted);">clinics deployed</div>
+              </div>
+              <div>
+                <div style="font-family:var(--font-display); font-weight:800; font-size:1.5rem; color:var(--navy-950);">~1 week</div>
+                <div style="font-size:0.8125rem; color:var(--text-muted);">from template to live</div>
+              </div>
+              <div>
+                <div style="font-family:var(--font-display); font-weight:800; font-size:1.5rem; color:var(--navy-950);">$0</div>
+                <div style="font-size:0.8125rem; color:var(--text-muted);">per-clinic setup cost</div>
+              </div>
+              <div>
+                <div style="font-family:var(--font-display); font-weight:800; font-size:1.5rem; color:var(--navy-950);">4,200+</div>
+                <div style="font-size:0.8125rem; color:var(--text-muted);">calls/month handled</div>
+              </div>
+            </div>
+          </div>
+          <p style="font-size:0.875rem; color:var(--text-muted);">Each clinic's agent auto-configured from its website — hours, services, providers, insurance accepted. No manual data entry.</p>
+        </div>
+        <div class="split-visual" style="background:var(--navy-950); border-color:rgba(255,255,255,0.08);">
+          <div class="agent-mockup">
+            <div class="agent-mockup-header" style="border-color:rgba(255,255,255,0.1);">
+              <div class="agent-dot"></div>
+              <span style="color:var(--white);">Network Dashboard — Dental Group</span>
+            </div>
+            <div style="padding:16px 0;">
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+                <div style="background:rgba(20,184,166,0.1); border-radius:8px; padding:14px 12px; text-align:center;">
+                  <div style="font-family:var(--font-display); font-weight:800; font-size:1.25rem; color:var(--teal-400);">25</div>
+                  <div style="font-size:0.6875rem; color:var(--slate-400);">Active clinics</div>
+                </div>
+                <div style="background:rgba(59,130,246,0.1); border-radius:8px; padding:14px 12px; text-align:center;">
+                  <div style="font-family:var(--font-display); font-weight:800; font-size:1.25rem; color:var(--blue-400);">4,200</div>
+                  <div style="font-size:0.6875rem; color:var(--slate-400);">Calls this month</div>
+                </div>
+              </div>
+              <div style="margin-top:12px; font-size:0.6875rem; color:var(--slate-400); text-transform:uppercase; letter-spacing:0.08em;">Recent deployments</div>
+              <div style="margin-top:8px; display:flex; flex-direction:column; gap:6px;">
+                <div style="background:rgba(255,255,255,0.04); border-radius:6px; padding:10px 12px; display:flex; justify-content:space-between; align-items:center;">
+                  <span style="font-size:0.8125rem; color:var(--slate-300);">Bright Smile Orthodontics</span>
+                  <span style="font-size:0.6875rem; color:var(--teal-400); font-weight:600;">Live</span>
+                </div>
+                <div style="background:rgba(255,255,255,0.04); border-radius:6px; padding:10px 12px; display:flex; justify-content:space-between; align-items:center;">
+                  <span style="font-size:0.8125rem; color:var(--slate-300);">Perfect Teeth Dental</span>
+                  <span style="font-size:0.6875rem; color:var(--teal-400); font-weight:600;">Live</span>
+                </div>
+                <div style="background:rgba(255,255,255,0.04); border-radius:6px; padding:10px 12px; display:flex; justify-content:space-between; align-items:center;">
+                  <span style="font-size:0.8125rem; color:var(--slate-300);">Sunshine Dental Group</span>
+                  <span style="font-size:0.6875rem; color:var(--amber-400); font-weight:600;">Deploying...</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== THE ECONOMICS ===== -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">The economics</div>
+        <h2>Per-endpoint pricing. No revenue share.</h2>
+        <p>You pay a platform base + per active endpoint. You charge your network whatever you want. No audits, no rev share.</p>
+      </div>
+      <div style="max-width:800px; margin:0 auto;" class="scroll-animate">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; margin-bottom:40px;">
+          <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:var(--radius-lg); padding:32px;">
+            <div style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--slate-400); font-weight:700; margin-bottom:16px;">Your cost (dental network, 25 clinics)</div>
+            <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid rgba(255,255,255,0.06); font-size:0.9375rem;">
+              <span style="color:var(--slate-400);">Platform base</span>
+              <span style="color:var(--white); font-weight:600;">$1,497/mo</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid rgba(255,255,255,0.06); font-size:0.9375rem;">
+              <span style="color:var(--slate-400);">Per-endpoint ($99 × 25)</span>
+              <span style="color:var(--white); font-weight:600;">$2,475/mo</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid rgba(255,255,255,0.06); font-size:0.9375rem;">
+              <span style="color:var(--slate-400);">Template build (one-time)</span>
+              <span style="color:var(--white); font-weight:600;">$14,000</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; padding:12px 0; font-size:1rem; margin-top:4px;">
+              <span style="color:var(--white); font-weight:700;">Total monthly</span>
+              <span style="color:var(--teal-400); font-weight:800; font-family:var(--font-display); font-size:1.25rem;">$3,972/mo</span>
+            </div>
+          </div>
+          <div style="background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.08); border-radius:var(--radius-lg); padding:32px;">
+            <div style="font-size:0.75rem; text-transform:uppercase; letter-spacing:0.1em; color:var(--slate-400); font-weight:700; margin-bottom:16px;">Example revenue (you set the price)</div>
+            <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid rgba(255,255,255,0.06); font-size:0.9375rem;">
+              <span style="color:var(--slate-400);">Charge per clinic</span>
+              <span style="color:var(--white); font-weight:600;">$399/mo</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid rgba(255,255,255,0.06); font-size:0.9375rem;">
+              <span style="color:var(--slate-400);">Revenue (25 clinics)</span>
+              <span style="color:var(--white); font-weight:600;">$9,975/mo</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid rgba(255,255,255,0.06); font-size:0.9375rem;">
+              <span style="color:var(--slate-400);">+ Onboarding fees (optional)</span>
+              <span style="color:var(--white); font-weight:600;">$500–2,000/ea</span>
+            </div>
+            <div style="display:flex; justify-content:space-between; padding:12px 0; font-size:1rem; margin-top:4px;">
+              <span style="color:var(--white); font-weight:700;">Monthly margin</span>
+              <span style="color:var(--teal-400); font-weight:800; font-family:var(--font-display); font-size:1.25rem;">~$6,000/mo</span>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center;">
+          <p style="color:var(--slate-400); font-size:0.875rem; margin:0 auto;">Per-endpoint fees by vertical: Healthcare $99–149 &middot; Professional services $79–99 &middot; Home services $49–79<br>These are illustrative examples. Your actual margin depends on your pricing and network size.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== VS THE OLD WAY ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">vs. the old way</div>
+        <h2>What used to cost $60–70K is now a platform.</h2>
+        <p>Enterprise voice AI used to mean a custom build, months of engineering, and a six-figure project. This replaces that with a monthly subscription and instant deployment.</p>
+      </div>
+      <div style="overflow-x:auto; max-width:700px; margin:0 auto;" class="scroll-animate">
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th style="width:35%;"></th>
+              <th>Custom Build</th>
+              <th>Trillet Pro SaaS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Upfront cost</td>
+              <td>$60–70K</td>
+              <td class="check">$14K template build</td>
+            </tr>
+            <tr>
+              <td>Monthly cost</td>
+              <td>Custom / unpredictable</td>
+              <td class="check">$1,497 + per-endpoint</td>
+            </tr>
+            <tr>
+              <td>Time to first agent</td>
+              <td>3–6 months</td>
+              <td class="check">~2 weeks</td>
+            </tr>
+            <tr>
+              <td>Deploy new location</td>
+              <td>Manual setup each time</td>
+              <td class="check">One API call, 5 minutes</td>
+            </tr>
+            <tr>
+              <td>Scale to 100+ endpoints</td>
+              <td>More engineering</td>
+              <td class="check">Same API call</td>
+            </tr>
+            <tr>
+              <td>Recurring revenue model</td>
+              <td>None built in</td>
+              <td class="check">Per-endpoint monthly</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHO THIS IS FOR ===== -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">Who this is for</div>
+        <h2>Networks with 20+ locations in a single vertical.</h2>
+        <p>If you manage, franchise, or supply services to a network of businesses — and you want consistent AI call handling everywhere — this is the tier.</p>
+      </div>
+      <div class="vertical-tags scroll-animate">
+        <span class="vertical-tag vertical-tag--featured">Dental networks</span>
+        <span class="vertical-tag vertical-tag--featured">Orthodontic chains</span>
+        <span class="vertical-tag vertical-tag--featured">Legal referral networks</span>
+        <span class="vertical-tag">Franchise systems</span>
+        <span class="vertical-tag">Property management</span>
+        <span class="vertical-tag">Auto service chains</span>
+        <span class="vertical-tag">Telecom / PBX providers</span>
+        <span class="vertical-tag">Therapy networks</span>
+        <span class="vertical-tag">Restoration companies</span>
+        <span class="vertical-tag">Vertical SaaS platforms</span>
+        <span class="vertical-tag">Insurance agencies</span>
+        <span class="vertical-tag">Home service franchises</span>
+      </div>
+      <div style="text-align:center; margin-top:28px;">
+        <p style="color:var(--slate-400); font-size:0.875rem;">Don't see your vertical? <a href="#" style="color:var(--teal-400); text-decoration:underline;">Book a discovery call</a> — we've deployed in 36+ industries.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHAT HAPPENS NEXT ===== -->
+  <section class="section section--light">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">After you book</div>
+        <h2>Discovery to deployment in ~3 weeks.</h2>
+      </div>
+      <div class="timeline-steps scroll-animate">
+        <div class="timeline-step">
+          <div class="timeline-week">Week 0</div>
+          <div class="timeline-label">Discovery call</div>
+          <div class="timeline-desc">We map your network, workflows, and compliance requirements.</div>
+        </div>
+        <div class="timeline-step">
+          <div class="timeline-week">Week 1–2</div>
+          <div class="timeline-label">Template build</div>
+          <div class="timeline-desc">We build and test your custom agent with your team's input.</div>
+        </div>
+        <div class="timeline-step">
+          <div class="timeline-week">Week 2–3</div>
+          <div class="timeline-label">API integration</div>
+          <div class="timeline-desc">Connect to your platform. Test deployment on 2–3 pilot locations.</div>
+        </div>
+        <div class="timeline-step">
+          <div class="timeline-week">Week 3+</div>
+          <div class="timeline-label">Network rollout</div>
+          <div class="timeline-desc">Deploy to all endpoints. Each auto-configures from its website.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== COMPLIANCE ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">Compliance &amp; security</div>
+        <h2>Enterprise-grade from day one.</h2>
+      </div>
+      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:20px; max-width:900px; margin:0 auto;" class="scroll-animate">
+        <div class="compliance-card">
+          <div style="font-size:1.5rem;">🔒</div>
+          <h4>HIPAA-ready</h4>
+          <p>BAA available. PHI handling compliant with healthcare data requirements.</p>
+        </div>
+        <div class="compliance-card">
+          <div style="font-size:1.5rem;">📋</div>
+          <h4>SOC 2 Type II</h4>
+          <p>Audited controls for security, availability, and confidentiality.</p>
+        </div>
+        <div class="compliance-card">
+          <div style="font-size:1.5rem;">📞</div>
+          <h4>TCPA compliant</h4>
+          <p>Consent management and call recording disclosures built in.</p>
+        </div>
+        <div class="compliance-card">
+          <div style="font-size:1.5rem;">🇦🇺</div>
+          <h4>APRA / IRAP</h4>
+          <p>Australian regulatory alignment for financial and government sectors.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIAL ===== -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="testimonial scroll-animate">
+        <blockquote>"The humans are now doing BETTER because they can call back only those people who are hot leads, and so their stats are triple what they were."</blockquote>
+        <div class="testimonial-author">
+          <strong>CEO, Go to Court Lawyers</strong> — Multi-office legal network, 15+ locations
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Deploy voice AI across<br>your entire network.</h2>
+      <p>One discovery call. We'll map your network, model the economics, and show you a live deployment.</p>
+      <div class="btn-group" style="justify-content:center;">
+        <a href="#" class="btn btn--primary btn--lg">Book a discovery call</a>
+        <a href="pricing.html" class="btn btn--secondary btn--lg">See all plans</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="nav-logo" style="margin-bottom:4px;">
+            <span class="logo-dot"></span>
+            trillet
+          </div>
+          <p>The platform agencies use to build, brand, and sell AI voice agents.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <a href="pricing.html">Pricing</a>
+          <a href="#">Industries</a>
+          <a href="enterprise.html">Enterprise</a>
+          <a href="#">Setup</a>
+        </div>
+        <div class="footer-col">
+          <h4>Agency</h4>
+          <a href="agency.html">White-label Platform</a>
+          <a href="#">Partner Program</a>
+          <a href="#">Community</a>
+          <a href="#">Case Studies</a>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <a href="#">Blog</a>
+          <a href="#">Demos</a>
+          <a href="#">Comparisons</a>
+          <a href="#">Help Center</a>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <a href="#">About</a>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Use</a>
+          <a href="#">Contact</a>
+          <a href="architecture.html" style="color:var(--amber-400);">Architecture</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Trillet Pty Ltd. All rights reserved.</span>
+        <span>HIPAA-ready &middot; TCPA compliant &middot; SOC 2 Type II</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

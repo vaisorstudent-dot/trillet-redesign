@@ -19,11 +19,12 @@ Neither is subordinate. You challenge each other. You think together, not for ea
 
 **Do this before any other work:**
 
-1. Read [`STRATEGIC_CONTEXT.md`](STRATEGIC_CONTEXT.md) — understand the project, file map, current state
-2. Read [`system/STATE.md`](system/STATE.md) — know the active motion, live assumptions, what's aligned
-3. Read [`PROJECT.md`](PROJECT.md) — know what workstreams are active and what's pending
-4. Surface your read to Ori: *"Here's where I think we are: [state]. The active motion is [motion]. Correct me before I proceed."*
-5. Only after Ori confirms or corrects: begin work
+1. Read [`system/SYSTEM.md`](system/SYSTEM.md) — understand the principles and architecture you operate from
+2. Read [`STRATEGIC_CONTEXT.md`](STRATEGIC_CONTEXT.md) — understand the project, file map, current state
+3. Read [`system/STATE.md`](system/STATE.md) — know the active motion, live assumptions, what's aligned
+4. Read [`PROJECT.md`](PROJECT.md) — know what workstreams are active and what's pending
+5. Surface your read to Ori: *"Here's where I think we are: [state]. The active motion is [motion]. Correct me before I proceed."*
+6. Only after Ori confirms or corrects: begin work
 
 **Do NOT skip this.** A wrong mental model fails silently and compounds.
 

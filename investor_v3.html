@@ -1073,234 +1073,126 @@
       color: var(--text-primary);
     }
 
-    /* Deployment model table */
-    .deploy-table {
-      width: 100%;
-      border-collapse: separate;
-      border-spacing: 0;
-      margin-bottom: 48px;
-    }
-
-    .deploy-table th {
-      text-align: left;
-      font-size: 0.6875rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--text-muted);
-      font-weight: 700;
-      padding: 12px 20px;
-      border-bottom: 1px solid var(--border-medium);
-    }
-
-    .deploy-table td {
-      padding: 20px;
-      border-bottom: 1px solid var(--border-subtle);
-      font-size: 0.875rem;
-      vertical-align: top;
-    }
-
-    .deploy-table tr:last-child td {
-      border-bottom: none;
-    }
-
-    .deploy-table .tier-name {
-      font-weight: 700;
-      color: var(--text-primary);
-      font-size: 0.9375rem;
-      white-space: nowrap;
-    }
-
-    .deploy-table .tier-price {
-      font-weight: 700;
-      color: var(--teal-400);
-      white-space: nowrap;
-    }
-
-    .deploy-table .tier-who {
-      color: var(--text-tertiary);
-      font-size: 0.8125rem;
-    }
-
-    /* Interactive deployment visualization */
-    .deploy-viz {
+    /* ===== NESTED ENTERPRISE ===== */
+    .org-tree {
       display: flex;
       flex-direction: column;
+      align-items: center;
       gap: 0;
-      margin-bottom: 48px;
+      max-width: 900px;
+      margin: 0 auto;
     }
 
-    .deploy-tier {
-      border: none;
-      border-top: 1px solid var(--border-subtle);
+    .org-node {
       background: transparent;
-      border-radius: 0;
-      padding: 32px 0;
-      margin-bottom: 0;
-      cursor: pointer;
-      transition: all 0.3s ease;
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-sm);
+      padding: 16px 24px;
+      text-align: center;
       position: relative;
     }
 
-    .deploy-tier:last-child {
-      border-bottom: 1px solid var(--border-subtle);
+    .org-node--hq {
+      border-top: 2px solid var(--indigo-500);
+      background: var(--bg-surface);
+      min-width: 280px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
     }
 
-    .deploy-tier:hover {
-      z-index: 2;
+    .org-node--region {
+      border-top: 2px solid var(--teal-500);
+      background: var(--bg-surface);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
     }
 
-    .deploy-tier--starter {
-      border-top-color: rgba(59, 130, 246, 0.2);
-      background: rgba(59, 130, 246, 0.02);
-      z-index: 4;
-    }
-
-    .deploy-tier--starter:hover {
-      background: rgba(59, 130, 246, 0.06);
-      border-top-color: rgba(59, 130, 246, 0.35);
-    }
-
-    .deploy-tier--agency {
-      border-top-color: rgba(20, 184, 166, 0.2);
-      background: rgba(20, 184, 166, 0.02);
-      padding-left: 48px;
-      z-index: 3;
-    }
-
-    .deploy-tier--agency:hover {
-      background: rgba(20, 184, 166, 0.06);
-      border-top-color: rgba(20, 184, 166, 0.35);
-    }
-
-    .deploy-tier--lite {
-      border-top-color: rgba(245, 158, 11, 0.2);
-      background: rgba(245, 158, 11, 0.02);
-      padding-left: 68px;
-      z-index: 2;
-    }
-
-    .deploy-tier--lite:hover {
-      background: rgba(245, 158, 11, 0.06);
-      border-top-color: rgba(245, 158, 11, 0.35);
-    }
-
-    .deploy-tier--pro {
-      border-top-color: rgba(129, 140, 248, 0.2);
-      background: rgba(129, 140, 248, 0.02);
-      padding-left: 88px;
-      z-index: 1;
-    }
-
-    .deploy-tier--pro:hover {
-      background: rgba(129, 140, 248, 0.06);
-      border-top-color: rgba(129, 140, 248, 0.35);
-    }
-
-    .deploy-tier-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 6px;
-    }
-
-    .deploy-tier-badge {
-      font-size: 0.625rem;
+    .org-node .org-label {
+      font-size: 0.6875rem;
       text-transform: uppercase;
       letter-spacing: 0.1em;
+      color: var(--text-tertiary);
+      margin-bottom: 4px;
       font-weight: 700;
-      padding: 3px 10px;
-      border-radius: 100px;
     }
 
-    .deploy-tier--starter .deploy-tier-badge {
-      background: rgba(59, 130, 246, 0.15);
-      color: var(--blue-400);
-    }
-
-    .deploy-tier--agency .deploy-tier-badge {
-      background: rgba(20, 184, 166, 0.15);
-      color: var(--teal-400);
-    }
-
-    .deploy-tier--lite .deploy-tier-badge {
-      background: rgba(245, 158, 11, 0.15);
-      color: var(--amber-400);
-    }
-
-    .deploy-tier--pro .deploy-tier-badge {
-      background: rgba(129, 140, 248, 0.15);
-      color: var(--indigo-300);
-    }
-
-    .deploy-tier-price {
-      font-weight: 800;
+    .org-node .org-name {
+      font-weight: 700;
+      font-size: 0.9375rem;
       color: var(--text-primary);
-      font-size: 0.875rem;
     }
 
-    .deploy-tier-desc {
-      font-size: 0.8125rem;
-      color: var(--text-tertiary);
-      max-width: 540px;
-    }
-
-    .deploy-tier-detail {
-      font-size: 0.8125rem;
+    .org-node .org-stat {
+      font-size: 0.75rem;
       color: var(--text-secondary);
-      margin-top: 12px;
-      padding-top: 12px;
-      border-top: 1px solid var(--border-subtle);
-      max-height: 0;
-      overflow: hidden;
-      opacity: 0;
-      transition: max-height 0.4s ease, opacity 0.3s ease, margin 0.3s ease, padding 0.3s ease;
-      margin-top: 0;
-      padding-top: 0;
-    }
-
-    .deploy-tier:hover .deploy-tier-detail,
-    .deploy-tier.active .deploy-tier-detail {
-      max-height: 120px;
-      opacity: 1;
-      margin-top: 12px;
-      padding-top: 12px;
-    }
-
-    /* Endpoint multiplier */
-    .endpoint-row {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-      margin-bottom: 16px;
-    }
-
-    .endpoint-cell {
-      text-align: center;
-      padding: 24px 0;
-      background: transparent;
-      border: none;
-      border-top: 1px solid var(--border-subtle);
-      border-radius: 0;
-    }
-
-    .endpoint-cell:first-child {
-      border-top: 1px solid var(--border-subtle);
-      /* Keep top border consistent */
-    }
-
-    .endpoint-cell .ep-count {
-      font-size: 1.75rem;
-      font-weight: 800;
-      color: var(--white);
-      letter-spacing: -0.02em;
-    }
-
-    .endpoint-cell .ep-label {
-      font-size: 0.6875rem;
-      color: var(--text-tertiary);
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
       margin-top: 4px;
+    }
+
+    .org-vline {
+      width: 2px;
+      height: 28px;
+      background: var(--border-medium);
+      margin: 0 auto;
+    }
+
+    .org-branch {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      position: relative;
+    }
+
+    .org-branch::before {
+      content: '';
+      position: absolute;
+      top: -28px;
+      left: 50%;
+      width: 2px;
+      height: 28px;
+      background: var(--border-medium);
+      transform: translateX(-50%);
+    }
+
+    .org-branch-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+
+    .org-locations {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 160px;
+    }
+
+    .loc-dot {
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      background: rgba(20, 184, 166, 0.05);
+      border: 1px solid rgba(20, 184, 166, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .loc-dot::after {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--teal-500);
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    .loc-dot:nth-child(odd)::after {
+      animation-delay: 0.5s;
+    }
+
+    .loc-dot:nth-child(3n)::after {
+      animation-delay: 1s;
     }
 
     .insight-line {
@@ -2710,138 +2602,183 @@
         deployment wrapper changes.
       </div>
 
-      <!-- Deployment models - interactive -->
-      <div class="reveal" style="margin-bottom:16px;">
-        <h3 style="font-size:1.0625rem;color:var(--text-secondary);font-weight:600;margin-bottom:24px;">Four deployment
-          models</h3>
+      <!-- Reordered Narrative Step 2: Infrastructure Stack -->
+      <div class="reveal" style="text-align:center;margin-top:80px;margin-bottom:48px;">
+        <h3 style="font-size:1.0625rem;color:var(--text-secondary);font-weight:600;">The Infrastructure Moat</h3>
       </div>
 
-      <div class="deploy-viz reveal">
-        <div class="deploy-tier deploy-tier--starter" data-tier="starter">
-          <div class="deploy-tier-header">
-            <span class="deploy-tier-badge">Starter</span>
-            <span class="deploy-tier-price">$59/mo</span>
-          </div>
-          <div class="deploy-tier-desc">1 operator sets up 1 agent for their own business.</div>
-          <div class="deploy-tier-detail">Solo operators and small businesses. Self-serve setup from a URL in under 5
-            minutes. Includes 100 minutes.</div>
-        </div>
-        <div class="deploy-tier deploy-tier--agency" data-tier="agency">
-          <div class="deploy-tier-header">
-            <span class="deploy-tier-badge">Agency</span>
-            <span class="deploy-tier-price">$299/mo</span>
-          </div>
-          <div class="deploy-tier-desc">1 operator configures agents for each client. Sells it under their own brand.
-            Bills their clients directly through the platform.</div>
-          <div class="deploy-tier-detail">Marketing and digital agencies. Full white-labeling: their clients never see
-            Trillet's name. Direct client billing through our platform. Per-minute charges at $0.12.</div>
-        </div>
-        <div class="deploy-tier deploy-tier--lite" data-tier="lite">
-          <div class="deploy-tier-header">
-            <span class="deploy-tier-badge">Lite SaaS</span>
-            <span class="deploy-tier-price">$497/mo</span>
-          </div>
-          <div class="deploy-tier-desc">1 operator deploys from a template library. Clients self-onboard with one click.
-          </div>
-          <div class="deploy-tier-detail">Agencies scaling past 15 clients. Snap a working agent into a reusable
-            template &mdash; new clients deploy instantly. The agency becomes a SaaS company.</div>
-        </div>
-        <div class="deploy-tier deploy-tier--pro" data-tier="pro">
-          <div class="deploy-tier-header">
-            <span class="deploy-tier-badge">Pro SaaS</span>
-            <span class="deploy-tier-price">$1,497/mo + $14K build</span>
-          </div>
-          <div class="deploy-tier-desc">Custom template + API. Entire networks auto-configure from local context.</div>
-          <div class="deploy-tier-detail">Network operators and enterprise. REST API, auto-configuration, per-endpoint
-            billing. One deployment covers 1,000+ locations.</div>
-        </div>
-      </div>
-
-      <!-- Endpoint multiplier -->
-      <div class="endpoint-row reveal">
-        <div class="endpoint-cell">
-          <div class="ep-count">1</div>
-          <div class="ep-label">Starter endpoint</div>
-        </div>
-        <div class="endpoint-cell">
-          <div class="ep-count">10&ndash;50</div>
-          <div class="ep-label">Agency endpoints</div>
-        </div>
-        <div class="endpoint-cell">
-          <div class="ep-count">100+</div>
-          <div class="ep-label">Lite SaaS endpoints</div>
-        </div>
-        <div class="endpoint-cell">
-          <div class="ep-count">1,000+</div>
-          <div class="ep-label">Pro SaaS endpoints</div>
-        </div>
-      </div>
-
-      <div class="insight-line reveal">
-        Each tier is an order of magnitude more distribution per customer.
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ===== SECTION 5: INFRASTRUCTURE STACK ===== -->
-  <section class="section section-divider" id="stack">
-    <div class="container">
-
-      <div class="reveal">
-        <div class="section-label">Infrastructure</div>
-        <h2>Five layers. All live.</h2>
-      </div>
-
-      <div class="stack-layers reveal reveal-delay-1">
+      <div class="stack-layers reveal reveal-delay-1" style="max-width: 800px; margin: 0 auto;">
         <div class="stack-layer">
+          <div style="font-family:var(--font-display);font-weight:800;color:var(--text-tertiary);">L0</div>
           <div>
             <div class="stack-layer-name">Core AI Engine</div>
             <div class="stack-layer-desc">Voice processing, NLU, TTS, 32 languages</div>
           </div>
-          <div style="font-size:0.8125rem;color:var(--text-tertiary);">The intelligence</div>
           <div class="stack-layer-status">
             <span class="status-badge status-badge--live">Live</span>
           </div>
         </div>
         <div class="stack-layer">
+          <div style="font-family:var(--font-display);font-weight:800;color:var(--text-tertiary);">L1</div>
           <div>
             <div class="stack-layer-name">Agent Builder</div>
             <div class="stack-layer-desc">URL &rarr; live agent in 5 minutes</div>
           </div>
-          <div style="font-size:0.8125rem;color:var(--text-tertiary);">The magic</div>
           <div class="stack-layer-status">
             <span class="status-badge status-badge--live">Live</span>
           </div>
         </div>
         <div class="stack-layer">
+          <div style="font-family:var(--font-display);font-weight:800;color:var(--text-tertiary);">L2</div>
           <div>
             <div class="stack-layer-name">Agency Platform</div>
             <div class="stack-layer-desc">White-label, sub-accounts, Stripe billing</div>
           </div>
-          <div style="font-size:0.8125rem;color:var(--text-tertiary);">The distribution model</div>
           <div class="stack-layer-status">
             <span class="status-badge status-badge--live">Live</span>
           </div>
         </div>
         <div class="stack-layer">
+          <div style="font-family:var(--font-display);font-weight:800;color:var(--text-tertiary);">L3</div>
           <div>
             <div class="stack-layer-name">Template Engine</div>
             <div class="stack-layer-desc">Snap &rarr; freeze &rarr; one-click stamp</div>
           </div>
-          <div style="font-size:0.8125rem;color:var(--text-tertiary);">The scale unlock</div>
           <div class="stack-layer-status">
             <span class="status-badge status-badge--live">Live</span>
           </div>
         </div>
-        <div class="stack-layer">
+        <div class="stack-layer" style="border-bottom-color: var(--indigo-500); border-bottom-width: 2px;">
+          <div style="font-family:var(--font-display);font-weight:800;color:var(--indigo-400);">L4</div>
           <div>
             <div class="stack-layer-name">API Distribution</div>
             <div class="stack-layer-desc">REST API, auto-configure, per-endpoint billing</div>
           </div>
-          <div style="font-size:0.8125rem;color:var(--text-tertiary);">The infrastructure play</div>
           <div class="stack-layer-status">
             <span class="status-badge status-badge--pilot">Pilot</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="key-line reveal reveal-delay-2" style="margin-top:40px;">
+        Ming built L0-L3. We are raising to scale L4 &mdash; <strong>The Fractal Distribution API</strong>
+      </div>
+
+      <!-- Reordered Narrative Step 3: Fractal Scale (Nested Enterprise) -->
+      <div class="reveal" style="text-align:center;margin-top:80px;margin-bottom:48px;">
+        <h3 style="font-size:1.0625rem;color:var(--text-secondary);font-weight:600;">The Fractal Scale</h3>
+      </div>
+
+      <div class="org-tree reveal reveal-delay-1">
+        <!-- HQ -->
+        <div class="org-node org-node--hq">
+          <div class="org-label">Network HQ</div>
+          <div class="org-name">Dental Corp Australia</div>
+          <div class="org-stat">1 custom template &middot; API Distribution</div>
+        </div>
+        <div class="org-vline"></div>
+
+        <!-- Branches to regions -->
+        <div style="display:flex; justify-content:center; gap:0; margin-bottom:4px;">
+          <div style="flex:1; max-width:370px; height:2px; background:var(--border-medium); margin-top:-2px;"></div>
+        </div>
+
+        <div class="org-branch" style="padding-top:0;">
+          <!-- Region 1 -->
+          <div class="org-branch-item">
+            <div class="org-node org-node--region">
+              <div class="org-label">Region</div>
+              <div class="org-name">NSW Network</div>
+              <div class="org-stat">25 clinics</div>
+            </div>
+            <div class="org-vline"></div>
+            <div class="org-locations">
+              <div class="loc-dot"></div>
+              <div class="loc-dot"></div>
+              <div class="loc-dot"></div>
+              <div class="loc-dot"></div>
+              <div class="loc-dot"></div>
+              <div class="loc-dot"></div>
+              <div class="loc-dot"></div>
+              <div class="loc-dot"></div>
+              <div class="loc-dot"></div>
+              <div class="loc-dot"></div>
+              <div class="loc-dot"></div>
+              <div class="loc-dot"></div>
+              <div class="loc-dot"></div>
+              <div class="loc-dot"></div>
+              <div class="loc-dot"></div>
+              <div class="loc-dot"></div>
+              <div class="loc-dot"></div>
+              <div class="loc-dot"></div>
+              <div class="loc-dot"></div>
+              <div class="loc-dot"></div>
+              <div class="loc-dot"></div>
+              <div class="loc-dot"></div>
+              <div class="loc-dot"></div>
+              <div class="loc-dot"></div>
+              <div class="loc-dot"></div>
+            </div>
+          </div>
+          <!-- Region 2 -->
+          <div class="org-branch-item">
+            <div class="org-node org-node--region">
+              <div class="org-label">Region</div>
+              <div class="org-name">VIC Network</div>
+              <div class="org-stat">20 clinics</div>
+            </div>
+            <div class="org-vline"></div>
+            <div class="org-locations">
+              <div class="loc-dot"></div>
+              <div class="loc-dot"></div>
+              <div class="loc-dot"></div>
+              <div class="loc-dot"></div>
+              <div class="loc-dot"></div>
+              <div class="loc-dot"></div>
+              <div class="loc-dot"></div>
+              <div class="loc-dot"></div>
+              <div class="loc-dot"></div>
+              <div class="loc-dot"></div>
+              <div class="loc-dot"></div>
+              <div class="loc-dot"></div>
+              <div class="loc-dot"></div>
+              <div class="loc-dot"></div>
+              <div class="loc-dot"></div>
+              <div class="loc-dot"></div>
+              <div class="loc-dot"></div>
+              <div class="loc-dot"></div>
+              <div class="loc-dot"></div>
+              <div class="loc-dot"></div>
+            </div>
+          </div>
+          <!-- Region 3 -->
+          <div class="org-branch-item">
+            <div class="org-node org-node--region">
+              <div class="org-label">Region</div>
+              <div class="org-name">QLD Network</div>
+              <div class="org-stat">18 clinics</div>
+            </div>
+            <div class="org-vline"></div>
+            <div class="org-locations">
+              <div class="loc-dot"></div>
+              <div class="loc-dot"></div>
+              <div class="loc-dot"></div>
+              <div class="loc-dot"></div>
+              <div class="loc-dot"></div>
+              <div class="loc-dot"></div>
+              <div class="loc-dot"></div>
+              <div class="loc-dot"></div>
+              <div class="loc-dot"></div>
+              <div class="loc-dot"></div>
+              <div class="loc-dot"></div>
+              <div class="loc-dot"></div>
+              <div class="loc-dot"></div>
+              <div class="loc-dot"></div>
+              <div class="loc-dot"></div>
+              <div class="loc-dot"></div>
+              <div class="loc-dot"></div>
+              <div class="loc-dot"></div>
+            </div>
           </div>
         </div>
       </div>

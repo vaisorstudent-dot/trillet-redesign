@@ -836,20 +836,17 @@
     }
 
     .team-card {
-      background: rgba(255, 255, 255, 0.7);
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
-      border: 1px solid var(--border-subtle);
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.5);
-      border-radius: var(--radius);
-      padding: 28px 24px;
-      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+      background: transparent;
+      border: none;
+      box-shadow: none;
+      padding: 20px 0;
+      border-top: 1px solid var(--border-subtle);
+      border-radius: 0;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .team-card:hover {
       transform: translateY(-4px);
-      border-color: rgba(0, 0, 0, 0.15);
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.8);
     }
 
     .team-name {
@@ -876,13 +873,12 @@
 
     .team-stat-line {
       text-align: center;
-      padding: 32px;
-      background: rgba(255, 255, 255, 0.7);
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
-      border: 1px solid var(--border-subtle);
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.5);
-      border-radius: var(--radius);
+      padding: 40px 0;
+      background: transparent;
+      border: none;
+      border-top: 1px solid var(--border-medium);
+      border-bottom: 1px solid var(--border-medium);
+      border-radius: 0;
     }
 
     .team-stat-line p {
@@ -976,8 +972,8 @@
     }
 
     .cap-pill {
-      background: rgba(255, 255, 255, 0.04);
-      border: 1px solid var(--border-subtle);
+      background: transparent;
+      border: 1px solid var(--border-medium);
       border-radius: 100px;
       padding: 7px 16px;
       font-size: 0.75rem;
@@ -992,19 +988,21 @@
       color: var(--text-secondary);
       max-width: 700px;
       margin: 0 auto 60px;
-      padding: 32px;
-      background: rgba(255, 255, 255, 0.02);
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-      border-radius: var(--radius);
+      padding: 40px 0;
+      background: transparent;
+      border: none;
+      border-top: 1px solid var(--border-medium);
+      border-bottom: 1px solid var(--border-medium);
+      border-radius: 0;
+      box-shadow: none;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
       font-weight: 500;
       line-height: 1.6;
     }
 
     .key-line strong {
-      color: var(--white);
+      color: var(--text-primary);
     }
 
     /* Deployment model table */
@@ -1064,15 +1062,19 @@
     }
 
     .deploy-tier {
-      border: 1px solid var(--border-subtle);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border-radius: var(--radius);
-      padding: 28px 28px;
-      margin-bottom: -1px;
+      border: none;
+      border-top: 1px solid var(--border-subtle);
+      background: transparent;
+      border-radius: 0;
+      padding: 32px 0;
+      margin-bottom: 0;
       cursor: pointer;
       transition: all 0.3s ease;
       position: relative;
+    }
+
+    .deploy-tier:last-child {
+      border-bottom: 1px solid var(--border-subtle);
     }
 
     .deploy-tier:hover {
@@ -1206,10 +1208,15 @@
 
     .endpoint-cell {
       text-align: center;
-      padding: 20px 16px;
-      border-radius: var(--radius-sm);
-      background: var(--bg-elevated);
-      border: 1px solid var(--border-subtle);
+      padding: 24px 0;
+      background: transparent;
+      border: none;
+      border-left: 1px solid var(--border-subtle);
+      border-radius: 0;
+    }
+
+    .endpoint-cell:first-child {
+      border-left: none;
     }
 
     .endpoint-cell .ep-count {
@@ -1253,20 +1260,21 @@
       gap: 20px;
       align-items: center;
       padding: 24px 28px;
-      background: rgba(255, 255, 255, 0.015);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
-      border-radius: var(--radius);
-      transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid var(--border-subtle);
+      border-radius: 0;
+      box-shadow: none;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease;
     }
 
     .stack-layer:hover {
       transform: translateX(8px);
-      background: rgba(255, 255, 255, 0.04);
-      border-color: rgba(255, 255, 255, 0.15);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      background: rgba(0, 0, 0, 0.02);
+      border-bottom-color: var(--border-medium);
+      box-shadow: none;
     }
 
     .stack-layer-name {
@@ -1325,13 +1333,15 @@
     .stack-callout {
       text-align: center;
       margin-top: 48px;
-      padding: 32px;
-      background: rgba(255, 255, 255, 0.02);
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-      border-radius: var(--radius);
+      padding: 40px 0;
+      background: transparent;
+      border: none;
+      border-top: 1px solid var(--border-medium);
+      border-bottom: 1px solid var(--border-medium);
+      border-radius: 0;
+      box-shadow: none;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
     }
 
     .stack-callout p {
@@ -1365,19 +1375,21 @@
 
     .metric-block {
       text-align: center;
-      padding: 22px 16px;
-      background: rgba(255, 255, 255, 0.7);
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
-      border: 1px solid var(--border-subtle);
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.5);
-      border-radius: var(--radius);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      padding: 24px 0;
+      background: transparent;
+      border: none;
+      box-shadow: none;
+      border-radius: 0;
+      border-left: 1px solid var(--border-subtle);
+      transition: transform 0.3s ease;
+    }
+
+    .metric-block:first-child {
+      border-left: none;
     }
 
     .metric-block:hover {
       transform: translateY(-4px);
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.8);
     }
 
     .metric-number {
@@ -1447,19 +1459,17 @@
     }
 
     .case-study {
-      background: rgba(255, 255, 255, 0.02);
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
-      border-radius: var(--radius-lg);
-      padding: 28px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      padding: 32px 0;
+      background: transparent;
+      border: none;
+      border-top: 2px solid var(--text-primary);
+      box-shadow: none;
+      border-radius: 0;
+      transition: transform 0.3s ease;
     }
 
     .case-study:hover {
       transform: translateY(-4px);
-      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
     }
 
     .case-label {
@@ -1609,19 +1619,16 @@
     }
 
     .moat-card {
-      background: rgba(255, 255, 255, 0.7);
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
-      border: 1px solid var(--border-subtle);
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.5);
-      border-radius: var(--radius-lg);
-      padding: 36px;
-      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+      background: transparent;
+      border: none;
+      box-shadow: none;
+      padding: 0 0 0 32px;
+      border-radius: 0;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .moat-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+      transform: translateX(8px);
     }
 
     /* Issue 3: Distinct left-border colors per moat card */
@@ -1679,20 +1686,20 @@
       margin-bottom: 48px;
     }
 
+
+
     .revenue-card {
-      background: rgba(255, 255, 255, 0.7);
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
-      border: 1px solid var(--border-subtle);
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.5);
-      border-radius: var(--radius-lg);
-      padding: 36px;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background: transparent;
+      border: none;
+      border-left: 2px solid var(--border-subtle);
+      box-shadow: none;
+      border-radius: 0;
+      padding: 0 0 0 32px;
+      transition: transform 0.3s ease;
     }
 
     .revenue-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+      transform: translateX(8px);
     }
 
     .revenue-card h3 {
@@ -1798,20 +1805,19 @@
     }
 
     .comp-raise {
-      text-align: center;
-      padding: 24px 16px;
-      background: rgba(255, 255, 255, 0.7);
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
-      border: 1px solid var(--border-subtle);
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.5);
-      border-radius: var(--radius);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: left;
+      padding: 16px 0 16px 20px;
+      background: transparent;
+      border: none;
+      border-left: 2px solid var(--border-subtle);
+      box-shadow: none;
+      border-radius: 0;
+      transition: transform 0.3s ease, border-color 0.3s ease;
     }
 
     .comp-raise:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+      transform: translateX(8px);
+      border-color: rgba(0, 0, 0, 0.3);
     }
 
     .comp-raise--trillet {
@@ -1852,13 +1858,12 @@
     }
 
     .vision-timeline {
-      background: rgba(255, 255, 255, 0.7);
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
-      border: 1px solid var(--border-subtle);
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.5);
-      border-radius: var(--radius-lg);
-      padding: 36px;
+      background: transparent;
+      border: none;
+      border-left: 2px solid var(--border-subtle);
+      box-shadow: none;
+      border-radius: 0;
+      padding: 0 0 0 32px;
     }
 
     .vision-timeline-header {
@@ -2021,20 +2026,19 @@
     }
 
     .ask-fund {
-      text-align: center;
-      padding: 24px 16px;
-      background: rgba(255, 255, 255, 0.7);
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
-      border: 1px solid var(--border-subtle);
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.5);
-      border-radius: var(--radius);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      text-align: left;
+      padding: 16px 0 16px 20px;
+      background: transparent;
+      border: none;
+      border-left: 2px solid var(--border-subtle);
+      box-shadow: none;
+      border-radius: 0;
+      transition: transform 0.3s ease, border-color 0.3s ease;
     }
 
     .ask-fund:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+      transform: translateX(8px);
+      border-color: rgba(0, 0, 0, 0.3);
     }
 
     .ask-fund-label {
@@ -2060,13 +2064,13 @@
 
     .ask-milestone {
       text-align: center;
-      padding: 28px;
-      background: rgba(255, 255, 255, 0.7);
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
-      border: 1px solid var(--border-subtle);
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.5);
-      border-radius: var(--radius);
+      padding: 32px 0;
+      background: transparent;
+      border: none;
+      border-top: 1px solid var(--border-medium);
+      border-bottom: 1px solid var(--border-medium);
+      box-shadow: none;
+      border-radius: 0;
       margin-bottom: 64px;
     }
 

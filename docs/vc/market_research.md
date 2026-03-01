@@ -83,26 +83,6 @@ GoHighLevel is the proof-of-concept for Trillet's agency playbook.
 
 ---
 
-## 4. What I Still Need From You (Ori)
-
-These are the pieces that transform this research into an actual investor artifact:
-
-### Critical (without these, no investor takes a meeting)
-1. **MRR and growth trajectory** — even early numbers are fine if the trend is right
-2. **Agency/customer count** — how many paying agencies? How many total agents deployed?
-3. **Calls handled** — total calls through the platform (the "2.5M+" on the homepage — is that real?)
-4. **Team backgrounds** — what did Ori, Ming, Laurence do before? Any exits? Domain expertise?
-
-### Important (strengthens the deck significantly)
-5. **Pipeline** — any signed LOIs, enterprise conversations, agency waitlist?
-6. **Unit economics** — what's the actual cost to serve per agent? Per call minute?
-7. **Churn rate** — even anecdotal ("we've never lost an agency" is a data point)
-8. **The Mark/Nexit deal** — concrete proof of enterprise traction
-
-### The Ask
-9. **How much are you raising?**
-10. **What milestones does it unlock?** (Ship L3? Hire? GTM spend?)
-
 ---
 
-*This research is ready to be transformed into the architecture page narrative once Ori provides the traction inputs.*
+*All data inputs from Ori have been captured. Team profiles: `docs/company/team.md`. Traction & metrics: `docs/company/traction.md`. Pricing, unit economics & the ask: `docs/company/business_model.md`.*

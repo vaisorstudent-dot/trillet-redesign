@@ -1,7 +1,7 @@
 # Trillet — Strategic Context & Working Memory
 
-*Captured: 2026-02-28. Conversation between Ori (strategy, US) and AI co-strategist.*
-*Purpose: Persistent context that survives compaction. Read this first in any session.*
+*Last updated: 2026-03-01. Ori + AI co-strategist.*
+*Purpose: Cold-start entry point. Read this first in any session.*
 
 ---
 
@@ -9,14 +9,21 @@
 
 | Category | File | Contents |
 |----------|------|----------|
-| **Company** | [`docs/company/team.md`](docs/company/team.md) | Full team profiles, company size, origin stories |
-| **Company** | [`docs/company/traction.md`](docs/company/traction.md) | ARR, pipeline, enterprise proof points, case studies, integrations |
-| **Company** | [`docs/company/business_model.md`](docs/company/business_model.md) | Pricing tiers, unit economics, the ask ($5-7M), strategic decisions |
-| **VC Research** | [`docs/vc/market_research.md`](docs/vc/market_research.md) | Market sizing, GHL reference, competitor funding, competitive landscape |
+| **System** | [`system/SYSTEM.md`](system/SYSTEM.md) | Orchestrator architecture — governing principles, cognitive motion, design intent |
+| **System** | [`system/ORCHESTRATOR_PROMPT.md`](system/ORCHESTRATOR_PROMPT.md) | Boot sequence for orchestrator agent |
+| **System** | [`CLAUDE.md`](CLAUDE.md) | Operating protocol + project context |
+| **Project** | [`PROJECT.md`](PROJECT.md) | Master workstream tracker — **check this for current state** |
+| **Company** | [`docs/company/team.md`](docs/company/team.md) | Full team profiles, 20 people, 4 founders, origin stories |
+| **Company** | [`docs/company/traction.md`](docs/company/traction.md) | $500K ARR, enterprise proof points, case studies, integrations |
+| **Company** | [`docs/company/business_model.md`](docs/company/business_model.md) | 4 tiers, unit economics, the ask ($5-7M), locked decisions |
+| **VC Research** | [`docs/vc/market_research.md`](docs/vc/market_research.md) | TAM/SAM, GHL reference, competitive landscape |
 | **VC Research** | [`docs/vc/strategic_patterns.md`](docs/vc/strategic_patterns.md) | 10 strategic patterns (platform-of-platforms, lock-in, distribution, etc.) |
-| **VC Research** | `docs/vc/build_brief.md` | *Coming — spec for builder agent to create investor artifact* |
-| **Project** | [`PROJECT.md`](PROJECT.md) | Master workstream tracker |
-| **Prototype** | [`CLAUDE.md`](CLAUDE.md) | Original prototype context (pages, purpose, architecture) |
+| **VC Critique** | [`docs/vc/critique_vc_panel.md`](docs/vc/critique_vc_panel.md) | VC evaluation panel — 4-agent critique of investor deck |
+| **VC Critique** | [`docs/vc/saas_assessment.md`](docs/vc/saas_assessment.md) | Full SaaS advisory panel — 5-agent, 60K-word assessment |
+| **VC Critique** | [`docs/vc/decisions_needed.md`](docs/vc/decisions_needed.md) | 6 key decisions for founding team before deck goes out |
+| **Investor** | [`investor/deck_v3.html`](investor/deck_v3.html) | Current investor deck (v3) |
+| **Prototype** | HTML files in root | 5 pages, live at GitHub Pages |
+| **Workflow** | [`workflows/stitch.md`](workflows/stitch.md) | Design-first build workflow (Decide→Research→Blueprint→Design→Build) |
 
 ---
 
@@ -28,11 +35,21 @@ White-label agency voice AI with templating and rebilling on a GHL frame does no
 
 ---
 
+## Current State (as of 2026-03-01)
+
+**Active motion:** File system restructured. Orchestrator operationalized. VC workstream blocked on team decisions.
+
+**VC workstream:** Investor deck v3 (`investor/deck_v3.html`) complete. Two critique panels run. Six decisions surfaced for founding team (`docs/vc/decisions_needed.md`). **Blocked on team decisions before deck goes to investors.** Key blockers: one agency case study, updated trillet.ai pricing, and the enterprise-vs-agency framing decision.
+
+**Orchestrator system:** Live. File system consolidated and restructured. Operating protocol encoded in `CLAUDE.md`. System architecture in `system/`.
+
+---
+
 ## The Paradigm Shift
 
 ### Where We Were (trillet.ai today)
 - All segments exist — D2C, Agency, Enterprise, Developer
-- **The problem is fragmented, incoherent positioning.** Agency is buried under `/whitelabel`. Enterprise is a generic managed service page. No unifying thesis.
+- Fragmented, incoherent positioning. Agency is buried under `/whitelabel`. Enterprise is a generic managed page.
 
 ### Where We're Going
 - Agency-first GTM. "The GHL of Voice AI."
@@ -42,10 +59,10 @@ White-label agency voice AI with templating and rebilling on a GHL frame does no
 ### The Shift Is Three Things At Once
 1. **Storytelling** — telling existing capabilities correctly
 2. **New product layers** — Lite SaaS and Pro SaaS are genuinely new
-3. **Enterprise re-architecture** — managed service → scalable API model (though traditional enterprise is still welcome as revenue)
+3. **Enterprise re-architecture** — managed service → scalable API model
 
 ### Timeline-Gated Narrative
-- **Phase 1 (Now → 12mo)**: Lead with Agency. Enterprise for inbound only, not actively narrated.
+- **Phase 1 (Now → 12mo)**: Lead with Agency. Enterprise for inbound only.
 - **Phase 2 (12-24mo)**: Layer in enterprise as L4 proves out.
 - **Investor narrative shows both phases. Public website shows Phase 1 only.**
 
@@ -69,33 +86,21 @@ White-label agency voice AI with templating and rebilling on a GHL frame does no
 ## Non-Trivial Strategic Observations
 
 1. **Operational lock-in is the strongest card.** Switching off = calls go unanswered everywhere. At 100+ endpoints = effectively permanent.
-2. **AEO works but is fragile.** Zero ad spend, LLMs recommend Trillet. But platform-dependent and not permanently defensible. Window of opportunity.
+2. **AEO works but is fragile.** Zero ad spend, LLMs recommend Trillet. Platform-dependent and not permanently defensible. Window of opportunity.
 3. **GHL parallel has limits.** Validates the playbook but GHL has massive community momentum. Trillet's structural advantages: 5-min URL deploy, operational lock-in, templates as full products.
 4. **GHL's voice AI feature = market validation, not threat.** They bolted voice onto marketing automation. Voice-as-feature ≠ voice-as-product.
+5. **The competitive window is 9-15 months, not 18-24.** Synthflow ($30M Accel Series A) is the existential threat. Must have 100+ active agencies before they ship white-label features.
 
 ---
 
 ## Open Threads
 
-1. **`stitch_workflow`** — Empty file. Ori will explain when ready.
-2. **VC investor artifact** — Build brief coming next. All data inputs complete.
-3. **Marketplace** — Future vision at scale. Not current priority.
-4. **Codebase refactoring** — Plan exists, secondary to strategic work.
-5. **Downstream effects of paradigm shift** — Ori has not enumerated all.
-
----
-
-## The Prototype (this repo)
-
-5 static HTML pages, 1 CSS, 1 JS. Hosted at: https://vaisorstudent-dot.github.io/trillet-redesign/
-
-| Page | Purpose |
-|------|---------|
-| `index.html` | Dual-audience homepage |
-| `agency.html` | Agency pitch |
-| `pricing.html` | 4 tiers side-by-side |
-| `enterprise.html` | Pro SaaS / Process Configurator |
-| `architecture.html` | Internal fractal thesis |
+1. **6 team decisions** — pricing, positioning, org. See `docs/vc/decisions_needed.md`
+2. **Agency case study** — blocker for investor deck. Ori needs to extract from best of ~14 paying agencies.
+3. **trillet.ai update** — live site contradicts deck ($29 vs $59, missing tiers)
+4. **Stitch workflow** — documented in `workflows/stitch.md`, not yet applied to a problem space
+5. **Marketplace** — future vision at scale, not current priority
+6. **Codebase refactoring** — parked
 
 ---
 

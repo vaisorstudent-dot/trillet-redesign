@@ -1,3 +1,4 @@
+<!-- PRE-SEND BLOCKER: Update trillet.ai pricing to match this deck before sending -->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -952,6 +953,18 @@
       color: var(--text-primary);
     }
 
+    .team-roles-note {
+      text-align: center;
+      margin-top: 12px;
+      margin-bottom: 8px;
+    }
+
+    .team-roles-note p {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
     /* ======================
        SECTION 4: THE PRODUCT
        ====================== */
@@ -1398,6 +1411,60 @@
       color: var(--white);
     }
 
+    /* Infrastructure maturity pills (compact stack replacement) */
+    .infra-maturity {
+      text-align: center;
+    }
+
+    .infra-pills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .infra-pill {
+      display: inline-flex;
+      align-items: center;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      padding: 8px 16px;
+      border-radius: 100px;
+      border: 1px solid var(--border-subtle);
+      background: var(--bg-surface);
+    }
+
+    .infra-maturity-note {
+      margin-top: 16px;
+      font-size: 0.8125rem;
+      color: var(--text-tertiary);
+    }
+
+    /* Transition callout between Product and Traction */
+    .transition-callout {
+      padding: 64px 0;
+      text-align: center;
+      border-top: 1px solid var(--border-subtle);
+      border-bottom: 1px solid var(--border-subtle);
+      background: var(--bg-surface);
+    }
+
+    .transition-callout-text {
+      font-size: clamp(1.125rem, 2.2vw, 1.5rem);
+      color: var(--text-secondary);
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.5;
+      border-left: 3px solid var(--teal-500);
+      padding-left: 24px;
+      text-align: left;
+    }
+
+    .transition-callout-text strong {
+      color: var(--text-primary);
+    }
+
     /* ======================
        SECTION 6: TRACTION (Issue 3)
        ====================== */
@@ -1405,6 +1472,79 @@
     /* Issue 3: Traction section — denser spacing */
     #traction.section {
       padding: 80px 0;
+    }
+
+    /* Revenue Profile */
+    .revenue-profile-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .revenue-profile-card {
+      padding: 20px 24px;
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-sm);
+      background: transparent;
+    }
+
+    .revenue-profile-label {
+      font-size: 0.6875rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .revenue-profile-value {
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      line-height: 1.5;
+    }
+
+    .revenue-profile-flag {
+      margin-top: 8px;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .tier-mix-bar {
+      display: flex;
+      height: 24px;
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 8px;
+    }
+
+    .tier-mix-segment {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.625rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .tier-mix-segment--enterprise { background: var(--green-400); }
+    .tier-mix-segment--smb { background: var(--blue-400); }
+    .tier-mix-segment--agency { background: var(--indigo-400); }
+
+    .tier-mix-legend {
+      display: flex;
+      gap: 12px;
+      font-size: 0.6875rem;
+      color: var(--text-muted);
+    }
+
+    .tier-mix-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      margin-right: 4px;
+      vertical-align: middle;
     }
 
     /* Metrics bar — tighter */
@@ -1491,6 +1631,20 @@
       color: var(--text-muted);
       font-style: italic;
       margin-top: 8px;
+    }
+
+    .agency-bridge {
+      padding: 20px 24px;
+      border-left: 3px solid var(--amber-400);
+      background: rgba(245, 158, 11, 0.04);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    }
+
+    .agency-bridge p {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      font-style: italic;
+      line-height: 1.6;
     }
 
     /* Case studies — tighter */
@@ -1760,6 +1914,34 @@
     .revenue-card p {
       font-size: 0.875rem;
       line-height: 1.7;
+    }
+
+    /* Pricing architecture table */
+    .pricing-arch-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.875rem;
+    }
+
+    .pricing-arch-table th {
+      text-align: left;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--text-muted);
+      padding: 8px 16px 8px 0;
+      border-bottom: 1px solid var(--border-medium);
+    }
+
+    .pricing-arch-table td {
+      padding: 12px 16px 12px 0;
+      border-bottom: 1px solid var(--border-subtle);
+      color: var(--text-secondary);
+    }
+
+    .pricing-arch-table td strong {
+      color: var(--text-primary);
     }
 
     /* Compounding visual */
@@ -2084,6 +2266,14 @@
       transition: transform 0.3s ease, border-color 0.3s ease;
     }
 
+    .ask-fund-pct {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--teal-500);
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+
     .ask-fund:hover {
       transform: translateY(-4px);
       border-color: rgba(0, 0, 0, 0.3);
@@ -2305,11 +2495,13 @@
         grid-template-columns: 1fr 1fr;
       }
 
-      .case-studies {
+      .revenue-profile-grid {
         grid-template-columns: 1fr;
       }
 
-
+      .case-studies {
+        grid-template-columns: 1fr;
+      }
 
       .comp-raises {
         grid-template-columns: 1fr 1fr;
@@ -2381,6 +2573,14 @@
         grid-template-columns: 1fr;
       }
 
+      .pricing-arch-table {
+        font-size: 0.75rem;
+      }
+
+      .pricing-arch-table th,
+      .pricing-arch-table td {
+        padding: 8px 8px 8px 0;
+      }
 
       .comp-raises {
         grid-template-columns: 1fr;
@@ -2420,7 +2620,6 @@
       <nav class="conf-nav" id="confNav">
         <a href="#gap">Market</a>
         <a href="#product">Product</a>
-        <a href="#stack">Stack</a>
         <a href="#traction">Traction</a>
         <a href="#moat">Moat</a>
         <a href="#model">Model</a>
@@ -2499,8 +2698,8 @@
       <!-- Beat 2: Wrong thing -->
       <div class="callout callout--teal reveal reveal-delay-2" style="margin-top:64px;">
         <h3>Everyone is building the wrong thing</h3>
-        <p>Bland AI, Vapi, Retell, Synthflow &mdash; they raised $110M+ combined to build <span
-            class="emphasis">developer tools</span>. APIs for engineers who want to build voice AI from scratch.</p>
+        <p>Bland AI, Vapi, Retell, and Synthflow raised $110M+ combined &mdash; building APIs for developers or builders for individuals. None built the <span
+            class="emphasis">agency platform layer</span>: white-label, sub-accounts, rebilling, templates-as-products.</p>
         <p style="margin-top:12px;">But the $6.8B market isn't developers. It's the <span class="emphasis">50,000+
             agencies and service businesses</span> that need to deploy voice AI for their clients &mdash; without
           writing code, without hiring engineers.</p>
@@ -2590,12 +2789,6 @@
 
       <div class="team-grid reveal reveal-delay-2">
         <div class="team-card">
-          <div class="team-name">Laurence Latin</div>
-          <div class="team-title">CEO</div>
-          <div class="team-proof">Head of Software at Australia's leading healthcare SaaS. Infrastructure at Dimension
-            Data, Commonwealth Bank. Mission-critical systems.</div>
-        </div>
-        <div class="team-card">
           <div class="team-name">Ming Xu</div>
           <div class="team-title">COO</div>
           <div class="team-proof">Bland.ai's first partner. 7-figure ARR exit in 16 months. Serial entrepreneur ($5M+
@@ -2608,15 +2801,25 @@
             operator. Red Hat Certified Engineer.</div>
         </div>
         <div class="team-card">
+          <div class="team-name">Laurence Latin</div>
+          <div class="team-title">CEO</div>
+          <div class="team-proof">Head of Software at Australia's leading healthcare SaaS. Infrastructure at Dimension
+            Data, Commonwealth Bank. Mission-critical systems.</div>
+        </div>
+        <div class="team-card">
           <div class="team-name">Barak Blatman</div>
-          <div class="team-title">Managing Partner, US</div>
+          <div class="team-title">Managing Partner</div>
           <div class="team-proof">Former COO of social platforms (Whiplr, Vigr). Israel Security Agency. B2C product +
             data expertise.</div>
         </div>
       </div>
 
+      <div class="team-roles-note reveal reveal-delay-2">
+        <p>Ming built the product. Laurence runs the company. Ori opens the US market.</p>
+      </div>
+
       <div class="team-stat-line reveal reveal-delay-3">
-        <p><strong>20 people. 15 engineers. $0 raised.</strong> Core AI through API Distribution &mdash; built and
+        <p><strong>20 people. 15 engineers. Self-funded.</strong> Core AI through API Distribution &mdash; built and
           deployed.</p>
       </div>
 
@@ -2674,7 +2877,7 @@
       </div>
 
       <div class="key-line reveal reveal-delay-2">
-        A <strong>$59/month solo operator</strong> and a <strong>Fortune 500 telecom</strong> run the same AI. Only the
+        A <strong>solo operator</strong> and a <strong>Fortune 500 telecom</strong> run the same AI. Only the
         deployment wrapper changes.
       </div>
 
@@ -2687,32 +2890,27 @@
       <div class="deploy-model-grid reveal reveal-delay-1">
         <div class="deploy-model-card">
           <div class="deploy-model-tier">Starter</div>
-          <div class="deploy-model-price">$59/mo</div>
           <div class="deploy-model-buyer">Solo operators, small businesses</div>
-          <div class="deploy-model-deploy">1 operator &rarr; self-setup &rarr; 1 agent</div>
+          <div class="deploy-model-deploy">Self-setup &rarr; 1 agent</div>
           <div class="deploy-model-endpoints">1 endpoint</div>
         </div>
         <div class="deploy-model-card">
           <div class="deploy-model-tier">Agency</div>
-          <div class="deploy-model-price">$299/mo</div>
           <div class="deploy-model-buyer">Marketing &amp; digital agencies</div>
-          <div class="deploy-model-deploy">1 operator &rarr; manual config per client &rarr; white-label + rebilling
-          </div>
+          <div class="deploy-model-deploy">Manual config per client &rarr; white-label + rebilling</div>
           <div class="deploy-model-endpoints">10&ndash;50 endpoints</div>
         </div>
         <div class="deploy-model-card deploy-model-card--highlight">
           <div class="deploy-model-tier">Lite SaaS</div>
-          <div class="deploy-model-price">$497/mo</div>
           <div class="deploy-model-buyer">Agencies scaling past 15 clients</div>
           <div class="deploy-model-deploy">Template library &rarr; one-click deploy &rarr; clients self-onboard</div>
           <div class="deploy-model-endpoints">100+ endpoints</div>
         </div>
         <div class="deploy-model-card">
           <div class="deploy-model-tier">Pro SaaS</div>
-          <div class="deploy-model-price">$1,497/mo + $14K build</div>
           <div class="deploy-model-buyer">Network operators, enterprise</div>
           <div class="deploy-model-deploy">Custom template &rarr; API &rarr; entire network auto-configures</div>
-          <div class="deploy-model-endpoints">1,000+ endpoints &middot; $49&ndash;149/endpoint</div>
+          <div class="deploy-model-endpoints">1,000+ endpoints</div>
         </div>
       </div>
 
@@ -2746,7 +2944,7 @@
           <div class="org-branch-item">
             <div class="org-node org-node--region">
               <div class="org-label">Region</div>
-              <div class="org-name">NSW</div>
+              <div class="org-name">Texas</div>
               <div class="org-stat">25 locations</div>
             </div>
             <div class="org-vline"></div>
@@ -2782,7 +2980,7 @@
           <div class="org-branch-item">
             <div class="org-node org-node--region">
               <div class="org-label">Region</div>
-              <div class="org-name">VIC</div>
+              <div class="org-name">Florida</div>
               <div class="org-stat">20 locations</div>
             </div>
             <div class="org-vline"></div>
@@ -2813,7 +3011,7 @@
           <div class="org-branch-item">
             <div class="org-node org-node--region">
               <div class="org-label">Region</div>
-              <div class="org-name">QLD</div>
+              <div class="org-name">California</div>
               <div class="org-stat">18 locations</div>
             </div>
             <div class="org-vline"></div>
@@ -2841,79 +3039,27 @@
         </div>
       </div>
 
+      <!-- Infrastructure maturity — compact signal -->
+      <div class="infra-maturity reveal" style="margin-top:64px;">
+        <div class="infra-pills">
+          <span class="infra-pill infra-pill--live">Core AI <span class="status-badge status-badge--live" style="margin-left:6px;font-size:0.625rem;padding:2px 8px;">Live</span></span>
+          <span class="infra-pill infra-pill--live">Agent Builder <span class="status-badge status-badge--live" style="margin-left:6px;font-size:0.625rem;padding:2px 8px;">Live</span></span>
+          <span class="infra-pill infra-pill--live">Agency Platform <span class="status-badge status-badge--live" style="margin-left:6px;font-size:0.625rem;padding:2px 8px;">Live</span></span>
+          <span class="infra-pill infra-pill--live">Template Engine <span class="status-badge status-badge--live" style="margin-left:6px;font-size:0.625rem;padding:2px 8px;">Live</span></span>
+          <span class="infra-pill infra-pill--pilot">API Distribution <span class="status-badge status-badge--pilot" style="margin-left:6px;font-size:0.625rem;padding:2px 8px;">Pilot</span></span>
+        </div>
+        <p class="infra-maturity-note">Four layers in production. The fifth is in pilot with a paying enterprise customer.</p>
+      </div>
 
     </div>
   </section>
 
-  <!-- ===== SECTION 5: INFRASTRUCTURE STACK ===== -->
-  <section class="section section-divider" id="stack">
+  <!-- ===== TRANSITION CALLOUT ===== -->
+  <div class="transition-callout reveal">
     <div class="container">
-
-      <div class="reveal" style="text-align:center;margin-bottom:48px;">
-        <div class="section-label">Infrastructure</div>
-        <h2>Five layers. All live.</h2>
-      </div>
-
-      <div class="stack-layers reveal reveal-delay-1" style="max-width: 800px; margin: 0 auto;">
-        <div class="stack-layer">
-          <div style="font-weight:700;color:var(--text-tertiary);font-size:0.8125rem;letter-spacing:0.04em;">01</div>
-          <div>
-            <div class="stack-layer-name">Core AI Engine</div>
-            <div class="stack-layer-desc">Voice processing, NLU, TTS, 32 languages</div>
-          </div>
-          <div class="stack-layer-status">
-            <span class="status-badge status-badge--live">Live</span>
-          </div>
-        </div>
-        <div class="stack-layer">
-          <div style="font-weight:700;color:var(--text-tertiary);font-size:0.8125rem;letter-spacing:0.04em;">02</div>
-          <div>
-            <div class="stack-layer-name">Agent Builder</div>
-            <div class="stack-layer-desc">URL &rarr; live agent in 5 minutes</div>
-          </div>
-          <div class="stack-layer-status">
-            <span class="status-badge status-badge--live">Live</span>
-          </div>
-        </div>
-        <div class="stack-layer">
-          <div style="font-weight:700;color:var(--text-tertiary);font-size:0.8125rem;letter-spacing:0.04em;">03</div>
-          <div>
-            <div class="stack-layer-name">Agency Platform</div>
-            <div class="stack-layer-desc">White-label, sub-accounts, Stripe billing</div>
-          </div>
-          <div class="stack-layer-status">
-            <span class="status-badge status-badge--live">Live</span>
-          </div>
-        </div>
-        <div class="stack-layer">
-          <div style="font-weight:700;color:var(--text-tertiary);font-size:0.8125rem;letter-spacing:0.04em;">04</div>
-          <div>
-            <div class="stack-layer-name">Template Engine</div>
-            <div class="stack-layer-desc">Snap &rarr; freeze &rarr; one-click stamp</div>
-          </div>
-          <div class="stack-layer-status">
-            <span class="status-badge status-badge--live">Live</span>
-          </div>
-        </div>
-        <div class="stack-layer" style="border-bottom-color: var(--indigo-500); border-bottom-width: 2px;">
-          <div style="font-weight:700;color:var(--indigo-400);font-size:0.8125rem;letter-spacing:0.04em;">05</div>
-          <div>
-            <div class="stack-layer-name">API Distribution</div>
-            <div class="stack-layer-desc">REST API, auto-configure, per-endpoint billing</div>
-          </div>
-          <div class="stack-layer-status">
-            <span class="status-badge status-badge--pilot">Pilot</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="stack-callout reveal reveal-delay-2">
-        <p><strong>Four layers live in production. The fifth is in pilot with a paying enterprise customer.</strong> We
-          didn't raise to build the product. We built it. Now we're raising to capture the market.</p>
-      </div>
-
+      <p class="transition-callout-text"><strong>We didn't raise to build the product. We built it. Now we're raising to capture the market.</strong></p>
     </div>
-  </section>
+  </div>
 
   <!-- ===== SECTION 6: TRACTION ===== -->
   <section class="section section-divider" id="traction">
@@ -2944,6 +3090,41 @@
         </div>
       </div>
 
+      <!-- Revenue Profile -->
+      <div class="revenue-profile reveal reveal-delay-1" style="margin-top:36px;">
+        <div class="revenue-profile-grid">
+          <div class="revenue-profile-card">
+            <div class="revenue-profile-label">Tier Mix</div>
+            <div class="tier-mix-bar">
+              <div class="tier-mix-segment tier-mix-segment--enterprise" style="width:65%;">
+                <span>65%</span>
+              </div>
+              <div class="tier-mix-segment tier-mix-segment--smb" style="width:25%;">
+                <span>25%</span>
+              </div>
+              <div class="tier-mix-segment tier-mix-segment--agency" style="width:10%;">
+              </div>
+            </div>
+            <div class="tier-mix-legend">
+              <span><span class="tier-mix-dot" style="background:var(--green-400);"></span>Enterprise 65%</span>
+              <span><span class="tier-mix-dot" style="background:var(--blue-400);"></span>SMB/D2C 25%</span>
+              <span><span class="tier-mix-dot" style="background:var(--indigo-400);"></span>Agency 10%</span>
+            </div>
+            <div class="revenue-profile-flag">~50 accounts across all tiers</div>
+          </div>
+          <div class="revenue-profile-card">
+            <div class="revenue-profile-label">Concentration</div>
+            <div class="revenue-profile-value">No single customer exceeds 40% of ARR</div>
+            <div class="revenue-profile-flag">Largest account: ~25 endpoints</div>
+          </div>
+          <div class="revenue-profile-card">
+            <div class="revenue-profile-label">Growth</div>
+            <div class="revenue-profile-value">Q1 2025 &rarr; $500K ARR in under 12 months</div>
+            <div class="revenue-profile-flag">Enterprise contracts, $0 in paid acquisition</div>
+          </div>
+        </div>
+      </div>
+
       <!-- Enterprise client grid -->
       <div class="reveal reveal-delay-2">
         <table class="enterprise-grid">
@@ -2963,7 +3144,7 @@
             <tr>
               <td class="client-name">European Bank</td>
               <td>Financial Services</td>
-              <td>End-stage, pre-deployment</td>
+              <td>Deploying Q2 2026</td>
             </tr>
             <tr>
               <td class="client-name">5 National Debt Collection Cos</td>
@@ -2979,6 +3160,11 @@
         </table>
         <div class="nda-note">Enterprise clients under NDA. Industry references and metrics available upon request.
         </div>
+      </div>
+
+      <!-- Agency bridge — naming the gap honestly -->
+      <div class="agency-bridge reveal" style="margin-top:32px;">
+        <p>Enterprise traction proves the product converts. Agency recruitment started Q4 2025 &mdash; a few dozen agencies onboarded. This raise funds the GTM engine to prove the distribution model at scale.</p>
       </div>
 
       <!-- Case studies -->
@@ -3115,6 +3301,47 @@
         </div>
       </div>
 
+      <!-- Pricing Architecture -->
+      <div class="reveal" style="margin-top:48px;">
+        <h3 style="font-size:1rem;color:var(--text-tertiary);margin-bottom:16px;font-weight:600;">Pricing architecture</h3>
+        <table class="pricing-arch-table">
+          <thead>
+            <tr>
+              <th>Tier</th>
+              <th>Price</th>
+              <th>Buyer</th>
+              <th>Margin</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Starter</strong></td>
+              <td>$59/mo</td>
+              <td>Solo operators</td>
+              <td>92% (on included minutes)</td>
+            </tr>
+            <tr>
+              <td><strong>Agency</strong></td>
+              <td>$299/mo</td>
+              <td>Marketing &amp; digital agencies</td>
+              <td>~100% sub + 62% usage</td>
+            </tr>
+            <tr>
+              <td><strong>Lite SaaS</strong></td>
+              <td>$497/mo</td>
+              <td>Agencies at scale</td>
+              <td>~100% sub + 62% usage</td>
+            </tr>
+            <tr>
+              <td><strong>Pro SaaS</strong></td>
+              <td>$1,497/mo + $14K build</td>
+              <td>Network operators</td>
+              <td>$49&ndash;149/endpoint</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
       <!-- Compounding example -->
       <div class="compound-example reveal reveal-delay-2">
         <h3>How one Agency-tier account becomes $779/month</h3>
@@ -3184,8 +3411,8 @@
         <div class="vision-timeline vision-timeline--now">
           <div class="vision-timeline-header vt-now">Now &rarr; 12 Months</div>
           <ul>
-            <li>Agency-first GTM at full velocity</li>
-            <li>300+ agencies on platform</li>
+            <li><strong>300+ agencies</strong> on platform</li>
+            <li><strong>$3M+ ARR</strong> run rate</li>
             <li>Template marketplace opens: agencies list battle-tested templates for other agencies to license</li>
             <li>Community and certification program launches</li>
           </ul>
@@ -3193,8 +3420,8 @@
         <div class="vision-timeline vision-timeline--future">
           <div class="vision-timeline-header vt-future">12 &rarr; 24 Months</div>
           <ul>
-            <li>API Distribution powers enterprise network deployments</li>
-            <li>The platform agencies use becomes the infrastructure that industries run on</li>
+            <li><strong>5+ enterprise verticals</strong> in production</li>
+            <li><strong>1,000+ agencies.</strong> Template marketplace generating independent revenue.</li>
             <li>Voice AI as a platform layer embedded in healthcare networks, financial systems, telecom operations</li>
           </ul>
         </div>
@@ -3239,9 +3466,10 @@
         <p>15 engineers. The product is built. This raise captures the market.</p>
       </div>
 
-      <!-- Issue 6: SVG icons for each fund area -->
+      <!-- Fund allocation with percentages -->
       <div class="ask-funds reveal reveal-delay-2">
         <div class="ask-fund">
+          <div class="ask-fund-pct">40%</div>
           <div class="ask-fund-icon">
             <svg viewBox="0 0 24 24">
               <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
@@ -3250,18 +3478,10 @@
               <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
             </svg>
           </div>
-          <div class="ask-fund-label">US sales team &amp; agency recruitment</div>
+          <div class="ask-fund-label">US Sales &amp; Agency Recruitment</div>
         </div>
         <div class="ask-fund">
-          <div class="ask-fund-icon">
-            <svg viewBox="0 0 24 24">
-              <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
-              <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
-            </svg>
-          </div>
-          <div class="ask-fund-label">Agency community &amp; certification</div>
-        </div>
-        <div class="ask-fund">
+          <div class="ask-fund-pct">20%</div>
           <div class="ask-fund-icon">
             <svg viewBox="0 0 24 24">
               <path
@@ -3271,9 +3491,20 @@
               <line x1="12" y1="22.08" x2="12" y2="12"></line>
             </svg>
           </div>
-          <div class="ask-fund-label">Marketing &amp; partnerships</div>
+          <div class="ask-fund-label">Marketing &amp; Partnerships</div>
         </div>
         <div class="ask-fund">
+          <div class="ask-fund-pct">15%</div>
+          <div class="ask-fund-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+              <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+            </svg>
+          </div>
+          <div class="ask-fund-label">Agency Community &amp; Certification</div>
+        </div>
+        <div class="ask-fund">
+          <div class="ask-fund-pct">15%</div>
           <div class="ask-fund-icon">
             <svg viewBox="0 0 24 24">
               <circle cx="12" cy="12" r="10"></circle>
@@ -3282,9 +3513,10 @@
               <line x1="15" y1="9" x2="15.01" y2="9"></line>
             </svg>
           </div>
-          <div class="ask-fund-label">Agency success &amp; enablement</div>
+          <div class="ask-fund-label">Agency Success &amp; Enablement</div>
         </div>
         <div class="ask-fund">
+          <div class="ask-fund-pct">10%</div>
           <div class="ask-fund-icon">
             <svg viewBox="0 0 24 24">
               <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
@@ -3293,7 +3525,7 @@
               <line x1="6" y1="18" x2="6.01" y2="18"></line>
             </svg>
           </div>
-          <div class="ask-fund-label">Infrastructure scaling</div>
+          <div class="ask-fund-label">Infrastructure Scaling</div>
         </div>
       </div>
 

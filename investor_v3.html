@@ -1066,6 +1066,83 @@
       color: var(--text-primary);
     }
 
+    /* Deployment model grid */
+    .deploy-model-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      max-width: 880px;
+      margin: 0 auto;
+    }
+
+    .deploy-model-card {
+      padding: 28px 24px;
+      border-right: 1px solid var(--border-subtle);
+      position: relative;
+    }
+
+    .deploy-model-card:last-child {
+      border-right: none;
+    }
+
+    .deploy-model-card--highlight {
+      background: rgba(20, 184, 166, 0.04);
+    }
+
+    .deploy-model-tier {
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .deploy-model-price {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--text-primary);
+      letter-spacing: -0.02em;
+      margin-bottom: 4px;
+    }
+
+    .deploy-model-buyer {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
+
+    .deploy-model-deploy {
+      font-size: 0.6875rem;
+      color: var(--text-tertiary);
+      line-height: 1.5;
+      padding-top: 12px;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .deploy-model-endpoints {
+      font-size: 0.8125rem;
+      font-weight: 700;
+      color: var(--teal-500);
+      margin-top: 8px;
+    }
+
+    .deploy-insight {
+      text-align: center;
+      font-size: clamp(0.9375rem, 1.8vw, 1.0625rem);
+      color: var(--text-secondary);
+      font-weight: 500;
+      max-width: 640px;
+      margin: 32px auto 0;
+      padding: 24px 0;
+      border-top: 1px solid var(--border-subtle);
+    }
+
+    .deploy-insight strong {
+      color: var(--text-primary);
+    }
+
     /* ===== NESTED ENTERPRISE ===== */
     .org-tree {
       display: flex;
@@ -2194,6 +2271,14 @@
         grid-template-columns: repeat(2, 1fr);
       }
 
+      .deploy-model-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .deploy-model-card:nth-child(2) {
+        border-right: none;
+      }
+
       .stack-layer {
         grid-template-columns: 50px 1fr 90px;
       }
@@ -2252,6 +2337,15 @@
 
       .compound-example {
         padding: 28px;
+      }
+
+      .deploy-model-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .deploy-model-card {
+        border-right: none;
+        border-bottom: 1px solid var(--border-subtle);
       }
 
       .stack-layer {
@@ -2583,9 +2677,51 @@
         deployment wrapper changes.
       </div>
 
-      <!-- Reordered Narrative Step 2: Infrastructure Stack -->
+      <!-- Deployment Models — the 4-tier framework -->
       <div class="reveal" style="text-align:center;margin-top:80px;margin-bottom:48px;">
-        <h3 style="font-size:1.0625rem;color:var(--text-secondary);font-weight:600;">The Infrastructure Moat</h3>
+        <h3 style="font-size:1.0625rem;color:var(--text-secondary);font-weight:600;">Four deployment models. Same AI.
+        </h3>
+      </div>
+
+      <div class="deploy-model-grid reveal reveal-delay-1">
+        <div class="deploy-model-card">
+          <div class="deploy-model-tier">Starter</div>
+          <div class="deploy-model-price">$59/mo</div>
+          <div class="deploy-model-buyer">Solo operators, small businesses</div>
+          <div class="deploy-model-deploy">1 operator &rarr; self-setup &rarr; 1 agent</div>
+          <div class="deploy-model-endpoints">1 endpoint</div>
+        </div>
+        <div class="deploy-model-card">
+          <div class="deploy-model-tier">Agency</div>
+          <div class="deploy-model-price">$299/mo</div>
+          <div class="deploy-model-buyer">Marketing &amp; digital agencies</div>
+          <div class="deploy-model-deploy">1 operator &rarr; manual config per client &rarr; white-label + rebilling
+          </div>
+          <div class="deploy-model-endpoints">10&ndash;50 endpoints</div>
+        </div>
+        <div class="deploy-model-card deploy-model-card--highlight">
+          <div class="deploy-model-tier">Lite SaaS</div>
+          <div class="deploy-model-price">$497/mo</div>
+          <div class="deploy-model-buyer">Agencies scaling past 15 clients</div>
+          <div class="deploy-model-deploy">Template library &rarr; one-click deploy &rarr; clients self-onboard</div>
+          <div class="deploy-model-endpoints">100+ endpoints</div>
+        </div>
+        <div class="deploy-model-card">
+          <div class="deploy-model-tier">Pro SaaS</div>
+          <div class="deploy-model-price">$1,497/mo</div>
+          <div class="deploy-model-buyer">Network operators, enterprise</div>
+          <div class="deploy-model-deploy">Custom template &rarr; API &rarr; entire network auto-configures</div>
+          <div class="deploy-model-endpoints">1,000+ endpoints</div>
+        </div>
+      </div>
+
+      <div class="deploy-insight reveal reveal-delay-2">
+        <strong>Each tier is an order of magnitude more distribution per customer.</strong>
+      </div>
+
+      <!-- Infrastructure Stack (product maturity, not moat) -->
+      <div class="reveal" style="text-align:center;margin-top:80px;margin-bottom:48px;">
+        <h3 style="font-size:1.0625rem;color:var(--text-secondary);font-weight:600;">Five layers. All live.</h3>
       </div>
 
       <div class="stack-layers reveal reveal-delay-1" style="max-width: 800px; margin: 0 auto;">
@@ -2641,14 +2777,16 @@
         </div>
       </div>
 
-      <div class="key-line reveal reveal-delay-2" style="margin-top:40px;">
-        Ming built Core AI through Template Engine. We are raising to scale API Distribution &mdash; <strong>the
-          enterprise infrastructure play</strong>.
+      <div class="stack-callout reveal reveal-delay-2">
+        <p><strong>We didn't raise to build the product.</strong> We built it. Now we're raising to capture the market.
+        </p>
       </div>
 
-      <!-- Reordered Narrative Step 3: Fractal Scale (Nested Enterprise) -->
-      <div class="reveal" style="text-align:center;margin-top:80px;margin-bottom:48px;">
+      <!-- Enterprise at Scale — Pro SaaS in action -->
+      <div class="reveal" style="text-align:center;margin-top:80px;margin-bottom:12px;">
         <h3 style="font-size:1.0625rem;color:var(--text-secondary);font-weight:600;">Enterprise at Scale</h3>
+        <p style="font-size:0.8125rem;color:var(--text-tertiary);margin-top:8px;">Pro SaaS in action &mdash; one
+          template, one API call, 63 clinics.</p>
       </div>
 
       <div class="org-tree reveal reveal-delay-1">
@@ -2765,10 +2903,6 @@
         </div>
       </div>
 
-      <div class="stack-callout reveal reveal-delay-2">
-        <p><strong>We didn't raise to build the product.</strong> We built it. Now we're raising to capture the market.
-        </p>
-      </div>
 
     </div>
   </section>

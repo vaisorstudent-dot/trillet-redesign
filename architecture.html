@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,8 +19,8 @@
 
     /* Internal banner */
     .internal-banner {
-      background: rgba(245,158,11,0.08);
-      border: 1px solid rgba(245,158,11,0.3);
+      background: rgba(245, 158, 11, 0.08);
+      border: 1px solid rgba(245, 158, 11, 0.3);
       border-left: 4px solid var(--amber-500);
       padding: 12px 24px;
       font-size: 0.75rem;
@@ -38,13 +39,15 @@
     .arch-hero {
       padding: 180px 0 80px;
       text-align: center;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
     }
+
     .arch-hero h1 {
       font-size: clamp(2.5rem, 5vw, 3.5rem);
       color: var(--white);
       margin-bottom: 16px;
     }
+
     .arch-hero p {
       color: var(--slate-400);
       font-size: 1.25rem;
@@ -55,32 +58,37 @@
     /* Section styling — all dark */
     .arch-section {
       padding: 100px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.04);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
     }
+
     .arch-section h2 {
       color: var(--white);
       margin-bottom: 16px;
     }
+
     .arch-section p {
       color: var(--slate-400);
     }
+
     .arch-section .section-header {
       margin-bottom: 56px;
     }
+
     .arch-section .section-header p {
       margin: 12px auto 0;
       font-size: 1.0625rem;
     }
 
     .insight-callout {
-      background: rgba(20,184,166,0.06);
-      border: 1px solid rgba(20,184,166,0.15);
+      background: rgba(20, 184, 166, 0.06);
+      border: 1px solid rgba(20, 184, 166, 0.15);
       border-left: 3px solid var(--teal-400);
       border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
       padding: 20px 24px;
       margin-top: 40px;
       max-width: 700px;
     }
+
     .insight-callout p {
       color: var(--teal-300);
       font-size: 0.9375rem;
@@ -88,18 +96,20 @@
       margin: 0;
       line-height: 1.6;
     }
+
     .insight-callout strong {
       color: var(--white);
     }
 
     /* ===== ATOMIC UNIT DIAGRAM ===== */
     .atom-diagram {
-      background: rgba(255,255,255,0.02);
-      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: var(--radius-lg);
       padding: 48px 40px;
       position: relative;
     }
+
     .atom-diagram::before {
       content: 'ATOMIC UNIT';
       position: absolute;
@@ -121,30 +131,35 @@
       overflow-x: auto;
       padding-bottom: 8px;
     }
+
     .atom-node {
       flex-shrink: 0;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: var(--radius-sm);
       padding: 16px 20px;
       text-align: center;
       min-width: 110px;
       position: relative;
     }
+
     .atom-node--input {
-      border-color: rgba(59,130,246,0.3);
-      background: rgba(59,130,246,0.06);
+      border-color: rgba(59, 130, 246, 0.3);
+      background: rgba(59, 130, 246, 0.06);
     }
+
     .atom-node--core {
-      border-color: rgba(20,184,166,0.3);
-      background: rgba(20,184,166,0.06);
+      border-color: rgba(20, 184, 166, 0.3);
+      background: rgba(20, 184, 166, 0.06);
       min-width: 140px;
       padding: 20px 24px;
     }
+
     .atom-node--output {
-      border-color: rgba(245,158,11,0.3);
-      background: rgba(245,158,11,0.06);
+      border-color: rgba(245, 158, 11, 0.3);
+      background: rgba(245, 158, 11, 0.06);
     }
+
     .atom-node .node-label {
       font-size: 0.6875rem;
       text-transform: uppercase;
@@ -152,25 +167,28 @@
       color: var(--slate-500);
       margin-bottom: 6px;
     }
+
     .atom-node .node-name {
       font-weight: 700;
       font-size: 0.875rem;
       color: var(--white);
     }
+
     .atom-arrow {
       flex-shrink: 0;
       width: 32px;
       height: 2px;
-      background: rgba(255,255,255,0.12);
+      background: rgba(255, 255, 255, 0.12);
       position: relative;
     }
+
     .atom-arrow::after {
       content: '';
       position: absolute;
       right: 0;
       top: -4px;
       border: 5px solid transparent;
-      border-left: 6px solid rgba(255,255,255,0.2);
+      border-left: 6px solid rgba(255, 255, 255, 0.2);
     }
 
     .atom-capabilities {
@@ -180,9 +198,10 @@
       flex-wrap: wrap;
       justify-content: center;
     }
+
     .atom-cap {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 100px;
       padding: 8px 18px;
       font-size: 0.8125rem;
@@ -195,42 +214,49 @@
       flex-direction: column;
       gap: 0;
     }
+
     .fractal-tier {
-      border: 1px solid rgba(255,255,255,0.06);
+      border: 1px solid rgba(255, 255, 255, 0.06);
       border-radius: var(--radius-lg);
       padding: 36px 32px;
       position: relative;
       margin-bottom: -1px;
     }
+
     .fractal-tier--d2c {
-      border-color: rgba(59,130,246,0.2);
-      background: rgba(59,130,246,0.02);
+      border-color: rgba(59, 130, 246, 0.2);
+      background: rgba(59, 130, 246, 0.02);
       z-index: 4;
     }
+
     .fractal-tier--agency {
-      border-color: rgba(20,184,166,0.2);
-      background: rgba(20,184,166,0.02);
+      border-color: rgba(20, 184, 166, 0.2);
+      background: rgba(20, 184, 166, 0.02);
       padding-left: 56px;
       z-index: 3;
     }
+
     .fractal-tier--lite {
-      border-color: rgba(245,158,11,0.2);
-      background: rgba(245,158,11,0.02);
+      border-color: rgba(245, 158, 11, 0.2);
+      background: rgba(245, 158, 11, 0.02);
       padding-left: 80px;
       z-index: 2;
     }
+
     .fractal-tier--pro {
-      border-color: rgba(129,140,248,0.2);
-      background: rgba(129,140,248,0.02);
+      border-color: rgba(129, 140, 248, 0.2);
+      background: rgba(129, 140, 248, 0.02);
       padding-left: 104px;
       z-index: 1;
     }
+
     .fractal-tier-header {
       display: flex;
       align-items: center;
       gap: 16px;
       margin-bottom: 20px;
     }
+
     .fractal-tier-badge {
       font-size: 0.6875rem;
       text-transform: uppercase;
@@ -239,28 +265,34 @@
       padding: 4px 12px;
       border-radius: 100px;
     }
+
     .fractal-tier--d2c .fractal-tier-badge {
-      background: rgba(59,130,246,0.15);
+      background: rgba(59, 130, 246, 0.15);
       color: var(--blue-400);
     }
+
     .fractal-tier--agency .fractal-tier-badge {
-      background: rgba(20,184,166,0.15);
+      background: rgba(20, 184, 166, 0.15);
       color: var(--teal-400);
     }
+
     .fractal-tier--lite .fractal-tier-badge {
-      background: rgba(245,158,11,0.15);
+      background: rgba(245, 158, 11, 0.15);
       color: var(--amber-400);
     }
+
     .fractal-tier--pro .fractal-tier-badge {
-      background: rgba(129,140,248,0.15);
+      background: rgba(129, 140, 248, 0.15);
       color: #A5B4FC;
     }
+
     .fractal-tier-price {
       font-family: var(--font-display);
       font-weight: 800;
       color: var(--white);
       font-size: 1rem;
     }
+
     .fractal-tier-desc {
       font-size: 0.875rem;
       color: var(--slate-400);
@@ -275,9 +307,10 @@
       gap: 12px;
       flex-wrap: wrap;
     }
+
     .fractal-operator {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
       border-radius: var(--radius-sm);
       padding: 10px 16px;
       font-size: 0.75rem;
@@ -287,25 +320,29 @@
       align-items: center;
       gap: 6px;
     }
+
     .fractal-connector {
       width: 24px;
       height: 2px;
-      background: rgba(255,255,255,0.12);
+      background: rgba(255, 255, 255, 0.12);
       position: relative;
     }
+
     .fractal-connector::after {
       content: '';
       position: absolute;
       right: 0;
       top: -3px;
       border: 4px solid transparent;
-      border-left: 5px solid rgba(255,255,255,0.2);
+      border-left: 5px solid rgba(255, 255, 255, 0.2);
     }
+
     .fractal-agents {
       display: flex;
       gap: 6px;
       flex-wrap: wrap;
     }
+
     .fractal-agent-dot {
       width: 36px;
       height: 36px;
@@ -316,29 +353,34 @@
       font-size: 0.6875rem;
       font-weight: 700;
     }
+
     .fractal-tier--d2c .fractal-agent-dot {
-      background: rgba(59,130,246,0.15);
-      border: 1px solid rgba(59,130,246,0.3);
+      background: rgba(59, 130, 246, 0.15);
+      border: 1px solid rgba(59, 130, 246, 0.3);
       color: var(--blue-400);
     }
+
     .fractal-tier--agency .fractal-agent-dot {
-      background: rgba(20,184,166,0.12);
-      border: 1px solid rgba(20,184,166,0.25);
+      background: rgba(20, 184, 166, 0.12);
+      border: 1px solid rgba(20, 184, 166, 0.25);
       color: var(--teal-400);
     }
+
     .fractal-tier--lite .fractal-agent-dot {
-      background: rgba(245,158,11,0.12);
-      border: 1px solid rgba(245,158,11,0.25);
+      background: rgba(245, 158, 11, 0.12);
+      border: 1px solid rgba(245, 158, 11, 0.25);
       color: var(--amber-400);
     }
+
     .fractal-tier--pro .fractal-agent-dot {
-      background: rgba(129,140,248,0.12);
-      border: 1px solid rgba(129,140,248,0.25);
+      background: rgba(129, 140, 248, 0.12);
+      border: 1px solid rgba(129, 140, 248, 0.25);
       color: #A5B4FC;
     }
+
     .fractal-template-box {
-      background: rgba(255,255,255,0.04);
-      border: 1px dashed rgba(255,255,255,0.15);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px dashed rgba(255, 255, 255, 0.15);
       border-radius: var(--radius-sm);
       padding: 8px 14px;
       font-size: 0.6875rem;
@@ -346,9 +388,10 @@
       text-transform: uppercase;
       letter-spacing: 0.08em;
     }
+
     .fractal-api-pipe {
-      background: linear-gradient(90deg, rgba(129,140,248,0.15), rgba(129,140,248,0.05));
-      border: 1px solid rgba(129,140,248,0.2);
+      background: linear-gradient(90deg, rgba(129, 140, 248, 0.15), rgba(129, 140, 248, 0.05));
+      border: 1px solid rgba(129, 140, 248, 0.2);
       border-radius: 100px;
       padding: 6px 16px;
       font-size: 0.6875rem;
@@ -366,28 +409,33 @@
       max-width: 900px;
       margin: 0 auto;
     }
+
     .org-node {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: var(--radius-sm);
       padding: 16px 24px;
       text-align: center;
       position: relative;
     }
+
     .org-node--hq {
-      border-color: rgba(129,140,248,0.3);
-      background: rgba(129,140,248,0.06);
+      border-color: rgba(129, 140, 248, 0.3);
+      background: rgba(129, 140, 248, 0.06);
       min-width: 280px;
     }
+
     .org-node--region {
-      border-color: rgba(20,184,166,0.25);
-      background: rgba(20,184,166,0.04);
+      border-color: rgba(20, 184, 166, 0.25);
+      background: rgba(20, 184, 166, 0.04);
     }
+
     .org-node--location {
-      border-color: rgba(59,130,246,0.2);
-      background: rgba(59,130,246,0.03);
+      border-color: rgba(59, 130, 246, 0.2);
+      background: rgba(59, 130, 246, 0.03);
       padding: 10px 14px;
     }
+
     .org-node .org-label {
       font-size: 0.6875rem;
       text-transform: uppercase;
@@ -395,32 +443,38 @@
       color: var(--slate-500);
       margin-bottom: 4px;
     }
+
     .org-node .org-name {
       font-weight: 700;
       font-size: 0.875rem;
       color: var(--white);
     }
+
     .org-node .org-stat {
       font-size: 0.75rem;
       color: var(--slate-400);
       margin-top: 4px;
     }
+
     .org-vline {
       width: 2px;
       height: 28px;
-      background: rgba(255,255,255,0.1);
+      background: rgba(255, 255, 255, 0.1);
       margin: 0 auto;
     }
+
     .org-hline {
       height: 2px;
-      background: rgba(255,255,255,0.1);
+      background: rgba(255, 255, 255, 0.1);
     }
+
     .org-branch {
       display: flex;
       gap: 16px;
       justify-content: center;
       position: relative;
     }
+
     .org-branch::before {
       content: '';
       position: absolute;
@@ -428,15 +482,17 @@
       left: 50%;
       width: 2px;
       height: 28px;
-      background: rgba(255,255,255,0.1);
+      background: rgba(255, 255, 255, 0.1);
       transform: translateX(-50%);
     }
+
     .org-branch-item {
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 0;
     }
+
     .org-locations {
       display: flex;
       gap: 6px;
@@ -444,17 +500,19 @@
       justify-content: center;
       max-width: 160px;
     }
+
     .loc-dot {
       width: 24px;
       height: 24px;
       border-radius: 6px;
-      background: rgba(59,130,246,0.1);
-      border: 1px solid rgba(59,130,246,0.2);
+      background: rgba(59, 130, 246, 0.1);
+      border: 1px solid rgba(59, 130, 246, 0.2);
       display: flex;
       align-items: center;
       justify-content: center;
       position: relative;
     }
+
     .loc-dot::after {
       content: '';
       width: 6px;
@@ -463,9 +521,11 @@
       background: var(--teal-400);
       animation: pulse 2s ease-in-out infinite;
     }
+
     .loc-dot:nth-child(odd)::after {
       animation-delay: 0.5s;
     }
+
     .loc-dot:nth-child(3n)::after {
       animation-delay: 1s;
     }
@@ -478,6 +538,7 @@
       max-width: 800px;
       margin: 0 auto;
     }
+
     .stack-layer {
       display: flex;
       align-items: center;
@@ -486,6 +547,7 @@
       gap: 20px;
       position: relative;
     }
+
     .stack-layer-num {
       font-family: var(--font-display);
       font-weight: 800;
@@ -494,6 +556,7 @@
       flex-shrink: 0;
       width: 28px;
     }
+
     .stack-layer-name {
       font-weight: 700;
       font-size: 0.9375rem;
@@ -501,11 +564,13 @@
       flex-shrink: 0;
       width: 200px;
     }
+
     .stack-layer-desc {
       font-size: 0.8125rem;
       color: var(--slate-400);
       flex: 1;
     }
+
     .stack-layer-status {
       font-size: 0.6875rem;
       font-weight: 700;
@@ -515,28 +580,34 @@
       border-radius: 100px;
       flex-shrink: 0;
     }
+
     .stack-layer--live {
-      background: rgba(20,184,166,0.04);
-      border: 1px solid rgba(20,184,166,0.15);
+      background: rgba(20, 184, 166, 0.04);
+      border: 1px solid rgba(20, 184, 166, 0.15);
     }
+
     .stack-layer--live .stack-layer-status {
-      background: rgba(20,184,166,0.15);
+      background: rgba(20, 184, 166, 0.15);
       color: var(--teal-400);
     }
+
     .stack-layer--building {
-      background: rgba(245,158,11,0.04);
-      border: 1px solid rgba(245,158,11,0.15);
+      background: rgba(245, 158, 11, 0.04);
+      border: 1px solid rgba(245, 158, 11, 0.15);
     }
+
     .stack-layer--building .stack-layer-status {
-      background: rgba(245,158,11,0.15);
+      background: rgba(245, 158, 11, 0.15);
       color: var(--amber-400);
     }
+
     .stack-layer--planned {
-      background: rgba(59,130,246,0.04);
-      border: 1px solid rgba(59,130,246,0.12);
+      background: rgba(59, 130, 246, 0.04);
+      border: 1px solid rgba(59, 130, 246, 0.12);
     }
+
     .stack-layer--planned .stack-layer-status {
-      background: rgba(59,130,246,0.12);
+      background: rgba(59, 130, 246, 0.12);
       color: var(--blue-400);
     }
 
@@ -545,14 +616,15 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 2px;
-      background: rgba(255,255,255,0.06);
+      background: rgba(255, 255, 255, 0.06);
       border-radius: var(--radius-lg);
       overflow: hidden;
       max-width: 800px;
       margin: 0 auto 48px;
     }
+
     .ghl-col-header {
-      background: rgba(255,255,255,0.06);
+      background: rgba(255, 255, 255, 0.06);
       padding: 16px 24px;
       font-weight: 700;
       font-size: 0.8125rem;
@@ -560,6 +632,7 @@
       letter-spacing: 0.08em;
       color: var(--white);
     }
+
     .ghl-row {
       background: var(--navy-950);
       padding: 14px 24px;
@@ -568,9 +641,11 @@
       justify-content: space-between;
       font-size: 0.875rem;
     }
+
     .ghl-row .ghl-feature {
       color: var(--slate-300);
     }
+
     .ghl-status {
       font-size: 0.6875rem;
       font-weight: 700;
@@ -579,16 +654,19 @@
       padding: 3px 10px;
       border-radius: 100px;
     }
+
     .ghl-status--shipped {
-      background: rgba(20,184,166,0.15);
+      background: rgba(20, 184, 166, 0.15);
       color: var(--teal-400);
     }
+
     .ghl-status--building {
-      background: rgba(245,158,11,0.15);
+      background: rgba(245, 158, 11, 0.15);
       color: var(--amber-400);
     }
+
     .ghl-status--planned {
-      background: rgba(59,130,246,0.12);
+      background: rgba(59, 130, 246, 0.12);
       color: var(--blue-400);
     }
 
@@ -599,22 +677,26 @@
       max-width: 900px;
       margin: 0 auto;
     }
+
     .ghl-break-card {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: var(--radius-lg);
       padding: 28px 24px;
     }
+
     .ghl-break-card h4 {
       color: var(--white);
       font-size: 1rem;
       margin-bottom: 10px;
     }
+
     .ghl-break-card p {
       font-size: 0.875rem;
       color: var(--slate-400);
       line-height: 1.6;
     }
+
     .ghl-break-card .ghl-vs {
       font-size: 0.75rem;
       color: var(--slate-500);
@@ -630,20 +712,23 @@
       margin: 0 auto;
       position: relative;
     }
+
     .flywheel-ring {
       display: grid;
       grid-template-columns: 1fr 1fr 1fr;
       gap: 16px;
       margin-bottom: 24px;
     }
+
     .flywheel-node {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.1);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: var(--radius-sm);
       padding: 20px 16px;
       text-align: center;
       position: relative;
     }
+
     .flywheel-node .fw-num {
       font-family: var(--font-display);
       font-weight: 800;
@@ -651,17 +736,20 @@
       color: var(--teal-400);
       margin-bottom: 6px;
     }
+
     .flywheel-node .fw-label {
       font-weight: 700;
       font-size: 0.8125rem;
       color: var(--white);
       margin-bottom: 4px;
     }
+
     .flywheel-node .fw-desc {
       font-size: 0.75rem;
       color: var(--slate-500);
       line-height: 1.5;
     }
+
     /* Arrows between flywheel nodes */
     .flywheel-arrows {
       display: flex;
@@ -669,6 +757,7 @@
       padding: 0 40px;
       margin-bottom: 16px;
     }
+
     .flywheel-arrow-down {
       color: var(--teal-400);
       font-size: 1.25rem;
@@ -678,11 +767,12 @@
     .flywheel-center-label {
       text-align: center;
       padding: 24px;
-      background: rgba(20,184,166,0.06);
-      border: 1px solid rgba(20,184,166,0.15);
+      background: rgba(20, 184, 166, 0.06);
+      border: 1px solid rgba(20, 184, 166, 0.15);
       border-radius: var(--radius);
       margin-top: 20px;
     }
+
     .flywheel-center-label .fw-big {
       font-family: var(--font-display);
       font-weight: 800;
@@ -690,6 +780,7 @@
       color: var(--teal-400);
       margin-bottom: 4px;
     }
+
     .flywheel-center-label p {
       font-size: 0.8125rem;
       color: var(--slate-400);
@@ -697,18 +788,20 @@
     }
 
     .lockin-callout {
-      background: rgba(239,68,68,0.06);
-      border: 1px solid rgba(239,68,68,0.15);
+      background: rgba(239, 68, 68, 0.06);
+      border: 1px solid rgba(239, 68, 68, 0.15);
       border-left: 3px solid var(--red-500);
       border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
       padding: 20px 24px;
       margin-top: 40px;
     }
+
     .lockin-callout h4 {
       color: var(--white);
       font-size: 0.9375rem;
       margin-bottom: 6px;
     }
+
     .lockin-callout p {
       color: var(--slate-400);
       font-size: 0.875rem;
@@ -718,20 +811,55 @@
 
     /* ===== RESPONSIVE ===== */
     @media (max-width: 768px) {
-      .atom-flow { flex-wrap: wrap; justify-content: center; }
-      .atom-arrow { width: 20px; }
-      .fractal-tier--agency { padding-left: 32px; }
-      .fractal-tier--lite { padding-left: 32px; }
-      .fractal-tier--pro { padding-left: 32px; }
-      .org-branch { flex-direction: column; align-items: center; }
-      .ghl-compare { grid-template-columns: 1fr; }
-      .ghl-breaks { grid-template-columns: 1fr; }
-      .stack-layer { flex-wrap: wrap; }
-      .stack-layer-name { width: auto; }
-      .flywheel-ring { grid-template-columns: 1fr; }
+      .atom-flow {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .atom-arrow {
+        width: 20px;
+      }
+
+      .fractal-tier--agency {
+        padding-left: 32px;
+      }
+
+      .fractal-tier--lite {
+        padding-left: 32px;
+      }
+
+      .fractal-tier--pro {
+        padding-left: 32px;
+      }
+
+      .org-branch {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .ghl-compare {
+        grid-template-columns: 1fr;
+      }
+
+      .ghl-breaks {
+        grid-template-columns: 1fr;
+      }
+
+      .stack-layer {
+        flex-wrap: wrap;
+      }
+
+      .stack-layer-name {
+        width: auto;
+      }
+
+      .flywheel-ring {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <!-- ===== NAVIGATION ===== -->
@@ -746,9 +874,8 @@
         <a href="agency.html">For Agencies</a>
         <a href="enterprise.html">Enterprise</a>
         <a href="pricing.html">Pricing</a>
-        <a href="#">Industries</a>
-        <a href="#">Blog</a>
-        <a href="architecture.html" class="active" style="color:var(--amber-400); border-left:1px solid rgba(255,255,255,0.08); padding-left:36px; margin-left:0; font-size:0.8125rem;">Architecture</a>
+        <a href="architecture.html" class="active"
+          style="color:var(--amber-400); border-left:1px solid rgba(255,255,255,0.08); padding-left:36px; margin-left:0; font-size:0.8125rem;">Architecture</a>
       </div>
       <div class="nav-cta">
         <a href="#" class="btn btn--secondary btn--sm">Book a Demo</a>
@@ -768,7 +895,8 @@
     <div class="container">
       <div class="section-label" style="color:var(--amber-400);">Architecture Overview</div>
       <h1>The Fractal Architecture</h1>
-      <p>One atomic unit. Every product. Every scale. This is the structural thesis underlying every tier, pricing decision, and roadmap item.</p>
+      <p>One atomic unit. Every product. Every scale. This is the structural thesis underlying every tier, pricing
+        decision, and roadmap item.</p>
     </div>
   </div>
 
@@ -779,7 +907,8 @@
       <div class="section-header" style="text-align:left;">
         <div class="section-label">Section 1</div>
         <h2>The Atomic Unit</h2>
-        <p style="margin:12px 0 0;">This is what Trillet sells. At every tier, at every scale, the unit is identical. The agent doesn't change — only the deployment model around it does.</p>
+        <p style="margin:12px 0 0;">This is what Trillet sells. At every tier, at every scale, the unit is identical.
+          The agent doesn't change — only the deployment model around it does.</p>
       </div>
 
       <div class="atom-diagram scroll-animate">
@@ -823,7 +952,8 @@
       </div>
 
       <div class="insight-callout" style="margin:40px auto 0;">
-        <p><strong>Key invariant:</strong> A $59/mo D2C agent and a $99/endpoint enterprise agent run the same AI, the same call flow, the same qualification logic. The buyer and deployment wrapper change. The atom doesn't.</p>
+        <p><strong>Key invariant:</strong> A $59/mo D2C agent and a $99/endpoint enterprise agent run the same AI, the
+          same call flow, the same qualification logic. The buyer and deployment wrapper change. The atom doesn't.</p>
       </div>
     </div>
   </div>
@@ -835,7 +965,8 @@
       <div class="section-header" style="text-align:left;">
         <div class="section-label">Section 2</div>
         <h2>The Fractal — Four Scales, One Unit</h2>
-        <p style="margin:12px 0 0;">Each tier wraps the same atomic agent in a progressively wider deployment model. The indentation below is intentional — each tier <em>contains</em> the one above it.</p>
+        <p style="margin:12px 0 0;">Each tier wraps the same atomic agent in a progressively wider deployment model. The
+          indentation below is intentional — each tier <em>contains</em> the one above it.</p>
       </div>
 
       <div class="fractal-tiers scroll-animate">
@@ -846,7 +977,8 @@
             <span class="fractal-tier-badge">D2C — Starter</span>
             <span class="fractal-tier-price">$59/mo</span>
           </div>
-          <div class="fractal-tier-desc">1 operator buys 1 agent for their own business. They set it up, it handles their calls.</div>
+          <div class="fractal-tier-desc">1 operator buys 1 agent for their own business. They set it up, it handles
+            their calls.</div>
           <div class="fractal-visual">
             <div class="fractal-operator">You</div>
             <div class="fractal-connector"></div>
@@ -854,7 +986,8 @@
               <div class="fractal-agent-dot">A</div>
             </div>
             <div class="fractal-connector"></div>
-            <div class="fractal-operator" style="color:var(--slate-400); border-color:rgba(255,255,255,0.06);">Your Business</div>
+            <div class="fractal-operator" style="color:var(--slate-400); border-color:rgba(255,255,255,0.06);">Your
+              Business</div>
           </div>
         </div>
 
@@ -864,7 +997,8 @@
             <span class="fractal-tier-badge">Agency</span>
             <span class="fractal-tier-price">$299/mo</span>
           </div>
-          <div class="fractal-tier-desc">1 operator manually configures N agents for N clients. White-label + rebilling. They build each agent per client.</div>
+          <div class="fractal-tier-desc">1 operator manually configures N agents for N clients. White-label + rebilling.
+            They build each agent per client.</div>
           <div class="fractal-visual">
             <div class="fractal-operator">Agency</div>
             <div class="fractal-connector"></div>
@@ -879,7 +1013,8 @@
               <div class="fractal-agent-dot" style="opacity:0.4;">+</div>
             </div>
             <div class="fractal-connector"></div>
-            <div class="fractal-operator" style="color:var(--slate-400); border-color:rgba(255,255,255,0.06);">N Clients</div>
+            <div class="fractal-operator" style="color:var(--slate-400); border-color:rgba(255,255,255,0.06);">N Clients
+            </div>
           </div>
         </div>
 
@@ -889,13 +1024,15 @@
             <span class="fractal-tier-badge">Lite SaaS</span>
             <span class="fractal-tier-price">$497/mo</span>
           </div>
-          <div class="fractal-tier-desc">1 operator picks from a template library. Agents deploy in one click from a URL. Clients can self-onboard.</div>
+          <div class="fractal-tier-desc">1 operator picks from a template library. Agents deploy in one click from a
+            URL. Clients can self-onboard.</div>
           <div class="fractal-visual">
             <div class="fractal-operator">Reseller</div>
             <div class="fractal-connector"></div>
             <div class="fractal-template-box">Template Library</div>
             <div class="fractal-connector"></div>
-            <div style="display:flex; align-items:center; gap:6px; background:rgba(245,158,11,0.08); border:1px solid rgba(245,158,11,0.15); border-radius:var(--radius-sm); padding:8px 12px;">
+            <div
+              style="display:flex; align-items:center; gap:6px; background:rgba(245,158,11,0.08); border:1px solid rgba(245,158,11,0.15); border-radius:var(--radius-sm); padding:8px 12px;">
               <span style="font-size:0.6875rem; color:var(--amber-400); font-weight:700;">1-CLICK</span>
             </div>
             <div class="fractal-connector"></div>
@@ -919,7 +1056,8 @@
             <span class="fractal-tier-badge">Pro SaaS</span>
             <span class="fractal-tier-price">$1,497/mo + $14K build + per-endpoint</span>
           </div>
-          <div class="fractal-tier-desc">1 operator gets a custom template built exclusively for their vertical. API deploys agents across the entire network. Each auto-configures from local context.</div>
+          <div class="fractal-tier-desc">1 operator gets a custom template built exclusively for their vertical. API
+            deploys agents across the entire network. Each auto-configures from local context.</div>
           <div class="fractal-visual">
             <div class="fractal-operator">Network Operator</div>
             <div class="fractal-connector"></div>
@@ -947,7 +1085,9 @@
       </div>
 
       <div class="insight-callout">
-        <p><strong>The deployment model changes. The agent doesn't.</strong> Every "A" in the diagram above is the same atomic unit from Section 1. A D2C customer's agent and the 87th clinic in a dental network run identical AI. The fractal is real.</p>
+        <p><strong>The deployment model changes. The agent doesn't.</strong> Every "A" in the diagram above is the same
+          atomic unit from Section 1. A D2C customer's agent and the 87th clinic in a dental network run identical AI.
+          The fractal is real.</p>
       </div>
     </div>
   </div>
@@ -959,7 +1099,8 @@
       <div class="section-header" style="text-align:left;">
         <div class="section-label">Section 3</div>
         <h2>Nested Enterprise</h2>
-        <p style="margin:12px 0 0;">Enterprise isn't a different product. It's the same fractal at deeper recursion. A network operator can have sub-networks, each deploying the same template to their own endpoints.</p>
+        <p style="margin:12px 0 0;">Enterprise isn't a different product. It's the same fractal at deeper recursion. A
+          network operator can have sub-networks, each deploying the same template to their own endpoints.</p>
       </div>
 
       <div class="org-tree scroll-animate">
@@ -1077,21 +1218,26 @@
 
         <!-- Totals -->
         <div style="margin-top:32px; text-align:center;">
-          <div style="display:inline-flex; gap:32px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:var(--radius); padding:20px 36px;">
+          <div
+            style="display:inline-flex; gap:32px; background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:var(--radius); padding:20px 36px;">
             <div>
-              <div style="font-family:var(--font-display); font-weight:800; font-size:1.75rem; color:var(--teal-400);">63</div>
+              <div style="font-family:var(--font-display); font-weight:800; font-size:1.75rem; color:var(--teal-400);">
+                63</div>
               <div style="font-size:0.75rem; color:var(--slate-500);">live agents</div>
             </div>
             <div>
-              <div style="font-family:var(--font-display); font-weight:800; font-size:1.75rem; color:var(--white);">1</div>
+              <div style="font-family:var(--font-display); font-weight:800; font-size:1.75rem; color:var(--white);">1
+              </div>
               <div style="font-size:0.75rem; color:var(--slate-500);">template</div>
             </div>
             <div>
-              <div style="font-family:var(--font-display); font-weight:800; font-size:1.75rem; color:var(--white);">0</div>
+              <div style="font-family:var(--font-display); font-weight:800; font-size:1.75rem; color:var(--white);">0
+              </div>
               <div style="font-size:0.75rem; color:var(--slate-500);">manual setups</div>
             </div>
             <div>
-              <div style="font-family:var(--font-display); font-weight:800; font-size:1.75rem; color:var(--amber-400);">~$4.7K</div>
+              <div style="font-family:var(--font-display); font-weight:800; font-size:1.75rem; color:var(--amber-400);">
+                ~$4.7K</div>
               <div style="font-size:0.75rem; color:var(--slate-500);">Trillet MRR</div>
             </div>
           </div>
@@ -1099,7 +1245,9 @@
       </div>
 
       <div class="insight-callout">
-        <p><strong>Enterprise isn't a different product.</strong> It's the same fractal at deeper recursion. The dental corp above is just D2C × 63, wrapped in a template, deployed via API. Adding region 4 is one API call. Adding 10 clinics to NSW is 10 API calls. The marginal cost of growth is effectively zero.</p>
+        <p><strong>Enterprise isn't a different product.</strong> It's the same fractal at deeper recursion. The dental
+          corp above is just D2C × 63, wrapped in a template, deployed via API. Adding region 4 is one API call. Adding
+          10 clinics to NSW is 10 API calls. The marginal cost of growth is effectively zero.</p>
       </div>
     </div>
   </div>
@@ -1111,53 +1259,66 @@
       <div class="section-header" style="text-align:left;">
         <div class="section-label">Section 4</div>
         <h2>The Infrastructure Stack</h2>
-        <p style="margin:12px 0 0;">What Ming built — and what's next. Each layer unlocks the product tier above it. The stack is the moat.</p>
+        <p style="margin:12px 0 0;">What Ming built — and what's next. Each layer unlocks the product tier above it. The
+          stack is the moat.</p>
       </div>
 
       <div class="stack-layers scroll-animate">
         <div class="stack-layer stack-layer--live">
           <div class="stack-layer-num">L0</div>
           <div class="stack-layer-name">Core AI Engine</div>
-          <div class="stack-layer-desc">Voice processing, NLU, TTS, qualification logic, call flow management, 32 languages</div>
+          <div class="stack-layer-desc">Voice processing, NLU, TTS, qualification logic, call flow management, 32
+            languages</div>
           <div class="stack-layer-status">Live</div>
         </div>
         <div class="stack-layer stack-layer--live">
           <div class="stack-layer-num">L1</div>
           <div class="stack-layer-name">Agent Builder</div>
-          <div class="stack-layer-desc">URL scrape → auto-config → phone number assignment → live in 5 min. The "from URL" magic.</div>
+          <div class="stack-layer-desc">URL scrape → auto-config → phone number assignment → live in 5 min. The "from
+            URL" magic.</div>
           <div class="stack-layer-status">Live</div>
         </div>
         <div class="stack-layer stack-layer--live">
           <div class="stack-layer-num">L2</div>
           <div class="stack-layer-name">Agency Platform</div>
-          <div class="stack-layer-desc">White-label, sub-accounts, rebilling (Stripe), agency dashboard, custom domains</div>
+          <div class="stack-layer-desc">White-label, sub-accounts, rebilling (Stripe), agency dashboard, custom domains
+          </div>
+          <div class="stack-layer-status">Live</div>
+        </div>
+        <div class="stack-layer stack-layer--live">
+          <div class="stack-layer-num">L3</div>
+          <div class="stack-layer-name">Template Engine</div>
+          <div class="stack-layer-desc">Snap agent → freeze as template → stamp copies with one click. Template library
+            for Lite SaaS.</div>
           <div class="stack-layer-status">Live</div>
         </div>
         <div class="stack-layer stack-layer--building">
-          <div class="stack-layer-num">L3</div>
-          <div class="stack-layer-name">Template Engine</div>
-          <div class="stack-layer-desc">Snap agent → freeze as template → stamp copies with one click. Template library for Lite SaaS.</div>
-          <div class="stack-layer-status">Building</div>
-        </div>
-        <div class="stack-layer stack-layer--planned">
           <div class="stack-layer-num">L4</div>
           <div class="stack-layer-name">API Distribution</div>
-          <div class="stack-layer-desc">One-call deploy via REST API, auto-configure from web presence, per-endpoint billing. The Process Configurator.</div>
-          <div class="stack-layer-status">Planned</div>
+          <div class="stack-layer-desc">One-call deploy via REST API, auto-configure from web presence, per-endpoint
+            billing. The Process Configurator.</div>
+          <div class="stack-layer-status">Pilot Deployed</div>
         </div>
       </div>
 
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; max-width:800px; margin:40px auto 0;">
         <div class="insight-callout" style="margin:0;">
-          <p><strong>Ming built L0–L2.</strong> That's the core AI, the URL-to-agent builder, and the complete agency platform. This is what's selling today.</p>
+          <p><strong>Ming built L0–L3.</strong> Core AI, URL-to-agent builder, agency platform, and template engine —
+            all live and selling today.</p>
         </div>
-        <div class="insight-callout" style="margin:0; border-left-color:var(--amber-400); background:rgba(245,158,11,0.04);">
-          <p style="color:var(--amber-300);"><strong>L3 is the Lite SaaS unlock.</strong> Templates turn manual agency work into one-click deployment. This is what lets agencies scale past ~15 clients without linear effort.</p>
+        <div class="insight-callout"
+          style="margin:0; border-left-color:var(--amber-400); background:rgba(245,158,11,0.04);">
+          <p style="color:var(--amber-300);"><strong>L3 is live — Lite SaaS is unlocked.</strong> Templates turn manual
+            agency work into one-click deployment. Agencies can now scale past ~15 clients without linear effort.</p>
         </div>
       </div>
 
-      <div class="insight-callout" style="border-left-color:#818CF8; background:rgba(129,140,248,0.04); max-width:800px; margin:20px auto 0;">
-        <p style="color:#C7D2FE;"><strong>L4 is the Process Configurator — the Pro SaaS unlock.</strong> This is where Trillet stops being "GHL for voice" and becomes infrastructure. Custom templates + API deployment = voice AI as a platform layer that networks embed into their own systems. This is the Mark/Nexit deal at $14K. This is the 24-month defensibility play.</p>
+      <div class="insight-callout"
+        style="border-left-color:#818CF8; background:rgba(129,140,248,0.04); max-width:800px; margin:20px auto 0;">
+        <p style="color:#C7D2FE;"><strong>L4 is the Process Configurator — pilot deployed.</strong> This is where
+          Trillet stops being "GHL for voice" and becomes infrastructure. Custom templates + API deployment = voice AI
+          as a platform layer that networks embed into their own systems. Live pilot with enterprise client, awaiting
+          feedback.</p>
       </div>
     </div>
   </div>
@@ -1169,7 +1330,8 @@
       <div class="section-header" style="text-align:left;">
         <div class="section-label">Section 5</div>
         <h2>The GHL Parallel</h2>
-        <p style="margin:12px 0 0;">GoHighLevel built a $2B+ business on this model. Here's where the parallel holds — and where Trillet has structural advantages GHL never had.</p>
+        <p style="margin:12px 0 0;">GoHighLevel built a $2B+ business on this model. Here's where the parallel holds —
+          and where Trillet has structural advantages GHL never had.</p>
       </div>
 
       <div class="ghl-compare scroll-animate">
@@ -1177,28 +1339,36 @@
         <div class="ghl-col-header">Trillet Equivalent</div>
 
         <div class="ghl-row"><span class="ghl-feature">White-label</span></div>
-        <div class="ghl-row"><span class="ghl-feature">White-label</span> <span class="ghl-status ghl-status--shipped">Shipped</span></div>
+        <div class="ghl-row"><span class="ghl-feature">White-label</span> <span
+            class="ghl-status ghl-status--shipped">Shipped</span></div>
 
         <div class="ghl-row"><span class="ghl-feature">SaaS Mode (rebilling)</span></div>
-        <div class="ghl-row"><span class="ghl-feature">Client rebilling (Stripe)</span> <span class="ghl-status ghl-status--shipped">Shipped</span></div>
+        <div class="ghl-row"><span class="ghl-feature">Client rebilling (Stripe)</span> <span
+            class="ghl-status ghl-status--shipped">Shipped</span></div>
 
         <div class="ghl-row"><span class="ghl-feature">Sub-accounts</span></div>
-        <div class="ghl-row"><span class="ghl-feature">Unlimited sub-accounts</span> <span class="ghl-status ghl-status--shipped">Shipped</span></div>
+        <div class="ghl-row"><span class="ghl-feature">Unlimited sub-accounts</span> <span
+            class="ghl-status ghl-status--shipped">Shipped</span></div>
 
         <div class="ghl-row"><span class="ghl-feature">Snapshots (templates)</span></div>
-        <div class="ghl-row"><span class="ghl-feature">Template engine</span> <span class="ghl-status ghl-status--building">Building</span></div>
+        <div class="ghl-row"><span class="ghl-feature">Template engine</span> <span
+            class="ghl-status ghl-status--shipped">Live</span></div>
 
         <div class="ghl-row"><span class="ghl-feature">Marketplace</span></div>
-        <div class="ghl-row"><span class="ghl-feature">Template marketplace</span> <span class="ghl-status ghl-status--planned">Planned</span></div>
+        <div class="ghl-row"><span class="ghl-feature">Template marketplace</span> <span
+            class="ghl-status ghl-status--planned">Planned</span></div>
 
         <div class="ghl-row"><span class="ghl-feature">Community / events</span></div>
-        <div class="ghl-row"><span class="ghl-feature">Agency community</span> <span class="ghl-status ghl-status--planned">Planned</span></div>
+        <div class="ghl-row"><span class="ghl-feature">Agency community</span> <span
+            class="ghl-status ghl-status--planned">Planned</span></div>
 
         <div class="ghl-row"><span class="ghl-feature">Certification program</span></div>
-        <div class="ghl-row"><span class="ghl-feature">Agency certification</span> <span class="ghl-status ghl-status--planned">Planned</span></div>
+        <div class="ghl-row"><span class="ghl-feature">Agency certification</span> <span
+            class="ghl-status ghl-status--planned">Planned</span></div>
 
         <div class="ghl-row"><span class="ghl-feature">API / developer tools</span></div>
-        <div class="ghl-row"><span class="ghl-feature">API distribution (L4)</span> <span class="ghl-status ghl-status--planned">Planned</span></div>
+        <div class="ghl-row"><span class="ghl-feature">API distribution (L4)</span> <span
+            class="ghl-status ghl-status--building">Pilot</span></div>
       </div>
 
       <div style="text-align:center; margin-bottom:48px;">
@@ -1210,17 +1380,23 @@
         <div class="ghl-break-card">
           <div class="ghl-vs">GHL: Manual setup per client</div>
           <h4>5 Minutes from URL</h4>
-          <p>GHL requires manual CRM/funnel setup per client. Trillet auto-configures an agent from any business URL. The agent reads services, hours, pricing, and FAQs. No data entry. This is structural — GHL literally can't do this because marketing automation doesn't have a single deployment artifact.</p>
+          <p>GHL requires manual CRM/funnel setup per client. Trillet auto-configures an agent from any business URL.
+            The agent reads services, hours, pricing, and FAQs. No data entry. This is structural — GHL literally can't
+            do this because marketing automation doesn't have a single deployment artifact.</p>
         </div>
         <div class="ghl-break-card">
           <div class="ghl-vs">GHL: Marketing automation (switchable)</div>
           <h4>Operational Lock-in</h4>
-          <p>GHL handles marketing — funnels, emails, SMS sequences. Businesses switch marketing tools regularly. Trillet handles live inbound calls — the operational heartbeat. Switching off Trillet means calls go unanswered. This creates switching costs 10x higher than GHL's, without contracts or penalties.</p>
+          <p>GHL handles marketing — funnels, emails, SMS sequences. Businesses switch marketing tools regularly.
+            Trillet handles live inbound calls — the operational heartbeat. Switching off Trillet means calls go
+            unanswered. This creates switching costs 10x higher than GHL's, without contracts or penalties.</p>
         </div>
         <div class="ghl-break-card">
           <div class="ghl-vs">GHL: Snapshots are config files</div>
           <h4>Template = Full Product</h4>
-          <p>GHL snapshots export settings and workflows. Trillet templates are production-ready voice agents that handle real calls. A "Dental Receptionist" template isn't a config — it's a working product that books appointments, triages emergencies, and verifies insurance. The template IS the deliverable.</p>
+          <p>GHL snapshots export settings and workflows. Trillet templates are production-ready voice agents that
+            handle real calls. A "Dental Receptionist" template isn't a config — it's a working product that books
+            appointments, triages emergencies, and verifies insurance. The template IS the deliverable.</p>
         </div>
       </div>
     </div>
@@ -1233,14 +1409,17 @@
       <div class="section-header" style="text-align:left;">
         <div class="section-label">Section 6</div>
         <h2>The Flywheel</h2>
-        <p style="margin:12px 0 0;">Two compounding loops — one running now (AEO), one activating with templates (marketplace). Zero ad spend. ChatGPT is the sales team.</p>
+        <p style="margin:12px 0 0;">Two compounding loops — one running now (AEO), one activating with templates
+          (marketplace). Zero ad spend. ChatGPT is the sales team.</p>
       </div>
 
       <div class="flywheel-container scroll-animate">
 
         <!-- Primary loop -->
         <div style="margin-bottom:48px;">
-          <div style="font-size:0.6875rem; text-transform:uppercase; letter-spacing:0.12em; color:var(--teal-400); font-weight:700; margin-bottom:20px;">Loop 1 — Active Now (AEO Flywheel)</div>
+          <div
+            style="font-size:0.6875rem; text-transform:uppercase; letter-spacing:0.12em; color:var(--teal-400); font-weight:700; margin-bottom:20px;">
+            Loop 1 — Active Now (AEO Flywheel)</div>
           <div class="flywheel-ring">
             <div class="flywheel-node">
               <div class="fw-num">1</div>
@@ -1283,13 +1462,16 @@
 
           <div class="flywheel-center-label">
             <div class="fw-big">Zero ad spend</div>
-            <p>Last agency signup spent 1 hour interrogating ChatGPT. Recommendation: "Trillet — and it wasn't even close."</p>
+            <p>Last agency signup spent 1 hour interrogating ChatGPT. Recommendation: "Trillet — and it wasn't even
+              close."</p>
           </div>
         </div>
 
         <!-- Secondary loop -->
         <div>
-          <div style="font-size:0.6875rem; text-transform:uppercase; letter-spacing:0.12em; color:var(--amber-400); font-weight:700; margin-bottom:20px;">Loop 2 — Activates with Templates (Marketplace Flywheel)</div>
+          <div
+            style="font-size:0.6875rem; text-transform:uppercase; letter-spacing:0.12em; color:var(--amber-400); font-weight:700; margin-bottom:20px;">
+            Loop 2 — Activates with Templates (Marketplace Flywheel)</div>
           <div class="flywheel-ring">
             <div class="flywheel-node" style="border-color:rgba(245,158,11,0.2);">
               <div class="fw-num" style="color:var(--amber-400);">1</div>
@@ -1308,16 +1490,23 @@
             </div>
           </div>
 
-          <div class="flywheel-center-label" style="background:rgba(245,158,11,0.06); border-color:rgba(245,158,11,0.15);">
+          <div class="flywheel-center-label"
+            style="background:rgba(245,158,11,0.06); border-color:rgba(245,158,11,0.15);">
             <div class="fw-big" style="color:var(--amber-400);">Template = IP</div>
-            <p>A battle-tested dental receptionist template isn't config — it's a product. The agency that built it has IP worth licensing. Trillet takes a cut. GHL's snapshot marketplace is the proof-of-concept for this model.</p>
+            <p>A battle-tested dental receptionist template isn't config — it's a product. The agency that built it has
+              IP worth licensing. Trillet takes a cut. GHL's snapshot marketplace is the proof-of-concept for this
+              model.</p>
           </div>
         </div>
 
         <!-- Lock-in callout -->
         <div class="lockin-callout">
           <h4>Vertical Lock-in (Why Churn is Structurally Low)</h4>
-          <p>25 dental clinics on Trillet means 25 phone systems routing to Trillet agents. Each agent knows the clinic's services, hours, providers, and insurance. Switching off means: every clinic's calls go unanswered until a replacement is configured, tested, and deployed. This is operational dependency — not a SaaS subscription you cancel and replace next month. The switching cost scales linearly with the number of endpoints. At 100+ endpoints, it's effectively permanent.</p>
+          <p>25 dental clinics on Trillet means 25 phone systems routing to Trillet agents. Each agent knows the
+            clinic's services, hours, providers, and insurance. Switching off means: every clinic's calls go unanswered
+            until a replacement is configured, tested, and deployed. This is operational dependency — not a SaaS
+            subscription you cancel and replace next month. The switching cost scales linearly with the number of
+            endpoints. At 100+ endpoints, it's effectively permanent.</p>
         </div>
       </div>
     </div>
@@ -1333,30 +1522,55 @@
       </div>
 
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:24px; max-width:900px;" class="scroll-animate">
-        <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:var(--radius-lg); padding:32px;">
-          <h4 style="color:var(--teal-400); font-size:0.8125rem; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:16px; font-family:var(--font-body);">Now (0–12 months)</h4>
+        <div
+          style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:var(--radius-lg); padding:32px;">
+          <h4
+            style="color:var(--teal-400); font-size:0.8125rem; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:16px; font-family:var(--font-body);">
+            Now (0–12 months)</h4>
           <ul style="display:flex; flex-direction:column; gap:10px;">
-            <li style="color:var(--slate-300); font-size:0.9375rem; display:flex; gap:8px;"><span style="color:var(--teal-400); font-weight:700;">1.</span> Lead as the Voice AI Platform for Agencies</li>
-            <li style="color:var(--slate-300); font-size:0.9375rem; display:flex; gap:8px;"><span style="color:var(--teal-400); font-weight:700;">2.</span> Ship template engine (L3) → unlock Lite SaaS</li>
-            <li style="color:var(--slate-300); font-size:0.9375rem; display:flex; gap:8px;"><span style="color:var(--teal-400); font-weight:700;">3.</span> Grow agency base → more deployments → AEO flywheel</li>
-            <li style="color:var(--slate-300); font-size:0.9375rem; display:flex; gap:8px;"><span style="color:var(--teal-400); font-weight:700;">4.</span> Build community, start certification pipeline</li>
+            <li style="color:var(--slate-300); font-size:0.9375rem; display:flex; gap:8px;"><span
+                style="color:var(--teal-400); font-weight:700;">1.</span> Lead as the Voice AI Platform for Agencies
+            </li>
+            <li style="color:var(--slate-300); font-size:0.9375rem; display:flex; gap:8px;"><span
+                style="color:var(--teal-400); font-weight:700;">2.</span> Ship template engine (L3) → unlock Lite SaaS
+            </li>
+            <li style="color:var(--slate-300); font-size:0.9375rem; display:flex; gap:8px;"><span
+                style="color:var(--teal-400); font-weight:700;">3.</span> Grow agency base → more deployments → AEO
+              flywheel</li>
+            <li style="color:var(--slate-300); font-size:0.9375rem; display:flex; gap:8px;"><span
+                style="color:var(--teal-400); font-weight:700;">4.</span> Build community, start certification pipeline
+            </li>
           </ul>
         </div>
-        <div style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:var(--radius-lg); padding:32px;">
-          <h4 style="color:#A5B4FC; font-size:0.8125rem; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:16px; font-family:var(--font-body);">Next (12–24 months)</h4>
+        <div
+          style="background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.08); border-radius:var(--radius-lg); padding:32px;">
+          <h4
+            style="color:#A5B4FC; font-size:0.8125rem; text-transform:uppercase; letter-spacing:0.1em; margin-bottom:16px; font-family:var(--font-body);">
+            Next (12–24 months)</h4>
           <ul style="display:flex; flex-direction:column; gap:10px;">
-            <li style="color:var(--slate-300); font-size:0.9375rem; display:flex; gap:8px;"><span style="color:#A5B4FC; font-weight:700;">1.</span> Ship API distribution (L4) → unlock Pro SaaS</li>
-            <li style="color:var(--slate-300); font-size:0.9375rem; display:flex; gap:8px;"><span style="color:#A5B4FC; font-weight:700;">2.</span> Land 3–5 enterprise network deals (Mark/Nexit model)</li>
-            <li style="color:var(--slate-300); font-size:0.9375rem; display:flex; gap:8px;"><span style="color:#A5B4FC; font-weight:700;">3.</span> Launch template marketplace → network effects</li>
-            <li style="color:var(--slate-300); font-size:0.9375rem; display:flex; gap:8px;"><span style="color:#A5B4FC; font-weight:700;">4.</span> Process Configurator becomes the moat — not the agency platform</li>
+            <li style="color:var(--slate-300); font-size:0.9375rem; display:flex; gap:8px;"><span
+                style="color:#A5B4FC; font-weight:700;">1.</span> Ship API distribution (L4) → unlock Pro SaaS</li>
+            <li style="color:var(--slate-300); font-size:0.9375rem; display:flex; gap:8px;"><span
+                style="color:#A5B4FC; font-weight:700;">2.</span> Land 3–5 enterprise network deals (Mark/Nexit model)
+            </li>
+            <li style="color:var(--slate-300); font-size:0.9375rem; display:flex; gap:8px;"><span
+                style="color:#A5B4FC; font-weight:700;">3.</span> Launch template marketplace → network effects</li>
+            <li style="color:var(--slate-300); font-size:0.9375rem; display:flex; gap:8px;"><span
+                style="color:#A5B4FC; font-weight:700;">4.</span> Process Configurator becomes the moat — not the agency
+              platform</li>
           </ul>
         </div>
       </div>
 
       <div style="max-width:900px; margin-top:40px; text-align:center;">
-        <div style="background:rgba(20,184,166,0.04); border:1px solid rgba(20,184,166,0.12); border-radius:var(--radius-lg); padding:40px;">
-          <p style="font-family:var(--font-display); font-size:1.5rem; font-weight:700; color:var(--white); line-height:1.4; margin:0 auto; max-width:700px;">"Trillet is the platform agencies use to build, brand, and sell AI voice agents — and the infrastructure networks use to deploy them at scale."</p>
-          <p style="color:var(--slate-500); font-size:0.875rem; margin:16px auto 0;">The first sentence sells today. The second sentence sells in 12 months. Both are the same product.</p>
+        <div
+          style="background:rgba(20,184,166,0.04); border:1px solid rgba(20,184,166,0.12); border-radius:var(--radius-lg); padding:40px;">
+          <p
+            style="font-family:var(--font-display); font-size:1.5rem; font-weight:700; color:var(--white); line-height:1.4; margin:0 auto; max-width:700px;">
+            "Trillet is the platform agencies use to build, brand, and sell AI voice agents — and the infrastructure
+            networks use to deploy them at scale."</p>
+          <p style="color:var(--slate-500); font-size:0.875rem; margin:16px auto 0;">The first sentence sells today. The
+            second sentence sells in 12 months. Both are the same product.</p>
         </div>
       </div>
     </div>
@@ -1372,10 +1586,12 @@
         <a href="pricing.html" class="btn btn--secondary btn--sm">Pricing Page</a>
         <a href="enterprise.html" class="btn btn--secondary btn--sm">Enterprise Page</a>
       </div>
-      <p style="font-size:0.75rem; color:var(--slate-600);">Internal document &middot; Trillet team &middot; February 2026</p>
+      <p style="font-size:0.75rem; color:var(--slate-600);">Internal document &middot; Trillet team &middot; February
+        2026</p>
     </div>
   </div>
 
   <script src="script.js"></script>
 </body>
+
 </html>

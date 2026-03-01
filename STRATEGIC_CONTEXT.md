@@ -11,7 +11,8 @@
 |----------|------|----------|
 | **System** | [`system/SYSTEM.md`](system/SYSTEM.md) | Orchestrator architecture — governing principles, cognitive motion, design intent |
 | **System** | [`system/ORCHESTRATOR_PROMPT.md`](system/ORCHESTRATOR_PROMPT.md) | Boot sequence for orchestrator agent |
-| **System** | [`CLAUDE.md`](CLAUDE.md) | Operating protocol + project context |
+| **System** | [`system/STATE.md`](system/STATE.md) | Live state: active motion, assumptions, alignment status |
+| **System** | [`CLAUDE.md`](CLAUDE.md) | Agent governance instructions + project context |
 | **Project** | [`PROJECT.md`](PROJECT.md) | Master workstream tracker — **check this for current state** |
 | **Company** | [`docs/company/team.md`](docs/company/team.md) | Full team profiles, 20 people, 4 founders, origin stories |
 | **Company** | [`docs/company/traction.md`](docs/company/traction.md) | $500K ARR, enterprise proof points, case studies, integrations |

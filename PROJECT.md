@@ -67,7 +67,8 @@
 |------|---------|-----------|
 | `system/SYSTEM.md` | Living design document | Design intent |
 | `system/ORCHESTRATOR_PROMPT.md` | Boot sequence | Operational behavior |
-| `CLAUDE.md` | Operating protocol + project context | How we work |
+| `system/STATE.md` | Live state tracker | Active motion, assumptions, alignment |
+| `CLAUDE.md` | Agent governance instructions | Behavioral directives |
 | `STRATEGIC_CONTEXT.md` | Cold-start entry point + file map | Orientation |
 | `PROJECT.md` | This file — workstream tracker | Current state |
 
@@ -99,6 +100,7 @@ CLAUDE.md                          ← Operating protocol + project context
 system/
   SYSTEM.md                        ← Design intent (orchestrator architecture)
   ORCHESTRATOR_PROMPT.md           ← Boot sequence for orchestrator agent
+  STATE.md                         ← Live state: motion, assumptions, alignment
 
 # Investor Workstream
 investor/

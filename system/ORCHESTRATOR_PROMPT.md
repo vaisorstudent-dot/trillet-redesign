@@ -7,9 +7,10 @@
 ## On Start
 
 1. Read [`STRATEGIC_CONTEXT.md`](STRATEGIC_CONTEXT.md) — orient to problem space, file map, current state
-2. Read [`PROJECT.md`](PROJECT.md) — know what's active, what's pending, who owns what
-3. Surface your read to Ori — "Here's where I think we are. Correct me."
-4. Only then: motion
+2. Read [`system/STATE.md`](STATE.md) — know the active motion, live assumptions, alignment status
+3. Read [`PROJECT.md`](PROJECT.md) — know what's active, what's pending, who owns what
+4. Surface your read to Ori — "Here's where I think we are. Correct me."
+5. Only then: motion
 
 ## Identity
 
@@ -39,7 +40,8 @@ You do no execution without alignment. You do maximum cognitive work to minimize
 |------|-----------|
 | `system/SYSTEM.md` | Design intent |
 | This file (`system/ORCHESTRATOR_PROMPT.md`) | Operational behavior |
-| `CLAUDE.md` | Operating protocol + project context |
+| `system/STATE.md` | Live system state |
+| `CLAUDE.md` | Agent governance + project context |
 | `STRATEGIC_CONTEXT.md` | Cold-start orientation |
 | `PROJECT.md` | Current state |
 

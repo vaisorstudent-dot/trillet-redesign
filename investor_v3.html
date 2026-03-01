@@ -691,30 +691,53 @@
       opacity: 1;
     }
 
-    /* Issue 3: Competitor cards red/warning tint */
+    /* Issue 3 & 7: Competitor cards sticky horizontal scroll */
+    .comp-scroll-wrapper {
+      position: relative;
+      width: 100vw;
+      margin-left: calc(-50vw + 50%);
+      padding: 0 24px;
+      margin-top: 48px;
+    }
+
     .comp-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 16px;
-      margin: 48px 0;
+      display: flex;
+      gap: 24px;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      padding-bottom: 24px;
+      -ms-overflow-style: none;
+      /* IE and Edge */
+      scrollbar-width: none;
+      /* Firefox */
+    }
+
+    .comp-grid::-webkit-scrollbar {
+      display: none;
+      /* Chrome, Safari and Opera */
     }
 
     .comp-card {
-      background: rgba(239, 68, 68, 0.04);
-      border: 1px solid rgba(239, 68, 68, 0.12);
-      border-radius: var(--radius);
-      padding: 24px 20px;
-      text-align: center;
-      transition: border-color 0.2s ease;
+      background: transparent;
+      border: none;
+      border-top: 2px solid rgba(239, 68, 68, 0.4);
+      /* Warning color for competitors */
+      border-radius: 0;
+      padding: 32px 24px 0 0;
+      text-align: left;
+      min-width: 280px;
+      scroll-snap-align: start;
+      transition: transform 0.2s ease;
+      flex-shrink: 0;
     }
 
     .comp-card:hover {
-      border-color: rgba(239, 68, 68, 0.22);
+      transform: translateY(-4px);
     }
 
     .comp-name {
       font-weight: 700;
-      color: var(--white);
+      color: var(--text-primary);
       font-size: 0.9375rem;
       margin-bottom: 4px;
     }
@@ -824,9 +847,8 @@
     .ghl-stat-number {
       font-size: clamp(2rem, 4vw, 2.75rem);
       font-weight: 800;
-      color: var(--white);
+      color: var(--text-primary);
       letter-spacing: -0.02em;
-      text-shadow: 0 0 40px rgba(45, 212, 191, 0.15);
     }
 
     .ghl-stat-label {
@@ -848,7 +870,7 @@
     .ghl-voice-standout {
       font-size: clamp(1.0625rem, 2vw, 1.25rem);
       font-weight: 700;
-      color: var(--white);
+      color: var(--text-primary);
       margin-top: 16px;
       line-height: 1.5;
     }
@@ -897,7 +919,7 @@
 
     .team-name {
       font-weight: 700;
-      color: var(--white);
+      color: var(--text-primary);
       font-size: 1rem;
       margin-bottom: 2px;
     }
@@ -934,7 +956,7 @@
     }
 
     .team-stat-line strong {
-      color: var(--white);
+      color: var(--text-primary);
     }
 
     /* ======================
@@ -988,7 +1010,7 @@
     .agent-flow-node .node-name {
       font-weight: 700;
       font-size: 0.8125rem;
-      color: var(--white);
+      color: var(--text-primary);
     }
 
     .agent-flow-arrow {
@@ -1083,7 +1105,7 @@
 
     .deploy-table .tier-name {
       font-weight: 700;
-      color: var(--white);
+      color: var(--text-primary);
       font-size: 0.9375rem;
       white-space: nowrap;
     }
@@ -1128,18 +1150,18 @@
     }
 
     .deploy-tier--starter {
-      border-color: rgba(59, 130, 246, 0.2);
+      border-top-color: rgba(59, 130, 246, 0.2);
       background: rgba(59, 130, 246, 0.02);
       z-index: 4;
     }
 
     .deploy-tier--starter:hover {
       background: rgba(59, 130, 246, 0.06);
-      border-color: rgba(59, 130, 246, 0.35);
+      border-top-color: rgba(59, 130, 246, 0.35);
     }
 
     .deploy-tier--agency {
-      border-color: rgba(20, 184, 166, 0.2);
+      border-top-color: rgba(20, 184, 166, 0.2);
       background: rgba(20, 184, 166, 0.02);
       padding-left: 48px;
       z-index: 3;
@@ -1147,11 +1169,11 @@
 
     .deploy-tier--agency:hover {
       background: rgba(20, 184, 166, 0.06);
-      border-color: rgba(20, 184, 166, 0.35);
+      border-top-color: rgba(20, 184, 166, 0.35);
     }
 
     .deploy-tier--lite {
-      border-color: rgba(245, 158, 11, 0.2);
+      border-top-color: rgba(245, 158, 11, 0.2);
       background: rgba(245, 158, 11, 0.02);
       padding-left: 68px;
       z-index: 2;
@@ -1159,11 +1181,11 @@
 
     .deploy-tier--lite:hover {
       background: rgba(245, 158, 11, 0.06);
-      border-color: rgba(245, 158, 11, 0.35);
+      border-top-color: rgba(245, 158, 11, 0.35);
     }
 
     .deploy-tier--pro {
-      border-color: rgba(129, 140, 248, 0.2);
+      border-top-color: rgba(129, 140, 248, 0.2);
       background: rgba(129, 140, 248, 0.02);
       padding-left: 88px;
       z-index: 1;
@@ -1171,7 +1193,7 @@
 
     .deploy-tier--pro:hover {
       background: rgba(129, 140, 248, 0.06);
-      border-color: rgba(129, 140, 248, 0.35);
+      border-top-color: rgba(129, 140, 248, 0.35);
     }
 
     .deploy-tier-header {
@@ -1212,7 +1234,7 @@
 
     .deploy-tier-price {
       font-weight: 800;
-      color: var(--white);
+      color: var(--text-primary);
       font-size: 0.875rem;
     }
 
@@ -1284,7 +1306,7 @@
     .insight-line {
       text-align: center;
       font-size: clamp(1.0625rem, 2.2vw, 1.375rem);
-      color: var(--white);
+      color: var(--text-primary);
       font-weight: 600;
       letter-spacing: -0.01em;
       max-width: 680px;
@@ -1326,7 +1348,7 @@
 
     .stack-layer-name {
       font-weight: 700;
-      color: var(--white);
+      color: var(--text-primary);
       font-size: 0.9375rem;
     }
 
@@ -1488,7 +1510,7 @@
 
     .enterprise-grid .client-name {
       font-weight: 600;
-      color: var(--white);
+      color: var(--text-primary);
     }
 
     .nda-note {
@@ -1535,14 +1557,12 @@
       color: var(--teal-400);
     }
 
-    /* Issue 3: Traction hero metric — larger with teal glow */
     .case-hero-metric {
       font-size: clamp(2.5rem, 5vw, 3.5rem);
       font-weight: 900;
-      color: var(--white);
+      color: var(--text-primary);
       letter-spacing: -0.03em;
       margin-bottom: 8px;
-      text-shadow: 0 0 50px rgba(45, 212, 191, 0.2);
     }
 
     .case-hero-label {
@@ -1575,7 +1595,7 @@
     .compare-bar-track {
       flex: 1;
       height: 28px;
-      background: rgba(255, 255, 255, 0.04);
+      background: rgba(0, 0, 0, 0.06);
       border-radius: 4px;
       position: relative;
       overflow: hidden;
@@ -1669,13 +1689,13 @@
       background: transparent;
       border: none;
       box-shadow: none;
-      padding: 0 0 0 32px;
+      padding: 0;
       border-radius: 0;
       transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     .moat-card:hover {
-      transform: translateX(8px);
+      transform: translateY(-4px);
     }
 
     /* Editorial moat layouts: Top borders instead of left borders */
@@ -1771,13 +1791,15 @@
 
     /* Compounding visual */
     .compound-example {
-      background: rgba(255, 255, 255, 0.7);
-      backdrop-filter: blur(24px);
-      -webkit-backdrop-filter: blur(24px);
-      border: 1px solid var(--border-subtle);
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.5);
-      border-radius: var(--radius-lg);
-      padding: 40px;
+      background: transparent;
+      border: none;
+      border-top: 1px solid var(--border-medium);
+      border-bottom: 1px solid var(--border-medium);
+      border-radius: 0;
+      box-shadow: none;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+      padding: 40px 0;
       margin-bottom: 48px;
     }
 
@@ -1878,7 +1900,7 @@
 
     .comp-raise .cr-name {
       font-weight: 700;
-      color: var(--white);
+      color: var(--text-primary);
       font-size: 0.8125rem;
       margin-bottom: 4px;
     }
@@ -1999,7 +2021,8 @@
     }
 
     .factory-quote blockquote strong {
-      color: var(--white);
+      color: var(--text-primary);
+      font-weight: 700;
     }
 
     /* Issue 4: Thesis statement — larger font, heavier weight */
@@ -2022,7 +2045,8 @@
     }
 
     .thesis-box .thesis-main strong {
-      color: var(--white);
+      color: var(--text-primary);
+      font-weight: 800;
     }
 
     /* Issue 4: Whispered punchline */
@@ -2058,7 +2082,7 @@
     .ask-raise {
       font-size: clamp(2rem, 4vw, 3rem);
       font-weight: 900;
-      color: var(--white);
+      color: var(--text-primary);
       letter-spacing: -0.03em;
       margin-bottom: 8px;
     }
@@ -2133,7 +2157,7 @@
     }
 
     .ask-milestone strong {
-      color: var(--white);
+      color: var(--text-primary);
     }
 
     /* Issue 4: Closing statement — animated gradient border */
@@ -2192,7 +2216,8 @@
     }
 
     .closing-statement blockquote strong {
-      color: var(--white);
+      color: var(--text-primary);
+      font-weight: 700;
     }
 
     /* Issue 6: "Let's talk" + founded line */
@@ -2513,27 +2538,35 @@
           writing code, without hiring engineers.</p>
       </div>
 
-      <!-- Issue 3: Competitor cards with red/warning tint (applied via CSS) -->
-      <div class="comp-grid reveal">
-        <div class="comp-card">
-          <div class="comp-name">Bland AI</div>
-          <div class="comp-raised"><strong>$65M</strong> raised</div>
-          <div class="comp-type">Developer API</div>
-        </div>
-        <div class="comp-card">
-          <div class="comp-name">Vapi</div>
-          <div class="comp-raised"><strong>$20M</strong> &middot; $130M val</div>
-          <div class="comp-type">Developer API</div>
-        </div>
-        <div class="comp-card">
-          <div class="comp-name">Synthflow</div>
-          <div class="comp-raised"><strong>$20M</strong> raised</div>
-          <div class="comp-type">No-code builder</div>
-        </div>
-        <div class="comp-card">
-          <div class="comp-name">Retell</div>
-          <div class="comp-raised"><strong>$5M</strong> seed</div>
-          <div class="comp-type">Developer API</div>
+      <!-- Issue 3 & 7: Competitor cards with horizontal sticky scroll -->
+      <div class="comp-scroll-wrapper reveal">
+        <div class="comp-grid">
+          <div class="comp-card">
+            <div class="comp-name">Bland AI</div>
+            <div class="comp-raised"><strong>$65M</strong> raised</div>
+            <div class="comp-type">Developer API</div>
+          </div>
+          <div class="comp-card">
+            <div class="comp-name">Vapi</div>
+            <div class="comp-raised"><strong>$20M</strong> &middot; $130M val</div>
+            <div class="comp-type">Developer API</div>
+          </div>
+          <div class="comp-card">
+            <div class="comp-name">Synthflow</div>
+            <div class="comp-raised"><strong>$20M</strong> raised</div>
+            <div class="comp-type">No-code builder</div>
+          </div>
+          <div class="comp-card">
+            <div class="comp-name">Retell</div>
+            <div class="comp-raised"><strong>$5M</strong> seed</div>
+            <div class="comp-type">Developer API</div>
+          </div>
+          <!-- Add a dummy card to show the scroll effect better if they are on a massive screen -->
+          <div class="comp-card" style="opacity: 0.5;">
+            <div class="comp-name">Others</div>
+            <div class="comp-raised"><strong>&lt;$5M</strong> seed</div>
+            <div class="comp-type">Various APIs</div>
+          </div>
         </div>
       </div>
 

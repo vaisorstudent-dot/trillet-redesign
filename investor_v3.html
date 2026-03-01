@@ -710,25 +710,37 @@
       margin-top: 8px;
     }
 
-    /* Wrong thing callout */
+    /* Editorial callout */
     .callout {
-      background: var(--bg-elevated);
-      border: 1px solid var(--border-medium);
-      border-radius: var(--radius-lg);
-      padding: 40px;
+      background: transparent;
+      border: none;
+      border-top: 1px solid var(--border-medium);
+      border-bottom: 1px solid var(--border-medium);
+      border-radius: 0;
+      padding: 40px 0;
       margin: 48px 0;
+      position: relative;
     }
 
-    .callout--teal {
-      border-left: 3px solid var(--teal-400);
+    .callout::before {
+      content: '';
+      position: absolute;
+      top: -1px;
+      left: 0;
+      width: 60px;
+      height: 2px;
     }
 
-    .callout--amber {
-      border-left: 3px solid rgba(239, 68, 68, 0.5);
+    .callout--teal::before {
+      background: var(--teal-500);
     }
 
-    .callout--indigo {
-      border-left: 3px solid var(--indigo-400);
+    .callout--amber::before {
+      background: var(--amber-500);
+    }
+
+    .callout--indigo::before {
+      background: var(--indigo-500);
     }
 
     .callout h3 {
@@ -743,8 +755,8 @@
     }
 
     .callout .emphasis {
-      color: var(--white);
-      font-weight: 600;
+      color: var(--text-primary);
+      font-weight: 700;
     }
 
     /* Issue 5: GHL box — gradient border, larger stats */
@@ -1218,12 +1230,13 @@
       padding: 24px 0;
       background: transparent;
       border: none;
-      border-left: 1px solid var(--border-subtle);
+      border-top: 1px solid var(--border-subtle);
       border-radius: 0;
     }
 
     .endpoint-cell:first-child {
-      border-left: none;
+      border-top: 1px solid var(--border-subtle);
+      /* Keep top border consistent */
     }
 
     .endpoint-cell .ep-count {
@@ -1638,21 +1651,25 @@
       transform: translateX(8px);
     }
 
-    /* Issue 3: Distinct left-border colors per moat card */
+    /* Editorial moat layouts: Top borders instead of left borders */
     .moat-card--telephony {
-      border-left: 3px solid var(--teal-400);
+      border-top: 2px solid var(--teal-500);
+      padding: 32px 0 0;
     }
 
     .moat-card--regulated {
-      border-left: 3px solid var(--amber-400);
+      border-top: 2px solid var(--amber-400);
+      padding: 32px 0 0;
     }
 
     .moat-card--deploy {
-      border-left: 3px solid var(--blue-400);
+      border-top: 2px solid var(--blue-400);
+      padding: 32px 0 0;
     }
 
     .moat-card--ai-native {
-      border-left: 3px solid var(--indigo-400);
+      border-top: 2px solid var(--indigo-500);
+      padding: 32px 0 0;
     }
 
     .moat-number {
@@ -1698,15 +1715,15 @@
     .revenue-card {
       background: transparent;
       border: none;
-      border-left: 2px solid var(--border-subtle);
+      border-top: 2px solid var(--border-subtle);
       box-shadow: none;
       border-radius: 0;
-      padding: 0 0 0 32px;
+      padding: 32px 0 0;
       transition: transform 0.3s ease;
     }
 
     .revenue-card:hover {
-      transform: translateX(8px);
+      transform: translateY(-4px);
     }
 
     .revenue-card h3 {
@@ -1813,17 +1830,17 @@
 
     .comp-raise {
       text-align: left;
-      padding: 16px 0 16px 20px;
+      padding: 24px 0 0;
       background: transparent;
       border: none;
-      border-left: 2px solid var(--border-subtle);
+      border-top: 2px solid var(--border-subtle);
       box-shadow: none;
       border-radius: 0;
       transition: transform 0.3s ease, border-color 0.3s ease;
     }
 
     .comp-raise:hover {
-      transform: translateX(8px);
+      transform: translateY(-4px);
       border-color: rgba(0, 0, 0, 0.3);
     }
 
@@ -1867,10 +1884,10 @@
     .vision-timeline {
       background: transparent;
       border: none;
-      border-left: 2px solid var(--border-subtle);
+      border-top: 2px solid var(--border-subtle);
       box-shadow: none;
       border-radius: 0;
-      padding: 0 0 0 32px;
+      padding: 32px 0 0;
     }
 
     .vision-timeline-header {
@@ -2034,17 +2051,17 @@
 
     .ask-fund {
       text-align: left;
-      padding: 16px 0 16px 20px;
+      padding: 24px 0 0;
       background: transparent;
       border: none;
-      border-left: 2px solid var(--border-subtle);
+      border-top: 2px solid var(--border-subtle);
       box-shadow: none;
       border-radius: 0;
       transition: transform 0.3s ease, border-color 0.3s ease;
     }
 
     .ask-fund:hover {
-      transform: translateX(8px);
+      transform: translateY(-4px);
       border-color: rgba(0, 0, 0, 0.3);
     }
 

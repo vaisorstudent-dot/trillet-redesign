@@ -1,0 +1,3405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trillet AI — Confidential Investor Briefing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <style>
+    /* ============================================
+       TRILLET AI — INVESTOR BRIEFING
+       Confidential. February 2026.
+       Aesthetic: Stripe-clean dark infrastructure
+       ============================================ */
+
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    :root {
+      --bg-deep: #FBFBFD;
+      /* Subtle, rich, warm white */
+      --bg-primary: #FFFFFF;
+      --bg-elevated: #FFFFFF;
+      --bg-surface: #F5F5F7;
+      --border-subtle: rgba(0, 0, 0, 0.08);
+      /* Dark subtle border on light theme */
+      --border-medium: rgba(0, 0, 0, 0.12);
+      --border-strong: rgba(0, 0, 0, 0.16);
+
+      --text-primary: #1D1D1F;
+      /* Almost black */
+      --text-secondary: #424245;
+      /* Dark gray */
+      --text-tertiary: #6E6E73;
+      /* Mid-gray */
+      --text-muted: #86868B;
+      --white: #1D1D1F;
+      /* Inverted for light mode headers */
+
+      --teal-600: #0D9488;
+      --teal-500: #14B8A6;
+      --teal-400: #2DD4BF;
+      --teal-300: #0F766E;
+      /* Darkened for accessibility on white */
+
+      --amber-500: #D97706;
+      /* Darkened for light background */
+      --amber-400: #F59E0B;
+      --amber-300: #B45309;
+
+      --indigo-500: #6366F1;
+      --indigo-400: #4F46E5;
+      --indigo-300: #4338CA;
+
+      --blue-500: #3B82F6;
+      --blue-400: #2563EB;
+
+      --green-500: #22C55E;
+      --green-400: #16A34A;
+
+      --red-500: #EF4444;
+
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --container: 1120px;
+      --radius: 12px;
+      --radius-sm: 8px;
+      --radius-lg: 16px;
+    }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg-deep);
+      background-image: none;
+      /* No radial gradients on pure background */
+      color: var(--text-secondary);
+      line-height: 1.6;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Dynamic Cursor Glow (Inverted for light mode - subtle shadow/burn) */
+    #cursorGlow {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 800px;
+      height: 800px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(0, 0, 0, 0.03) 0%, rgba(99, 102, 241, 0.01) 40%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+      transform: translate(-50%, -50%);
+      transition: transform 0.1s ease-out;
+      mix-blend-mode: multiply;
+    }
+
+    /* Soft grain texture kept extremely subtle for premium tactile feel */
+    body::after {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      pointer-events: none;
+      z-index: 9999;
+      opacity: 0.015;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      background-size: 256px 256px;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* --- Confidential Bar --- */
+    .conf-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(12, 16, 23, 0.92);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 0 24px;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .conf-bar.scrolled {
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.05);
+      border-bottom: 1px solid var(--border-medium);
+    }
+
+    .conf-bar-inner {
+      max-width: var(--container);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 48px;
+    }
+
+    .conf-bar-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .conf-logo {
+      font-weight: 800;
+      font-size: 0.9375rem;
+      color: var(--white);
+      letter-spacing: -0.01em;
+    }
+
+    .conf-logo .dot {
+      display: inline-block;
+      width: 7px;
+      height: 7px;
+      background: var(--teal-400);
+      border-radius: 50%;
+      margin-right: 4px;
+      vertical-align: middle;
+    }
+
+    .conf-divider {
+      width: 1px;
+      height: 16px;
+      background: var(--border-medium);
+    }
+
+    .conf-label {
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-tertiary);
+      font-weight: 600;
+    }
+
+    .conf-nav {
+      display: flex;
+      gap: 4px;
+    }
+
+    .conf-nav a {
+      font-size: 0.75rem;
+      color: var(--text-tertiary);
+      padding: 6px 10px;
+      border-radius: 6px;
+      transition: all 0.2s ease;
+      font-weight: 500;
+    }
+
+    .conf-nav a:hover {
+      color: var(--text-primary);
+      background: rgba(0, 0, 0, 0.05);
+      /* Inverted for light mode */
+    }
+
+    /* Active nav highlight */
+    .conf-nav a.active {
+      color: var(--teal-600);
+      background: rgba(45, 212, 191, 0.15);
+    }
+
+    @media (max-width: 768px) {
+      .conf-nav {
+        display: none;
+      }
+    }
+
+    /* --- Container --- */
+    .container {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* --- Section Base --- */
+    .section {
+      padding: 120px 0;
+      position: relative;
+    }
+
+    .section--compact {
+      padding: 80px 0;
+    }
+
+    /* Gradient section dividers (General Polish #1) — replaces border-bottom */
+    .section-divider {
+      position: relative;
+    }
+
+    .section-divider::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent 0%, var(--teal-500) 30%, var(--indigo-500) 70%, transparent 100%);
+      opacity: 0.3;
+    }
+
+    /* --- Typography --- */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: var(--white);
+      font-weight: 700;
+      line-height: 1.15;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      letter-spacing: -0.04em;
+      margin-bottom: 20px;
+      color: var(--text-primary);
+      /* Solid color instead of gradient clip for editorial look */
+    }
+
+    h3 {
+      font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+      letter-spacing: -0.02em;
+    }
+
+    /* Section labels: increased letter-spacing (General Polish #5) */
+    .section-label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-weight: 700;
+      color: var(--teal-400);
+      margin-bottom: 12px;
+    }
+
+    .section-subtitle {
+      font-size: 1.0625rem;
+      color: var(--text-secondary);
+      max-width: 640px;
+      line-height: 1.7;
+    }
+
+    /* --- Reveal Animations --- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 {
+      transition-delay: 0.1s;
+    }
+
+    .reveal-delay-2 {
+      transition-delay: 0.2s;
+    }
+
+    .reveal-delay-3 {
+      transition-delay: 0.3s;
+    }
+
+    .reveal-delay-4 {
+      transition-delay: 0.4s;
+    }
+
+    /* ======================
+       SECTION 1: THE HOOK (Issue 1)
+       ====================== */
+    .hook {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 120px 24px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hook::before {
+      content: '';
+      position: absolute;
+      top: 10%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, rgba(20, 184, 166, 0.06) 0%, rgba(99, 102, 241, 0.03) 40%, transparent 65%);
+      pointer-events: none;
+    }
+
+    /* Animated gradient orbs (Issue 1) */
+    .hook-orb {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+      filter: blur(80px);
+    }
+
+    .hook-orb--1 {
+      width: 500px;
+      height: 500px;
+      top: 10%;
+      left: 15%;
+      background: radial-gradient(circle, rgba(20, 184, 166, 0.04) 0%, transparent 70%);
+      animation: orbDrift1 18s ease-in-out infinite;
+    }
+
+    .hook-orb--2 {
+      width: 400px;
+      height: 400px;
+      top: 30%;
+      right: 10%;
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.035) 0%, transparent 70%);
+      animation: orbDrift2 22s ease-in-out infinite;
+    }
+
+    .hook-orb--3 {
+      width: 350px;
+      height: 350px;
+      bottom: 15%;
+      left: 40%;
+      background: radial-gradient(circle, rgba(245, 158, 11, 0.03) 0%, transparent 70%);
+      animation: orbDrift3 20s ease-in-out infinite;
+    }
+
+    @keyframes orbDrift1 {
+
+      0%,
+      100% {
+        transform: translate(0, 0);
+      }
+
+      25% {
+        transform: translate(40px, -30px);
+      }
+
+      50% {
+        transform: translate(-20px, 50px);
+      }
+
+      75% {
+        transform: translate(30px, 20px);
+      }
+    }
+
+    @keyframes orbDrift2 {
+
+      0%,
+      100% {
+        transform: translate(0, 0);
+      }
+
+      25% {
+        transform: translate(-50px, 20px);
+      }
+
+      50% {
+        transform: translate(30px, -40px);
+      }
+
+      75% {
+        transform: translate(-20px, -20px);
+      }
+    }
+
+    @keyframes orbDrift3 {
+
+      0%,
+      100% {
+        transform: translate(0, 0);
+      }
+
+      25% {
+        transform: translate(25px, 35px);
+      }
+
+      50% {
+        transform: translate(-40px, -15px);
+      }
+
+      75% {
+        transform: translate(15px, -30px);
+      }
+    }
+
+    .hook-content {
+      position: relative;
+      z-index: 1;
+      max-width: 720px;
+    }
+
+    /* Issue 1: Increase hook text size */
+    .hook-statement {
+      font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+      color: var(--text-secondary);
+      line-height: 1.4;
+      margin-bottom: 40px;
+      font-weight: 500;
+      letter-spacing: -0.02em;
+    }
+
+    .hook-statement .metric {
+      color: var(--indigo-400);
+      /* Rich pop on light background */
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .hook-statement .metric--teal {
+      color: var(--teal-400);
+    }
+
+    .hook-statement .metric--amber {
+      color: var(--amber-400);
+    }
+
+    /* Dynamic Callouts */
+    .hook-statement .metric--callout {
+      font-size: 1.6em;
+      line-height: 1;
+      display: inline-block;
+      vertical-align: middle;
+      color: var(--teal-500);
+      text-shadow: 0 4px 12px rgba(45, 212, 191, 0.3);
+      /* Subtle light mode shadow */
+      transform: translateY(-4px);
+      letter-spacing: -0.04em;
+    }
+
+    .hook-statement .metric--callout-amber {
+      font-size: 1.6em;
+      line-height: 1;
+      display: inline-block;
+      vertical-align: middle;
+      text-shadow: 0 0 60px rgba(251, 191, 36, 0.4), 0 0 20px rgba(251, 191, 36, 0.2);
+      transform: translateY(-4px);
+      letter-spacing: -0.04em;
+    }
+
+    .hook-line {
+      margin-bottom: 28px;
+      opacity: 0;
+      transform: translateY(16px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .hook-line.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .hook-team-line {
+      font-size: 1rem;
+      color: var(--text-tertiary);
+      font-weight: 500;
+      border-top: 1px solid var(--border-subtle);
+      padding-top: 32px;
+      margin-top: 12px;
+    }
+
+    .hook-team-line strong {
+      color: var(--text-secondary);
+    }
+
+    /* Scroll indicator (Issue 1) */
+    .scroll-indicator {
+      position: absolute;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      opacity: 0.4;
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+
+    .scroll-indicator svg {
+      width: 24px;
+      height: 24px;
+      stroke: var(--text-tertiary);
+      stroke-width: 2;
+      fill: none;
+    }
+
+    @keyframes scrollPulse {
+
+      0%,
+      100% {
+        opacity: 0.4;
+        transform: translateX(-50%) translateY(0);
+      }
+
+      50% {
+        opacity: 0.7;
+        transform: translateX(-50%) translateY(6px);
+      }
+    }
+
+    /* ======================
+       SECTION 2: THE GAP
+       ====================== */
+    .gap-market {
+      text-align: center;
+      margin-bottom: 80px;
+    }
+
+    .gap-market-number {
+      font-size: clamp(3rem, 6vw, 5rem);
+      font-weight: 900;
+      letter-spacing: -0.04em;
+      background: linear-gradient(135deg, var(--teal-300), var(--blue-400));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      margin-bottom: 8px;
+    }
+
+    .gap-market-detail {
+      font-size: 1.0625rem;
+      color: var(--text-secondary);
+    }
+
+    .gap-market-source {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .gap-arrow {
+      font-size: 1.5rem;
+      color: var(--text-muted);
+      margin: 0 16px;
+    }
+
+    .gap-market-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      gap: 4px;
+      flex-wrap: wrap;
+      position: relative;
+    }
+
+    .gap-market-year {
+      font-size: 0.8125rem;
+      color: var(--text-tertiary);
+      font-weight: 600;
+    }
+
+    /* Issue 3: Animated growth trajectory line between market numbers */
+    .growth-trajectory {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 12px 0 0;
+    }
+
+    .growth-trajectory-line {
+      height: 3px;
+      width: 0;
+      max-width: 300px;
+      border-radius: 2px;
+      background: linear-gradient(90deg, var(--teal-500), var(--blue-400), var(--indigo-400));
+      transition: width 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .growth-trajectory-line.animated {
+      width: 300px;
+    }
+
+    .growth-trajectory-label {
+      font-size: 0.6875rem;
+      color: var(--teal-400);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-left: 12px;
+      opacity: 0;
+      transition: opacity 0.6s ease 1s;
+    }
+
+    .growth-trajectory-label.animated {
+      opacity: 1;
+    }
+
+    /* Issue 3: Competitor cards red/warning tint */
+    .comp-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin: 48px 0;
+    }
+
+    .comp-card {
+      background: rgba(239, 68, 68, 0.04);
+      border: 1px solid rgba(239, 68, 68, 0.12);
+      border-radius: var(--radius);
+      padding: 24px 20px;
+      text-align: center;
+      transition: border-color 0.2s ease;
+    }
+
+    .comp-card:hover {
+      border-color: rgba(239, 68, 68, 0.22);
+    }
+
+    .comp-name {
+      font-weight: 700;
+      color: var(--white);
+      font-size: 0.9375rem;
+      margin-bottom: 4px;
+    }
+
+    .comp-raised {
+      font-size: 0.8125rem;
+      color: var(--text-tertiary);
+    }
+
+    .comp-raised strong {
+      color: var(--text-secondary);
+      font-weight: 700;
+    }
+
+    .comp-type {
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      margin-top: 8px;
+    }
+
+    /* Wrong thing callout */
+    .callout {
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      margin: 48px 0;
+    }
+
+    .callout--teal {
+      border-left: 3px solid var(--teal-400);
+    }
+
+    .callout--amber {
+      border-left: 3px solid rgba(239, 68, 68, 0.5);
+    }
+
+    .callout--indigo {
+      border-left: 3px solid var(--indigo-400);
+    }
+
+    .callout h3 {
+      margin-bottom: 12px;
+    }
+
+    .callout p {
+      color: var(--text-secondary);
+      font-size: 0.9375rem;
+      line-height: 1.7;
+      max-width: 640px;
+    }
+
+    .callout .emphasis {
+      color: var(--white);
+      font-weight: 600;
+    }
+
+    /* Issue 5: GHL box — gradient border, larger stats */
+    .ghl-box {
+      background: var(--bg-surface);
+      border: 1px solid transparent;
+      border-image: linear-gradient(135deg, var(--teal-500), var(--indigo-500)) 1;
+      border-radius: 0;
+      padding: 40px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+      position: relative;
+    }
+
+    /* Rounded border workaround with gradient */
+    .ghl-box-wrapper {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      padding: 2px;
+      background: linear-gradient(135deg, var(--teal-500), var(--indigo-500));
+      margin-top: 48px;
+    }
+
+    .ghl-box-wrapper .ghl-box {
+      border: none;
+      border-image: none;
+      border-radius: calc(var(--radius-lg) - 2px);
+      margin-top: 0;
+    }
+
+    .ghl-stat {
+      text-align: center;
+    }
+
+    /* Issue 5: Stat numbers larger */
+    .ghl-stat-number {
+      font-size: clamp(2rem, 4vw, 2.75rem);
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.02em;
+      text-shadow: 0 0 40px rgba(45, 212, 191, 0.15);
+    }
+
+    .ghl-stat-label {
+      font-size: 0.8125rem;
+      color: var(--text-tertiary);
+      margin-top: 4px;
+    }
+
+    .ghl-text h3 {
+      margin-bottom: 12px;
+    }
+
+    .ghl-text p {
+      font-size: 0.9375rem;
+      line-height: 1.7;
+    }
+
+    /* Issue 5: Voice AI standalone line */
+    .ghl-voice-standout {
+      font-size: clamp(1.0625rem, 2vw, 1.25rem);
+      font-weight: 700;
+      color: var(--white);
+      margin-top: 16px;
+      line-height: 1.5;
+    }
+
+    /* ======================
+       SECTION 3: ORIGIN
+       ====================== */
+    .origin-narrative {
+      max-width: 680px;
+      margin-bottom: 64px;
+    }
+
+    .origin-narrative p {
+      font-size: 1.0625rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .origin-narrative .highlight-line {
+      color: var(--white);
+      font-weight: 600;
+      font-size: 1.125rem;
+    }
+
+    /* Team grid */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-bottom: 48px;
+    }
+
+    .team-card {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+
+    .team-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(0, 0, 0, 0.15);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    }
+
+    .team-name {
+      font-weight: 700;
+      color: var(--white);
+      font-size: 1rem;
+      margin-bottom: 2px;
+    }
+
+    .team-title {
+      font-size: 0.75rem;
+      color: var(--teal-400);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .team-proof {
+      font-size: 0.8125rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .team-stat-line {
+      text-align: center;
+      padding: 32px;
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+      border-radius: var(--radius);
+    }
+
+    .team-stat-line p {
+      font-size: 1.0625rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    .team-stat-line strong {
+      color: var(--white);
+    }
+
+    /* ======================
+       SECTION 4: THE PRODUCT
+       ====================== */
+
+    /* Core agent flow */
+    .agent-flow {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      overflow-x: auto;
+      padding: 40px 0 20px;
+      margin-bottom: 20px;
+    }
+
+    .agent-flow-node {
+      flex-shrink: 0;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-medium);
+      border-radius: var(--radius-sm);
+      padding: 16px 22px;
+      text-align: center;
+      min-width: 120px;
+    }
+
+    .agent-flow-node--input {
+      border-color: rgba(59, 130, 246, 0.3);
+      background: rgba(59, 130, 246, 0.06);
+    }
+
+    .agent-flow-node--core {
+      border-color: rgba(20, 184, 166, 0.3);
+      background: rgba(20, 184, 166, 0.06);
+      padding: 20px 28px;
+    }
+
+    .agent-flow-node--output {
+      border-color: rgba(245, 158, 11, 0.3);
+      background: rgba(245, 158, 11, 0.06);
+    }
+
+    .agent-flow-node .node-label {
+      font-size: 0.625rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .agent-flow-node .node-name {
+      font-weight: 700;
+      font-size: 0.8125rem;
+      color: var(--white);
+    }
+
+    .agent-flow-arrow {
+      flex-shrink: 0;
+      width: 32px;
+      height: 2px;
+      background: rgba(255, 255, 255, 0.12);
+      position: relative;
+    }
+
+    .agent-flow-arrow::after {
+      content: '';
+      position: absolute;
+      right: 0;
+      top: -4px;
+      border: 5px solid transparent;
+      border-left: 6px solid rgba(255, 255, 255, 0.2);
+    }
+
+    /* Capabilities pills */
+    .cap-pills {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 48px;
+    }
+
+    .cap-pill {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-subtle);
+      border-radius: 100px;
+      padding: 7px 16px;
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    /* Key line */
+    .key-line {
+      text-align: center;
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      color: var(--text-secondary);
+      max-width: 700px;
+      margin: 0 auto 60px;
+      padding: 32px;
+      background: rgba(255, 255, 255, 0.02);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius);
+      font-weight: 500;
+      line-height: 1.6;
+    }
+
+    .key-line strong {
+      color: var(--white);
+    }
+
+    /* Deployment model table */
+    .deploy-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      margin-bottom: 48px;
+    }
+
+    .deploy-table th {
+      text-align: left;
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      font-weight: 700;
+      padding: 12px 20px;
+      border-bottom: 1px solid var(--border-medium);
+    }
+
+    .deploy-table td {
+      padding: 20px;
+      border-bottom: 1px solid var(--border-subtle);
+      font-size: 0.875rem;
+      vertical-align: top;
+    }
+
+    .deploy-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .deploy-table .tier-name {
+      font-weight: 700;
+      color: var(--white);
+      font-size: 0.9375rem;
+      white-space: nowrap;
+    }
+
+    .deploy-table .tier-price {
+      font-weight: 700;
+      color: var(--teal-400);
+      white-space: nowrap;
+    }
+
+    .deploy-table .tier-who {
+      color: var(--text-tertiary);
+      font-size: 0.8125rem;
+    }
+
+    /* Interactive deployment visualization */
+    .deploy-viz {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-bottom: 48px;
+    }
+
+    .deploy-tier {
+      border: 1px solid var(--border-subtle);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-radius: var(--radius);
+      padding: 28px 28px;
+      margin-bottom: -1px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .deploy-tier:hover {
+      z-index: 2;
+    }
+
+    .deploy-tier--starter {
+      border-color: rgba(59, 130, 246, 0.2);
+      background: rgba(59, 130, 246, 0.02);
+      z-index: 4;
+    }
+
+    .deploy-tier--starter:hover {
+      background: rgba(59, 130, 246, 0.06);
+      border-color: rgba(59, 130, 246, 0.35);
+    }
+
+    .deploy-tier--agency {
+      border-color: rgba(20, 184, 166, 0.2);
+      background: rgba(20, 184, 166, 0.02);
+      padding-left: 48px;
+      z-index: 3;
+    }
+
+    .deploy-tier--agency:hover {
+      background: rgba(20, 184, 166, 0.06);
+      border-color: rgba(20, 184, 166, 0.35);
+    }
+
+    .deploy-tier--lite {
+      border-color: rgba(245, 158, 11, 0.2);
+      background: rgba(245, 158, 11, 0.02);
+      padding-left: 68px;
+      z-index: 2;
+    }
+
+    .deploy-tier--lite:hover {
+      background: rgba(245, 158, 11, 0.06);
+      border-color: rgba(245, 158, 11, 0.35);
+    }
+
+    .deploy-tier--pro {
+      border-color: rgba(129, 140, 248, 0.2);
+      background: rgba(129, 140, 248, 0.02);
+      padding-left: 88px;
+      z-index: 1;
+    }
+
+    .deploy-tier--pro:hover {
+      background: rgba(129, 140, 248, 0.06);
+      border-color: rgba(129, 140, 248, 0.35);
+    }
+
+    .deploy-tier-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 6px;
+    }
+
+    .deploy-tier-badge {
+      font-size: 0.625rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 100px;
+    }
+
+    .deploy-tier--starter .deploy-tier-badge {
+      background: rgba(59, 130, 246, 0.15);
+      color: var(--blue-400);
+    }
+
+    .deploy-tier--agency .deploy-tier-badge {
+      background: rgba(20, 184, 166, 0.15);
+      color: var(--teal-400);
+    }
+
+    .deploy-tier--lite .deploy-tier-badge {
+      background: rgba(245, 158, 11, 0.15);
+      color: var(--amber-400);
+    }
+
+    .deploy-tier--pro .deploy-tier-badge {
+      background: rgba(129, 140, 248, 0.15);
+      color: var(--indigo-300);
+    }
+
+    .deploy-tier-price {
+      font-weight: 800;
+      color: var(--white);
+      font-size: 0.875rem;
+    }
+
+    .deploy-tier-desc {
+      font-size: 0.8125rem;
+      color: var(--text-tertiary);
+      max-width: 540px;
+    }
+
+    .deploy-tier-detail {
+      font-size: 0.8125rem;
+      color: var(--text-secondary);
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border-subtle);
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.4s ease, opacity 0.3s ease, margin 0.3s ease, padding 0.3s ease;
+      margin-top: 0;
+      padding-top: 0;
+    }
+
+    .deploy-tier:hover .deploy-tier-detail,
+    .deploy-tier.active .deploy-tier-detail {
+      max-height: 120px;
+      opacity: 1;
+      margin-top: 12px;
+      padding-top: 12px;
+    }
+
+    /* Endpoint multiplier */
+    .endpoint-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-bottom: 16px;
+    }
+
+    .endpoint-cell {
+      text-align: center;
+      padding: 20px 16px;
+      border-radius: var(--radius-sm);
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .endpoint-cell .ep-count {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: -0.02em;
+    }
+
+    .endpoint-cell .ep-label {
+      font-size: 0.6875rem;
+      color: var(--text-tertiary);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-top: 4px;
+    }
+
+    .insight-line {
+      text-align: center;
+      font-size: clamp(1.0625rem, 2.2vw, 1.375rem);
+      color: var(--white);
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 40px 0;
+    }
+
+    /* ======================
+       SECTION 5: STACK
+       ====================== */
+    .stack-layers {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .stack-layer {
+      display: grid;
+      grid-template-columns: 200px 1fr 100px;
+      gap: 20px;
+      align-items: center;
+      padding: 24px 28px;
+      background: rgba(255, 255, 255, 0.015);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
+      border-radius: var(--radius);
+      transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .stack-layer:hover {
+      transform: translateX(8px);
+      background: rgba(255, 255, 255, 0.04);
+      border-color: rgba(255, 255, 255, 0.15);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    }
+
+    .stack-layer-name {
+      font-weight: 700;
+      color: var(--white);
+      font-size: 0.9375rem;
+    }
+
+    .stack-layer-desc {
+      font-size: 0.8125rem;
+      color: var(--text-tertiary);
+    }
+
+    .stack-layer-status {
+      text-align: right;
+    }
+
+    .status-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 4px 12px;
+      border-radius: 100px;
+    }
+
+    .status-badge--live {
+      background: rgba(34, 197, 94, 0.1);
+      color: var(--green-400);
+    }
+
+    .status-badge--live::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--green-400);
+    }
+
+    .status-badge--pilot {
+      background: rgba(245, 158, 11, 0.1);
+      color: var(--amber-400);
+    }
+
+    .status-badge--pilot::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--amber-400);
+    }
+
+    .stack-callout {
+      text-align: center;
+      margin-top: 48px;
+      padding: 32px;
+      background: rgba(255, 255, 255, 0.02);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius);
+    }
+
+    .stack-callout p {
+      font-size: 1.0625rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .stack-callout strong {
+      color: var(--white);
+    }
+
+    /* ======================
+       SECTION 6: TRACTION (Issue 3)
+       ====================== */
+
+    /* Issue 3: Traction section — denser spacing */
+    #traction.section {
+      padding: 80px 0;
+    }
+
+    /* Metrics bar — tighter */
+    .metrics-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-bottom: 40px;
+    }
+
+    .metric-block {
+      text-align: center;
+      padding: 22px 16px;
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+      border-radius: var(--radius);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .metric-block:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    }
+
+    .metric-number {
+      font-size: clamp(1.5rem, 3vw, 2.25rem);
+      font-weight: 800;
+      color: var(--indigo-500);
+      /* Darker impact color for light mode */
+      letter-spacing: -0.03em;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .metric-label {
+      font-size: 0.75rem;
+      color: var(--text-tertiary);
+      margin-top: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 600;
+    }
+
+    /* Enterprise grid — tighter */
+    .enterprise-grid {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      margin-bottom: 40px;
+    }
+
+    .enterprise-grid th {
+      text-align: left;
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--text-muted);
+      font-weight: 700;
+      padding: 12px 20px;
+      border-bottom: 1px solid var(--border-medium);
+    }
+
+    .enterprise-grid td {
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--border-subtle);
+      font-size: 0.875rem;
+    }
+
+    .enterprise-grid tr:last-child td {
+      border-bottom: none;
+    }
+
+    .enterprise-grid .client-name {
+      font-weight: 600;
+      color: var(--white);
+    }
+
+    .nda-note {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-style: italic;
+      margin-top: 8px;
+    }
+
+    /* Case studies — tighter */
+    .case-studies {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .case-study {
+      background: rgba(255, 255, 255, 0.02);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .case-study:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    }
+
+    .case-label {
+      font-size: 0.6875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .case-label--amber {
+      color: var(--teal-400);
+    }
+
+    .case-label--teal {
+      color: var(--teal-400);
+    }
+
+    /* Issue 3: Traction hero metric — larger with teal glow */
+    .case-hero-metric {
+      font-size: clamp(2.5rem, 5vw, 3.5rem);
+      font-weight: 900;
+      color: var(--white);
+      letter-spacing: -0.03em;
+      margin-bottom: 8px;
+      text-shadow: 0 0 50px rgba(45, 212, 191, 0.2);
+    }
+
+    .case-hero-label {
+      font-size: 0.8125rem;
+      color: var(--text-tertiary);
+      margin-bottom: 20px;
+    }
+
+    /* Comparison bar for abandonment rate */
+    .compare-bars {
+      margin: 16px 0;
+      position: relative;
+    }
+
+    .compare-bar-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    .compare-bar-label {
+      font-size: 0.75rem;
+      color: var(--text-tertiary);
+      width: 100px;
+      flex-shrink: 0;
+      text-align: right;
+    }
+
+    .compare-bar-track {
+      flex: 1;
+      height: 28px;
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 4px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .compare-bar-fill {
+      height: 100%;
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      padding-left: 10px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--white);
+      transition: width 1s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .compare-bar-fill--trillet {
+      background: linear-gradient(90deg, var(--teal-600), var(--teal-500));
+      width: 0;
+    }
+
+    .compare-bar-fill--trillet.animated {
+      width: 8.9%;
+    }
+
+    .compare-bar-fill--industry {
+      background: rgba(239, 68, 68, 0.3);
+      width: 0;
+    }
+
+    .compare-bar-fill--industry.animated {
+      width: 90%;
+    }
+
+    .compare-bar-value {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-secondary);
+      width: 60px;
+      flex-shrink: 0;
+    }
+
+    /* Issue 3: "~10x better" fade-in label after bars animate */
+    .compare-better-label {
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--teal-400);
+      text-align: center;
+      margin-top: 8px;
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+      text-shadow: 0 0 30px rgba(45, 212, 191, 0.2);
+    }
+
+    .compare-better-label.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .case-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .case-stat {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      font-size: 0.8125rem;
+    }
+
+    .case-stat-icon {
+      color: var(--teal-400);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* ======================
+       SECTION 7: MOAT (Issue 3)
+       ====================== */
+    .moat-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .moat-card {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+    }
+
+    .moat-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    }
+
+    /* Issue 3: Distinct left-border colors per moat card */
+    .moat-card--telephony {
+      border-left: 3px solid var(--teal-400);
+    }
+
+    .moat-card--regulated {
+      border-left: 3px solid var(--amber-400);
+    }
+
+    .moat-card--deploy {
+      border-left: 3px solid var(--blue-400);
+    }
+
+    .moat-card--ai-native {
+      border-left: 3px solid var(--indigo-400);
+    }
+
+    .moat-number {
+      font-size: 0.75rem;
+      font-weight: 800;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .moat-card h3 {
+      margin-bottom: 12px;
+      font-size: 1.125rem;
+    }
+
+    .moat-card p {
+      font-size: 0.875rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+    }
+
+    /* Issue 3: Moat kicker lines — more prominent */
+    .moat-card .moat-kicker {
+      font-size: 0.8125rem;
+      color: var(--teal-300);
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid var(--border-subtle);
+      font-style: italic;
+    }
+
+    /* ======================
+       SECTION 8: BUSINESS MODEL
+       ====================== */
+    .revenue-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+
+    .revenue-card {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .revenue-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    }
+
+    .revenue-card h3 {
+      margin-bottom: 8px;
+    }
+
+    .revenue-card .revenue-margin {
+      font-size: 0.8125rem;
+      color: var(--teal-400);
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+
+    .revenue-card p {
+      font-size: 0.875rem;
+      line-height: 1.7;
+    }
+
+    /* Compounding visual */
+    .compound-example {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      margin-bottom: 48px;
+    }
+
+    .compound-example h3 {
+      margin-bottom: 24px;
+      font-size: 1.0625rem;
+    }
+
+    .compound-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .compound-step {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 0.875rem;
+    }
+
+    .compound-step-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .compound-step-icon--teal {
+      background: rgba(20, 184, 166, 0.15);
+      color: var(--teal-400);
+    }
+
+    .compound-step-icon--amber {
+      background: rgba(245, 158, 11, 0.15);
+      color: var(--amber-400);
+    }
+
+    .compound-total {
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border-medium);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .compound-total-label {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+    }
+
+    .compound-total-value {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--text-primary);
+    }
+
+    .compound-total-note {
+      font-size: 0.8125rem;
+      color: var(--text-tertiary);
+      margin-top: 12px;
+    }
+
+    /* Comparables */
+    .comp-raises {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+    }
+
+    .comp-raise {
+      text-align: center;
+      padding: 24px 16px;
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+      border-radius: var(--radius);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .comp-raise:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    }
+
+    .comp-raise--trillet {
+      border-color: var(--teal-500);
+      background: rgba(20, 184, 166, 0.06);
+    }
+
+    .comp-raise .cr-name {
+      font-weight: 700;
+      color: var(--white);
+      font-size: 0.8125rem;
+      margin-bottom: 4px;
+    }
+
+    .comp-raise .cr-amount {
+      font-size: 0.75rem;
+      color: var(--text-tertiary);
+    }
+
+    .comp-raise--trillet .cr-amount {
+      color: var(--teal-400);
+      font-weight: 600;
+    }
+
+    /* ======================
+       SECTION 9: VISION (Issue 3)
+       ====================== */
+    /* Issue 3: Vision section — indigo-tinted background */
+    #vision.section {
+      background: linear-gradient(180deg, var(--bg-deep) 0%, rgba(99, 102, 241, 0.05) 40%, rgba(99, 102, 241, 0.08) 60%, var(--bg-deep) 100%);
+    }
+
+    .vision-timelines {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-bottom: 64px;
+    }
+
+    .vision-timeline {
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+      border-radius: var(--radius-lg);
+      padding: 36px;
+    }
+
+    .vision-timeline-header {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      font-weight: 700;
+      margin-bottom: 20px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .vt-now {
+      color: var(--teal-400);
+    }
+
+    .vt-future {
+      color: var(--indigo-400);
+    }
+
+    .vision-timeline ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .vision-timeline li {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      padding-left: 20px;
+      position: relative;
+      line-height: 1.6;
+    }
+
+    .vision-timeline li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+
+    .vision-timeline--now li::before {
+      background: var(--teal-500);
+    }
+
+    .vision-timeline--future li::before {
+      background: var(--indigo-500);
+    }
+
+    /* Issue 3: Factory quote — larger font, more padding, gradient border on ALL sides */
+    .factory-quote {
+      border-radius: var(--radius-lg);
+      margin-bottom: 48px;
+      position: relative;
+    }
+
+    .factory-quote-wrapper {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      padding: 2px;
+      background: linear-gradient(135deg, var(--teal-500), var(--indigo-500));
+    }
+
+    .factory-quote-inner {
+      background: var(--bg-surface);
+      border-radius: calc(var(--radius-lg) - 2px);
+      padding: 64px 56px;
+      text-align: center;
+    }
+
+    .factory-quote blockquote {
+      font-size: clamp(1.125rem, 2.4vw, 1.5rem);
+      color: var(--text-primary);
+      line-height: 1.8;
+      max-width: 740px;
+      margin: 0 auto;
+      font-weight: 500;
+    }
+
+    .factory-quote blockquote strong {
+      color: var(--white);
+    }
+
+    /* Issue 4: Thesis statement — larger font, heavier weight */
+    .thesis-box {
+      background: linear-gradient(135deg, rgba(20, 184, 166, 0.04), rgba(99, 102, 241, 0.04));
+      border: 1px solid rgba(20, 184, 166, 0.2);
+      border-radius: var(--radius-lg);
+      padding: 48px;
+      text-align: center;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.03);
+    }
+
+    .thesis-box .thesis-main {
+      font-size: clamp(1.125rem, 2.2vw, 1.375rem);
+      color: var(--text-primary);
+      line-height: 1.8;
+      max-width: 720px;
+      margin: 0 auto;
+      font-weight: 600;
+    }
+
+    .thesis-box .thesis-main strong {
+      color: var(--white);
+    }
+
+    /* Issue 4: Whispered punchline */
+    .thesis-box .thesis-whisper {
+      font-size: clamp(0.875rem, 1.6vw, 1rem);
+      color: var(--text-tertiary);
+      line-height: 1.8;
+      max-width: 720px;
+      margin: 16px auto 0;
+      font-weight: 400;
+    }
+
+    .thesis-box .thesis-whisper strong {
+      color: var(--text-secondary);
+      font-weight: 600;
+    }
+
+    .thesis-meta {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      margin-top: 20px;
+      font-style: italic;
+    }
+
+    /* ======================
+       SECTION 10: THE ASK
+       ====================== */
+    .ask-header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    .ask-raise {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 900;
+      color: var(--white);
+      letter-spacing: -0.03em;
+      margin-bottom: 8px;
+    }
+
+    .ask-stage {
+      font-size: 0.875rem;
+      color: var(--text-tertiary);
+    }
+
+    /* Issue 6: Ask fund cards with SVG icons */
+    .ask-funds {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+      margin-bottom: 48px;
+    }
+
+    .ask-fund {
+      text-align: center;
+      padding: 24px 16px;
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+      border-radius: var(--radius);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .ask-fund:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    }
+
+    .ask-fund-label {
+      font-size: 0.75rem;
+      color: var(--text-tertiary);
+      font-weight: 500;
+    }
+
+    .ask-fund-icon {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .ask-fund-icon svg {
+      width: 28px;
+      height: 28px;
+      stroke: var(--teal-400);
+      stroke-width: 1.5;
+      fill: none;
+    }
+
+    .ask-milestone {
+      text-align: center;
+      padding: 28px;
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+      border-radius: var(--radius);
+      margin-bottom: 64px;
+    }
+
+    .ask-milestone p {
+      font-size: 0.9375rem;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .ask-milestone strong {
+      color: var(--white);
+    }
+
+    /* Issue 4: Closing statement — animated gradient border */
+    .closing-statement {
+      text-align: center;
+      margin-bottom: 48px;
+      position: relative;
+    }
+
+    .closing-statement-wrapper {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      padding: 1px;
+      background: var(--border-medium);
+      position: relative;
+    }
+
+    .closing-statement-wrapper::before {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border-radius: inherit;
+      background: linear-gradient(135deg, var(--teal-500), var(--indigo-500));
+      opacity: 0.4;
+      animation: closingGlow 6s ease-in-out infinite;
+      z-index: 0;
+    }
+
+    .closing-statement-inner {
+      background: var(--bg-surface);
+      border-radius: calc(var(--radius-lg) - 1px);
+      padding: 64px 32px;
+      position: relative;
+      z-index: 1;
+    }
+
+    @keyframes closingGlow {
+
+      0%,
+      100% {
+        opacity: 0.3;
+      }
+
+      50% {
+        opacity: 0.6;
+      }
+    }
+
+    .closing-statement blockquote {
+      font-size: clamp(1.0625rem, 2.2vw, 1.375rem);
+      color: var(--text-primary);
+      line-height: 1.8;
+      max-width: 760px;
+      margin: 0 auto;
+      font-weight: 500;
+    }
+
+    .closing-statement blockquote strong {
+      color: var(--white);
+    }
+
+    /* Issue 6: "Let's talk" + founded line */
+    .cta-contact {
+      text-align: center;
+    }
+
+    .cta-contact p {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      margin-bottom: 8px;
+    }
+
+    .cta-contact a {
+      font-size: 1.125rem;
+      font-weight: 700;
+      color: var(--teal-400);
+      transition: color 0.2s ease;
+    }
+
+    .cta-contact a:hover {
+      color: var(--teal-300);
+    }
+
+    .cta-founded {
+      margin-top: 16px;
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .cta-watermark {
+      margin-top: 48px;
+      font-size: 0.6875rem;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+    }
+
+    /* ======================
+       RESPONSIVE
+       ====================== */
+    @media (max-width: 1024px) {
+      .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .comp-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .metrics-bar {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .moat-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .revenue-split {
+        grid-template-columns: 1fr;
+      }
+
+      .vision-timelines {
+        grid-template-columns: 1fr;
+      }
+
+      .comp-raises {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .ask-funds {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .ghl-box {
+        grid-template-columns: 1fr;
+      }
+
+      .endpoint-row {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .stack-layer {
+        grid-template-columns: 160px 1fr 90px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .section {
+        padding: 80px 0;
+      }
+
+      .hook {
+        padding: 100px 24px 60px;
+      }
+
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .comp-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .metrics-bar {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .case-studies {
+        grid-template-columns: 1fr;
+      }
+
+      .deploy-tier--agency {
+        padding-left: 28px;
+      }
+
+      .deploy-tier--lite {
+        padding-left: 28px;
+      }
+
+      .deploy-tier--pro {
+        padding-left: 28px;
+      }
+
+      .comp-raises {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .ask-funds {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .factory-quote-inner {
+        padding: 40px 28px;
+      }
+
+      .thesis-box {
+        padding: 36px 24px;
+      }
+
+      .closing-statement-inner {
+        padding: 48px 24px;
+      }
+
+      .callout {
+        padding: 28px;
+      }
+
+      .compound-example {
+        padding: 28px;
+      }
+
+      .stack-layer {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+
+      .stack-layer-status {
+        text-align: left;
+      }
+
+      .deploy-table {
+        display: block;
+        overflow-x: auto;
+      }
+
+      .ghl-stat-number {
+        font-size: 1.5rem;
+      }
+
+      .endpoint-row {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .agent-flow {
+        justify-content: flex-start;
+      }
+
+      .scroll-indicator {
+        bottom: 20px;
+      }
+
+      .growth-trajectory-line.animated {
+        width: 200px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .metrics-bar {
+        grid-template-columns: 1fr;
+      }
+
+      .endpoint-row {
+        grid-template-columns: 1fr;
+      }
+
+      .comp-raises {
+        grid-template-columns: 1fr;
+      }
+
+      .ask-funds {
+        grid-template-columns: 1fr;
+      }
+
+      .conf-bar-inner {
+        height: 40px;
+      }
+
+      .conf-label {
+        font-size: 0.5625rem;
+      }
+
+      .growth-trajectory-line.animated {
+        width: 150px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Dynamic cursor background glow -->
+  <div id="cursorGlow"></div>
+
+  <!-- ===== CONFIDENTIAL BAR ===== -->
+  <header class="conf-bar" id="confBar">
+    <div class="conf-bar-inner">
+      <div class="conf-bar-left">
+        <span class="conf-logo"><span class="dot"></span>Trillet</span>
+        <span class="conf-divider"></span>
+        <span class="conf-label">Confidential Investor Briefing &mdash; February 2026</span>
+      </div>
+      <nav class="conf-nav" id="confNav">
+        <a href="#gap">Market</a>
+        <a href="#product">Product</a>
+        <a href="#traction">Traction</a>
+        <a href="#moat">Moat</a>
+        <a href="#model">Model</a>
+        <a href="#ask">The Ask</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== SECTION 1: THE HOOK ===== -->
+  <section class="hook" id="hook">
+    <!-- Animated gradient orbs (Issue 1) -->
+    <div class="hook-orb hook-orb--1"></div>
+    <div class="hook-orb hook-orb--2"></div>
+    <div class="hook-orb hook-orb--3"></div>
+
+    <div class="hook-content">
+      <div class="hook-statement">
+        <div class="hook-line" id="hookLine1">
+          A Fortune 500 telecom deployed our voice AI at <span class="metric">25 locations</span>.<br>
+          They're expanding nationally.
+        </div>
+        <div class="hook-line" id="hookLine2">
+          Our AI collected <span class="metric metric--teal metric--callout" data-count="338000" data-prefix="$"
+            data-suffix="">$338,000</span> for a debt collection firm &mdash; with a <span
+            class="metric metric--amber metric--callout-amber">0.89%</span> call abandonment rate.<br>
+          Industry average: 8&ndash;10%.
+        </div>
+        <div class="hook-line" id="hookLine3">
+          <span class="hook-team-line">We built this with <strong>20 people</strong> and <strong>$0</strong> in external
+            funding.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll indicator (Issue 1) -->
+    <div class="scroll-indicator">
+      <svg viewBox="0 0 24 24">
+        <polyline points="6 9 12 15 18 9"></polyline>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Issue 2: Brand reveal REMOVED — go straight from hook to market -->
+
+  <!-- ===== SECTION 2: THE GAP ===== -->
+  <section class="section section-divider" id="gap">
+    <div class="container">
+
+      <!-- Beat 1: Market -->
+      <div class="reveal">
+        <div class="section-label">The Opportunity</div>
+        <h2>The voice AI market is real &mdash; and enormous</h2>
+      </div>
+
+      <div class="gap-market reveal reveal-delay-1">
+        <div class="gap-market-row">
+          <div>
+            <div class="gap-market-number" data-count="6.8" data-prefix="$" data-suffix="B">$6.8B</div>
+            <div class="gap-market-year">2025</div>
+          </div>
+          <div class="gap-arrow">&rarr;</div>
+          <div>
+            <div class="gap-market-number" data-count="32.6" data-prefix="$" data-suffix="B">$32.6B</div>
+            <div class="gap-market-year">2033</div>
+          </div>
+        </div>
+        <!-- Issue 3: Growth trajectory line -->
+        <div class="growth-trajectory">
+          <div class="growth-trajectory-line" id="growthLine"></div>
+          <div class="growth-trajectory-label" id="growthLabel">21.5% CAGR</div>
+        </div>
+        <div class="gap-market-detail" style="margin-top:8px;">21.5% CAGR &mdash; Voice AI Market</div>
+        <div class="gap-market-source">Sources: Markets and Markets, Grand View Research</div>
+      </div>
+
+      <!-- Beat 2: Wrong thing -->
+      <div class="callout callout--teal reveal reveal-delay-2" style="margin-top:64px;">
+        <h3>Everyone is building the wrong thing</h3>
+        <p>Bland AI, Vapi, Retell, Synthflow &mdash; they raised $110M+ combined to build <span
+            class="emphasis">developer tools</span>. APIs for engineers who want to build voice AI from scratch.</p>
+        <p style="margin-top:12px;">But the $6.8B market isn't developers. It's the <span class="emphasis">50,000+
+            agencies and service businesses</span> that need to deploy voice AI for their clients &mdash; without
+          writing code, without hiring engineers.</p>
+      </div>
+
+      <!-- Issue 3: Competitor cards with red/warning tint (applied via CSS) -->
+      <div class="comp-grid reveal">
+        <div class="comp-card">
+          <div class="comp-name">Bland AI</div>
+          <div class="comp-raised"><strong>$65M</strong> raised</div>
+          <div class="comp-type">Developer API</div>
+        </div>
+        <div class="comp-card">
+          <div class="comp-name">Vapi</div>
+          <div class="comp-raised"><strong>$20M</strong> &middot; $130M val</div>
+          <div class="comp-type">Developer API</div>
+        </div>
+        <div class="comp-card">
+          <div class="comp-name">Synthflow</div>
+          <div class="comp-raised"><strong>$20M</strong> raised</div>
+          <div class="comp-type">No-code builder</div>
+        </div>
+        <div class="comp-card">
+          <div class="comp-name">Retell</div>
+          <div class="comp-raised"><strong>$5M</strong> seed</div>
+          <div class="comp-type">Developer API</div>
+        </div>
+      </div>
+
+      <!-- Beat 3: GHL proof — Issue 5: gradient border wrapper, larger stats, standalone voice line -->
+      <div class="ghl-box-wrapper reveal">
+        <div class="ghl-box">
+          <div class="ghl-text">
+            <h3>The GoHighLevel proof point</h3>
+            <p>GoHighLevel understood this for marketing automation. They built a platform that let agencies resell CRM,
+              funnels, and SMS under their own brand &mdash; no code required. Agencies sell it as their own product.
+              Their clients never see GoHighLevel's name.</p>
+            <div class="ghl-voice-standout">Voice AI has no equivalent. We're building it.</div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:24px;">
+            <div class="ghl-stat">
+              <div class="ghl-stat-number" data-count="2000000" data-prefix="" data-suffix="+">2M+</div>
+              <div class="ghl-stat-label">Businesses on platform</div>
+            </div>
+            <div class="ghl-stat">
+              <div class="ghl-stat-number" data-count="781" data-prefix="" data-suffix="%">781%</div>
+              <div class="ghl-stat-label">Revenue growth (3yr)</div>
+            </div>
+            <div class="ghl-stat">
+              <div class="ghl-stat-number" data-count="2" data-prefix="$" data-suffix="B+">$2B+</div>
+              <div class="ghl-stat-label">Valuation</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== SECTION 3: ORIGIN STORY ===== -->
+  <section class="section section-divider" id="origin">
+    <div class="container">
+
+      <div class="reveal">
+        <div class="section-label">Why Us</div>
+        <h2>He didn't predict the category. He lived the gap.</h2>
+      </div>
+
+      <div class="origin-narrative reveal reveal-delay-1">
+        <p>Ming Xu was Bland.ai's first partner &mdash; the first person to build a voice AI agency practice on top of
+          the leading infrastructure. He scaled it to <strong style="color:var(--white)">7-figure ARR in 16
+            months</strong>. Then exited.</p>
+        <p>Why? Because the tooling agencies need doesn't exist. No white-labeling &mdash; where agencies sell it under
+          their own brand. No way for agencies to bill their clients directly through the platform. No templates. No
+          one-click deployment. Every agency hits the same ceiling: manually configuring agents one by one.</p>
+        <p class="highlight-line">Ming didn't predict the category. He lived the gap. Then he built the platform to fill
+          it.</p>
+      </div>
+
+      <div class="team-grid reveal reveal-delay-2">
+        <div class="team-card">
+          <div class="team-name">Laurence Latin</div>
+          <div class="team-title">CEO</div>
+          <div class="team-proof">Head of Software at Australia's leading healthcare SaaS. Infrastructure at Dimension
+            Data, Commonwealth Bank. Mission-critical systems.</div>
+        </div>
+        <div class="team-card">
+          <div class="team-name">Ming Xu</div>
+          <div class="team-title">COO</div>
+          <div class="team-proof">Bland.ai's first partner. 7-figure ARR exit in 16 months. Serial entrepreneur ($5M+
+            bootstrapped). Director of Technology, Zeroth Capital.</div>
+        </div>
+        <div class="team-card">
+          <div class="team-name">Ori Vaisbort</div>
+          <div class="team-title">Managing Partner, US</div>
+          <div class="team-proof">Enterprise infrastructure &mdash; IAM for Visa, Check Point Software. 11-year
+            operator. Red Hat Certified Engineer.</div>
+        </div>
+        <div class="team-card">
+          <div class="team-name">Barak Blatman</div>
+          <div class="team-title">Managing Partner</div>
+          <div class="team-proof">Former COO of social platforms (Whiplr, Vigr). Israel Security Agency. B2C product +
+            data expertise.</div>
+        </div>
+      </div>
+
+      <div class="team-stat-line reveal reveal-delay-3">
+        <p><strong>20 people. 15 engineers. $0 raised.</strong> Core AI through API Distribution &mdash; built and
+          deployed.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== SECTION 4: THE PRODUCT ===== -->
+  <section class="section section-divider" id="product">
+    <div class="container">
+
+      <div class="reveal" style="text-align:center;margin-bottom:48px;">
+        <div class="section-label">The Product</div>
+        <h2>One product. Every scale.</h2>
+      </div>
+
+      <!-- Core agent flow -->
+      <div class="reveal reveal-delay-1" style="display:flex;justify-content:center;">
+        <div class="agent-flow">
+          <div class="agent-flow-node agent-flow-node--input">
+            <div class="node-label">Input</div>
+            <div class="node-name">Business URL</div>
+          </div>
+          <div class="agent-flow-arrow"></div>
+          <div class="agent-flow-node">
+            <div class="node-label">Process</div>
+            <div class="node-name">Web Scrape</div>
+          </div>
+          <div class="agent-flow-arrow"></div>
+          <div class="agent-flow-node agent-flow-node--core">
+            <div class="node-label">Configure</div>
+            <div class="node-name">Agent Config</div>
+          </div>
+          <div class="agent-flow-arrow"></div>
+          <div class="agent-flow-node agent-flow-node--core">
+            <div class="node-label">Engine</div>
+            <div class="node-name">Voice AI</div>
+          </div>
+          <div class="agent-flow-arrow"></div>
+          <div class="agent-flow-node agent-flow-node--output">
+            <div class="node-label">Output</div>
+            <div class="node-name">Live Agent</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cap-pills reveal reveal-delay-2">
+        <span class="cap-pill">Call Handling</span>
+        <span class="cap-pill">Lead Qualification</span>
+        <span class="cap-pill">Calendar Booking</span>
+        <span class="cap-pill">SMS</span>
+        <span class="cap-pill">Spam Detection</span>
+        <span class="cap-pill">Transcripts</span>
+        <span class="cap-pill">32 Languages</span>
+        <span class="cap-pill">CRM Sync</span>
+      </div>
+
+      <div class="key-line reveal reveal-delay-2">
+        A <strong>$59/month solo operator</strong> and a <strong>Fortune 500 telecom</strong> run the same AI. Only the
+        deployment wrapper changes.
+      </div>
+
+      <!-- Deployment models - interactive -->
+      <div class="reveal" style="margin-bottom:16px;">
+        <h3 style="font-size:1.0625rem;color:var(--text-secondary);font-weight:600;margin-bottom:24px;">Four deployment
+          models</h3>
+      </div>
+
+      <div class="deploy-viz reveal">
+        <div class="deploy-tier deploy-tier--starter" data-tier="starter">
+          <div class="deploy-tier-header">
+            <span class="deploy-tier-badge">Starter</span>
+            <span class="deploy-tier-price">$59/mo</span>
+          </div>
+          <div class="deploy-tier-desc">1 operator sets up 1 agent for their own business.</div>
+          <div class="deploy-tier-detail">Solo operators and small businesses. Self-serve setup from a URL in under 5
+            minutes. Includes 100 minutes.</div>
+        </div>
+        <div class="deploy-tier deploy-tier--agency" data-tier="agency">
+          <div class="deploy-tier-header">
+            <span class="deploy-tier-badge">Agency</span>
+            <span class="deploy-tier-price">$299/mo</span>
+          </div>
+          <div class="deploy-tier-desc">1 operator configures agents for each client. Sells it under their own brand.
+            Bills their clients directly through the platform.</div>
+          <div class="deploy-tier-detail">Marketing and digital agencies. Full white-labeling: their clients never see
+            Trillet's name. Direct client billing through our platform. Per-minute charges at $0.12.</div>
+        </div>
+        <div class="deploy-tier deploy-tier--lite" data-tier="lite">
+          <div class="deploy-tier-header">
+            <span class="deploy-tier-badge">Lite SaaS</span>
+            <span class="deploy-tier-price">$497/mo</span>
+          </div>
+          <div class="deploy-tier-desc">1 operator deploys from a template library. Clients self-onboard with one click.
+          </div>
+          <div class="deploy-tier-detail">Agencies scaling past 15 clients. Snap a working agent into a reusable
+            template &mdash; new clients deploy instantly. The agency becomes a SaaS company.</div>
+        </div>
+        <div class="deploy-tier deploy-tier--pro" data-tier="pro">
+          <div class="deploy-tier-header">
+            <span class="deploy-tier-badge">Pro SaaS</span>
+            <span class="deploy-tier-price">$1,497/mo + $14K build</span>
+          </div>
+          <div class="deploy-tier-desc">Custom template + API. Entire networks auto-configure from local context.</div>
+          <div class="deploy-tier-detail">Network operators and enterprise. REST API, auto-configuration, per-endpoint
+            billing. One deployment covers 1,000+ locations.</div>
+        </div>
+      </div>
+
+      <!-- Endpoint multiplier -->
+      <div class="endpoint-row reveal">
+        <div class="endpoint-cell">
+          <div class="ep-count">1</div>
+          <div class="ep-label">Starter endpoint</div>
+        </div>
+        <div class="endpoint-cell">
+          <div class="ep-count">10&ndash;50</div>
+          <div class="ep-label">Agency endpoints</div>
+        </div>
+        <div class="endpoint-cell">
+          <div class="ep-count">100+</div>
+          <div class="ep-label">Lite SaaS endpoints</div>
+        </div>
+        <div class="endpoint-cell">
+          <div class="ep-count">1,000+</div>
+          <div class="ep-label">Pro SaaS endpoints</div>
+        </div>
+      </div>
+
+      <div class="insight-line reveal">
+        Each tier is an order of magnitude more distribution per customer.
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== SECTION 5: INFRASTRUCTURE STACK ===== -->
+  <section class="section section-divider" id="stack">
+    <div class="container">
+
+      <div class="reveal">
+        <div class="section-label">Infrastructure</div>
+        <h2>Five layers. All live.</h2>
+      </div>
+
+      <div class="stack-layers reveal reveal-delay-1">
+        <div class="stack-layer">
+          <div>
+            <div class="stack-layer-name">Core AI Engine</div>
+            <div class="stack-layer-desc">Voice processing, NLU, TTS, 32 languages</div>
+          </div>
+          <div style="font-size:0.8125rem;color:var(--text-tertiary);">The intelligence</div>
+          <div class="stack-layer-status">
+            <span class="status-badge status-badge--live">Live</span>
+          </div>
+        </div>
+        <div class="stack-layer">
+          <div>
+            <div class="stack-layer-name">Agent Builder</div>
+            <div class="stack-layer-desc">URL &rarr; live agent in 5 minutes</div>
+          </div>
+          <div style="font-size:0.8125rem;color:var(--text-tertiary);">The magic</div>
+          <div class="stack-layer-status">
+            <span class="status-badge status-badge--live">Live</span>
+          </div>
+        </div>
+        <div class="stack-layer">
+          <div>
+            <div class="stack-layer-name">Agency Platform</div>
+            <div class="stack-layer-desc">White-label, sub-accounts, Stripe billing</div>
+          </div>
+          <div style="font-size:0.8125rem;color:var(--text-tertiary);">The distribution model</div>
+          <div class="stack-layer-status">
+            <span class="status-badge status-badge--live">Live</span>
+          </div>
+        </div>
+        <div class="stack-layer">
+          <div>
+            <div class="stack-layer-name">Template Engine</div>
+            <div class="stack-layer-desc">Snap &rarr; freeze &rarr; one-click stamp</div>
+          </div>
+          <div style="font-size:0.8125rem;color:var(--text-tertiary);">The scale unlock</div>
+          <div class="stack-layer-status">
+            <span class="status-badge status-badge--live">Live</span>
+          </div>
+        </div>
+        <div class="stack-layer">
+          <div>
+            <div class="stack-layer-name">API Distribution</div>
+            <div class="stack-layer-desc">REST API, auto-configure, per-endpoint billing</div>
+          </div>
+          <div style="font-size:0.8125rem;color:var(--text-tertiary);">The infrastructure play</div>
+          <div class="stack-layer-status">
+            <span class="status-badge status-badge--pilot">Pilot</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="stack-callout reveal reveal-delay-2">
+        <p><strong>We didn't raise to build the product.</strong> We built it. Now we're raising to capture the market.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== SECTION 6: TRACTION ===== -->
+  <section class="section section-divider" id="traction">
+    <div class="container">
+
+      <div class="reveal">
+        <div class="section-label">Traction</div>
+        <h2>$500K ARR. $0 raised.</h2>
+      </div>
+
+      <!-- Metrics bar -->
+      <div class="metrics-bar reveal reveal-delay-1">
+        <div class="metric-block">
+          <div class="metric-number" data-count="500" data-prefix="$" data-suffix="K">$0</div>
+          <div class="metric-label">Current ARR</div>
+        </div>
+        <div class="metric-block">
+          <div class="metric-number" data-count="500" data-prefix="$" data-suffix="K">$0</div>
+          <div class="metric-label">Pipeline</div>
+        </div>
+        <div class="metric-block">
+          <div class="metric-number" data-count="20" data-prefix="" data-suffix=" people">0</div>
+          <div class="metric-label">Team (15 engineers)</div>
+        </div>
+        <div class="metric-block">
+          <div class="metric-number" data-count="0" data-prefix="$" data-suffix="" data-static="$0">$0</div>
+          <div class="metric-label">External Funding</div>
+        </div>
+      </div>
+
+      <!-- Enterprise client grid -->
+      <div class="reveal reveal-delay-2">
+        <table class="enterprise-grid">
+          <thead>
+            <tr>
+              <th>Client</th>
+              <th>Sector</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="client-name">Fortune 500 Telecom</td>
+              <td>Telecommunications</td>
+              <td>25 locations &rarr; expanding nationally</td>
+            </tr>
+            <tr>
+              <td class="client-name">European Bank</td>
+              <td>Financial Services</td>
+              <td>End-stage, pre-deployment</td>
+            </tr>
+            <tr>
+              <td class="client-name">5 National Debt Collection Cos</td>
+              <td>Financial Services</td>
+              <td>Active &mdash; compliance-heavy</td>
+            </tr>
+            <tr>
+              <td class="client-name">National Legal Services Hotline</td>
+              <td>Government</td>
+              <td>Fully deployed</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="nda-note">Enterprise clients under NDA. Industry references and metrics available upon request.
+        </div>
+      </div>
+
+      <!-- Case studies -->
+      <div class="case-studies reveal" style="margin-top:36px;">
+        <div class="case-study">
+          <div class="case-label case-label--amber">Case Study &mdash; Debt Collection</div>
+          <div class="case-hero-metric" data-count="338357" data-prefix="$" data-suffix="">$0</div>
+          <div class="case-hero-label">Collected through AI-handled calls</div>
+
+          <div class="compare-bars" id="compareBars">
+            <div class="compare-bar-row">
+              <div class="compare-bar-label">Trillet</div>
+              <div class="compare-bar-track">
+                <div class="compare-bar-fill compare-bar-fill--trillet" data-width="8.9">0.89%</div>
+              </div>
+              <div class="compare-bar-value">0.89%</div>
+            </div>
+            <div class="compare-bar-row">
+              <div class="compare-bar-label">Industry avg</div>
+              <div class="compare-bar-track">
+                <div class="compare-bar-fill compare-bar-fill--industry" data-width="90">8&ndash;10%</div>
+              </div>
+              <div class="compare-bar-value">8&ndash;10%</div>
+            </div>
+            <!-- Issue 3: ~10x better label that fades in -->
+            <div class="compare-better-label" id="compareBetterLabel">~10x better</div>
+          </div>
+
+          <div class="case-stats">
+            <div class="case-stat"><span class="case-stat-icon">&bull;</span> ~10x better abandonment rate than human
+              call centers</div>
+            <div class="case-stat"><span class="case-stat-icon">&bull;</span> Secure payment processing + real-time CRM
+              updates</div>
+            <div class="case-stat"><span class="case-stat-icon">&bull;</span> 3-month implementation</div>
+          </div>
+        </div>
+
+        <div class="case-study">
+          <div class="case-label case-label--teal">Case Study &mdash; Government Legal Hotline</div>
+          <div class="case-hero-metric" style="font-size:clamp(1.75rem,3.5vw,2.25rem);">100% call coverage</div>
+          <div class="case-hero-label">Zero missed calls</div>
+
+          <div class="case-stats" style="margin-top:20px;">
+            <div class="case-stat"><span class="case-stat-icon">&bull;</span> 10+ concurrent calls handled
+              simultaneously</div>
+            <div class="case-stat"><span class="case-stat-icon">&bull;</span> Instant response &mdash; no hold times
+            </div>
+            <div class="case-stat"><span class="case-stat-icon">&bull;</span> 4-month implementation</div>
+          </div>
+
+          <div
+            style="margin-top:20px;padding:16px;background:rgba(20,184,166,0.06);border:1px solid rgba(20,184,166,0.15);border-radius:var(--radius-sm);">
+            <div style="font-size:0.8125rem;color:var(--text-secondary);">
+              <strong style="color:var(--white)">Before:</strong> Missing 100+ calls daily during peak periods<br>
+              <strong style="color:var(--white)">After:</strong> Zero missed calls. FAQs automated. Instant escalation
+              for emergencies.
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== SECTION 7: THE MOAT ===== -->
+  <section class="section section-divider" id="moat">
+    <div class="container">
+
+      <div class="reveal">
+        <div class="section-label">Defensibility</div>
+        <h2>Four structural advantages</h2>
+      </div>
+
+      <!-- Issue 3: Moat cards with distinct left-border colors -->
+      <div class="moat-grid reveal reveal-delay-1">
+        <div class="moat-card moat-card--telephony">
+          <div class="moat-number">01</div>
+          <h3>Telephony exclusivity</h3>
+          <p>You can A/B test email tools. You can run parallel chatbots. You cannot run two AI receptionists on the
+            same phone number. One number, one system. Winner-take-all at the endpoint &mdash; by physics, not by
+            contract.</p>
+          <div class="moat-kicker">At 50 endpoints: painful to switch. At 500: effectively permanent.</div>
+        </div>
+        <div class="moat-card moat-card--regulated">
+          <div class="moat-number">02</div>
+          <h3>Regulated industry beachhead</h3>
+          <p>Government, financial services, European banking &mdash; deployed and running. Competitors start with
+            restaurants and spas. We started at the top.</p>
+          <div class="moat-kicker">A Verizon reference sells dentists. A dentist reference doesn't sell Verizon.</div>
+        </div>
+        <div class="moat-card moat-card--deploy">
+          <div class="moat-number">03</div>
+          <h3>Five-minute deployment</h3>
+          <p>URL &rarr; live agent in 5 minutes. No other platform auto-configures a voice AI agent from a business
+            website. Marketing automation has no single deployment artifact. Voice AI does.</p>
+          <div class="moat-kicker">Speed to deployment = speed to market = speed to stickiness.</div>
+        </div>
+        <div class="moat-card moat-card--ai-native">
+          <div class="moat-number">04</div>
+          <h3>AI-native discovery</h3>
+          <p>When someone asks ChatGPT "what's the best AI receptionist," Trillet appears organically. Zero ad spend.
+            One agency signed up after spending an hour interrogating ChatGPT &mdash; the recommendation: "Trillet
+            &mdash; and it wasn't even close."</p>
+          <div class="moat-kicker">First-mover advantage in how the next generation discovers software.</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== SECTION 8: BUSINESS MODEL ===== -->
+  <section class="section section-divider" id="model">
+    <div class="container">
+
+      <div class="reveal">
+        <div class="section-label">Business Model</div>
+        <h2>Two revenue streams. Both compound.</h2>
+      </div>
+
+      <div class="revenue-split reveal reveal-delay-1">
+        <div class="revenue-card">
+          <h3>Subscriptions</h3>
+          <div class="revenue-margin">~100% margin (Agency/Lite SaaS/Pro SaaS)</div>
+          <p>Base monthly fee per tier. For Agency and above: no minutes included, so subscription revenue is nearly
+            pure margin. Predictable, recurring.</p>
+        </div>
+        <div class="revenue-card">
+          <h3>Usage</h3>
+          <div class="revenue-margin">62&ndash;77% gross margin</div>
+          <p>Per-minute charges on every call. Every call an agency's client receives generates revenue for Trillet
+            automatically. Scales without additional sales effort.</p>
+        </div>
+      </div>
+
+      <!-- Compounding example -->
+      <div class="compound-example reveal reveal-delay-2">
+        <h3>How one $299 account becomes $779/month</h3>
+        <div class="compound-steps">
+          <div class="compound-step">
+            <div class="compound-step-icon compound-step-icon--teal">1</div>
+            <div>1 agency signs up at <strong style="color:var(--white)">$299/mo</strong></div>
+          </div>
+          <div class="compound-step">
+            <div class="compound-step-icon compound-step-icon--teal">2</div>
+            <div>Adds <strong style="color:var(--white)">10 clients</strong>, each receiving ~200 calls/mo at ~2 min avg
+            </div>
+          </div>
+          <div class="compound-step">
+            <div class="compound-step-icon compound-step-icon--amber">3</div>
+            <div>4,000 minutes &times; $0.12 = <strong style="color:var(--white)">$480/mo</strong> in usage revenue
+            </div>
+          </div>
+        </div>
+        <div class="compound-total">
+          <div class="compound-total-label">Total from one account</div>
+          <div class="compound-total-value">$779/mo</div>
+        </div>
+        <div class="compound-total-note">As agencies grow, per-minute revenue compounds without additional sales.</div>
+      </div>
+
+      <!-- Comparable raises -->
+      <div class="reveal">
+        <h3 style="font-size:1rem;color:var(--text-tertiary);margin-bottom:16px;font-weight:600;">Comparable raises</h3>
+        <div class="comp-raises">
+          <div class="comp-raise">
+            <div class="cr-name">Retell</div>
+            <div class="cr-amount">$5.1M seed</div>
+          </div>
+          <div class="comp-raise">
+            <div class="cr-name">Synthflow</div>
+            <div class="cr-amount">$20M Series A</div>
+          </div>
+          <div class="comp-raise">
+            <div class="cr-name">Vapi</div>
+            <div class="cr-amount">$20M &middot; $130M val</div>
+          </div>
+          <div class="comp-raise">
+            <div class="cr-name">Bland</div>
+            <div class="cr-amount">$40M Series B</div>
+          </div>
+          <div class="comp-raise comp-raise--trillet">
+            <div class="cr-name">Trillet</div>
+            <div class="cr-amount">$500K ARR &middot; $0 raised<br>Product complete</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== SECTION 9: VISION ===== -->
+  <section class="section section-divider" id="vision">
+    <div class="container">
+
+      <div class="reveal">
+        <div class="section-label" style="color:var(--indigo-400);">Vision</div>
+        <h2>From platform to infrastructure</h2>
+      </div>
+
+      <div class="vision-timelines reveal reveal-delay-1">
+        <div class="vision-timeline vision-timeline--now">
+          <div class="vision-timeline-header vt-now">Now &rarr; 12 Months</div>
+          <ul>
+            <li>Agency-first GTM at full velocity</li>
+            <li>300+ agencies on platform</li>
+            <li>Template marketplace opens: agencies list battle-tested templates for other agencies to license</li>
+            <li>Community and certification program launches</li>
+          </ul>
+        </div>
+        <div class="vision-timeline vision-timeline--future">
+          <div class="vision-timeline-header vt-future">12 &rarr; 24 Months</div>
+          <ul>
+            <li>API Distribution powers enterprise network deployments</li>
+            <li>The platform agencies use becomes the infrastructure that industries run on</li>
+            <li>Voice AI as a platform layer embedded in healthcare networks, financial systems, telecom operations</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Factory of Factories — Issue 3: gradient border on ALL sides, larger font -->
+      <div class="factory-quote reveal reveal-delay-2">
+        <div class="factory-quote-wrapper">
+          <div class="factory-quote-inner">
+            <blockquote>
+              Bland, Vapi, and Retell built voice AI tools. GoHighLevel built a factory for marketing tools. <strong>We
+                built the factory for voice AI tools &mdash; and our factory creates factories.</strong> Every agency on
+              Trillet isn't just deploying voice AI. They're becoming a voice AI SaaS company.
+            </blockquote>
+          </div>
+        </div>
+      </div>
+
+      <!-- Issue 4: Thesis — larger main text, whispered punchline -->
+      <div class="thesis-box reveal reveal-delay-3">
+        <p class="thesis-main"><strong>Trillet is the platform agencies use to build, brand, and sell AI voice agents
+            &mdash; and the infrastructure networks use to deploy them at scale.</strong></p>
+        <p class="thesis-whisper">The first sentence sells today. The second sentence sells in 12 months. <strong>Both
+            are the same product.</strong></p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== SECTION 10: THE ASK ===== -->
+  <section class="section" id="ask">
+    <div class="container">
+
+      <div class="ask-header reveal">
+        <div class="section-label">The Ask</div>
+        <div class="ask-raise">$5&ndash;7M</div>
+        <div class="ask-stage">Seed+ / Pre-A &mdash; To capture the category</div>
+      </div>
+
+      <div class="callout callout--teal reveal reveal-delay-1" style="max-width:640px;margin:0 auto 48px;">
+        <h3 style="font-size:1rem;">Use of funds: GTM, not engineering</h3>
+        <p>15 engineers. The product is built. This raise captures the market.</p>
+      </div>
+
+      <!-- Issue 6: SVG icons for each fund area -->
+      <div class="ask-funds reveal reveal-delay-2">
+        <div class="ask-fund">
+          <div class="ask-fund-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+          </div>
+          <div class="ask-fund-label">US sales team &amp; agency recruitment</div>
+        </div>
+        <div class="ask-fund">
+          <div class="ask-fund-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+              <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+            </svg>
+          </div>
+          <div class="ask-fund-label">Agency community &amp; certification</div>
+        </div>
+        <div class="ask-fund">
+          <div class="ask-fund-icon">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z">
+              </path>
+              <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+              <line x1="12" y1="22.08" x2="12" y2="12"></line>
+            </svg>
+          </div>
+          <div class="ask-fund-label">Marketing &amp; partnerships</div>
+        </div>
+        <div class="ask-fund">
+          <div class="ask-fund-icon">
+            <svg viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10"></circle>
+              <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+              <line x1="9" y1="9" x2="9.01" y2="9"></line>
+              <line x1="15" y1="9" x2="15.01" y2="9"></line>
+            </svg>
+          </div>
+          <div class="ask-fund-label">Agency success &amp; enablement</div>
+        </div>
+        <div class="ask-fund">
+          <div class="ask-fund-icon">
+            <svg viewBox="0 0 24 24">
+              <rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect>
+              <rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect>
+              <line x1="6" y1="6" x2="6.01" y2="6"></line>
+              <line x1="6" y1="18" x2="6.01" y2="18"></line>
+            </svg>
+          </div>
+          <div class="ask-fund-label">Infrastructure scaling</div>
+        </div>
+      </div>
+
+      <div class="ask-milestone reveal reveal-delay-2">
+        <p><strong>$500K ARR &rarr; $3&ndash;5M ARR.</strong> A few dozen agencies &rarr; 300+. 18 months. Category
+          leadership established before competitors realize the category exists.</p>
+      </div>
+
+      <!-- Issue 4: Closing statement — animated gradient border -->
+      <div class="closing-statement reveal reveal-delay-3">
+        <div class="closing-statement-wrapper">
+          <div class="closing-statement-inner">
+            <blockquote>
+              We built the full product stack with <strong>20 people</strong> and <strong>$0 raised</strong>. We're at
+              <strong>$500K ARR</strong> with a Fortune 500 expanding nationally. The agency flywheel just started
+              turning. We're raising to capture a category that doesn't have a leader yet.
+            </blockquote>
+          </div>
+        </div>
+      </div>
+
+      <!-- Issue 6: "Let's talk" + founded line -->
+      <div class="cta-contact reveal reveal-delay-4">
+        <p>Let's talk</p>
+        <a href="mailto:oriv@trillet.ai">Ori Vaisbort &mdash; oriv@trillet.ai</a>
+        <div class="cta-founded">Founded September 2024 &mdash; Melbourne, Australia</div>
+        <div class="cta-watermark"><span class="dot"
+            style="display:inline-block;width:6px;height:6px;background:var(--teal-400);border-radius:50%;margin-right:4px;vertical-align:middle;"></span>
+          Trillet AI</div>
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+    /* ============================================
+       INVESTOR BRIEFING — Interactions
+       ============================================ */
+
+    // --- Confidential bar shadow on scroll ---
+    const confBar = document.getElementById('confBar');
+    window.addEventListener('scroll', () => {
+      confBar.classList.toggle('scrolled', window.scrollY > 20);
+    }, { passive: true });
+
+    // --- Active nav highlight (General Polish #3) ---
+    const navLinks = document.querySelectorAll('#confNav a');
+    const sections = [];
+    navLinks.forEach(link => {
+      const href = link.getAttribute('href');
+      const target = document.querySelector(href);
+      if (target) sections.push({ el: target, link: link });
+    });
+
+    function updateActiveNav() {
+      const scrollY = window.scrollY + 100;
+      let current = null;
+      for (let i = sections.length - 1; i >= 0; i--) {
+        if (scrollY >= sections[i].el.offsetTop) {
+          current = sections[i];
+          break;
+        }
+      }
+      navLinks.forEach(l => l.classList.remove('active'));
+      if (current) current.link.classList.add('active');
+    }
+    window.addEventListener('scroll', updateActiveNav, { passive: true });
+    updateActiveNav();
+
+    // --- IntersectionObserver for scroll reveals ---
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, {
+      threshold: 0.15,
+      rootMargin: '0px 0px -40px 0px'
+    });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // --- Hook lines staggered reveal ---
+    const hookLines = document.querySelectorAll('.hook-line');
+    const hookObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          hookLines.forEach((line, i) => {
+            setTimeout(() => {
+              line.classList.add('visible');
+            }, i * 600);
+          });
+          hookObserver.disconnect();
+        }
+      });
+    }, { threshold: 0.3 });
+
+    if (hookLines.length) {
+      hookObserver.observe(hookLines[0].parentElement);
+    }
+
+    // --- Animated counters ---
+    function animateCounter(el, target, prefix, suffix, duration) {
+      duration = duration || 1800;
+      const start = performance.now();
+      const isDecimal = target % 1 !== 0;
+
+      function update(now) {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const ease = 1 - Math.pow(1 - progress, 3);
+        const current = target * ease;
+
+        if (isDecimal) {
+          el.textContent = prefix + current.toFixed(1) + suffix;
+        } else if (target >= 1000000) {
+          // Format millions
+          const millions = current / 1000000;
+          if (millions >= 1) {
+            el.textContent = prefix + millions.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, ',') + 'M' + suffix;
+          } else {
+            el.textContent = prefix + Math.round(current).toLocaleString('en-US') + suffix;
+          }
+        } else if (target >= 1000) {
+          el.textContent = prefix + Math.round(current).toLocaleString('en-US') + suffix;
+        } else {
+          el.textContent = prefix + Math.round(current) + suffix;
+        }
+
+        if (progress < 1) {
+          requestAnimationFrame(update);
+        } else {
+          // Set final value exactly
+          if (target >= 1000000) {
+            el.textContent = prefix + (target / 1000000).toFixed(0) + 'M' + suffix;
+          }
+        }
+      }
+
+      requestAnimationFrame(update);
+    }
+
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting && !entry.target.dataset.animated) {
+          entry.target.dataset.animated = 'true';
+          const count = parseFloat(entry.target.dataset.count);
+          const prefix = entry.target.dataset.prefix || '';
+          const suffix = entry.target.dataset.suffix || '';
+          const staticVal = entry.target.dataset.static;
+
+          if (staticVal !== undefined) {
+            entry.target.textContent = staticVal;
+          } else {
+            animateCounter(entry.target, count, prefix, suffix);
+          }
+        }
+      });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('[data-count]').forEach(el => counterObserver.observe(el));
+
+    // --- Comparison bar animation + "~10x better" label (Issue 3) ---
+    const barObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const bars = entry.target.querySelectorAll('.compare-bar-fill');
+          bars.forEach((bar, i) => {
+            setTimeout(() => {
+              bar.classList.add('animated');
+            }, i * 300);
+          });
+          // Show "~10x better" label after bars animate
+          const betterLabel = entry.target.querySelector('.compare-better-label');
+          if (betterLabel) {
+            setTimeout(() => {
+              betterLabel.classList.add('visible');
+            }, 1400);
+          }
+          barObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('.compare-bars').forEach(el => barObserver.observe(el));
+
+    // --- Growth trajectory line animation (Issue 3) ---
+    const growthLine = document.getElementById('growthLine');
+    const growthLabel = document.getElementById('growthLabel');
+    if (growthLine) {
+      const growthObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            growthLine.classList.add('animated');
+            if (growthLabel) growthLabel.classList.add('animated');
+            growthObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.5 });
+      growthObserver.observe(growthLine.parentElement);
+    }
+
+    // --- Deployment tier click to toggle ---
+    document.querySelectorAll('.deploy-tier').forEach(tier => {
+      tier.addEventListener('click', () => {
+        const wasActive = tier.classList.contains('active');
+        document.querySelectorAll('.deploy-tier').forEach(t => t.classList.remove('active'));
+        if (!wasActive) {
+          tier.classList.add('active');
+        }
+      });
+    });
+
+    // --- Smooth scroll for nav links ---
+    document.querySelectorAll('.conf-nav a').forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) {
+          const offset = 60;
+          const top = target.getBoundingClientRect().top + window.scrollY - offset;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      });
+    });
+
+    // --- Scroll indicator fade on scroll ---
+    const scrollIndicator = document.querySelector('.scroll-indicator');
+    if (scrollIndicator) {
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 100) {
+          scrollIndicator.style.opacity = '0';
+          scrollIndicator.style.transition = 'opacity 0.5s ease';
+        } else {
+          scrollIndicator.style.opacity = '';
+        }
+      }, { passive: true });
+    }
+
+    // --- Interactive Mouse Glow ---
+    const cursorGlow = document.getElementById('cursorGlow');
+    if (cursorGlow) {
+      document.addEventListener('mousemove', (e) => {
+        requestAnimationFrame(() => {
+          cursorGlow.style.left = e.clientX + 'px';
+          cursorGlow.style.top = e.clientY + 'px';
+        });
+      });
+      document.addEventListener('mousedown', () => {
+        cursorGlow.style.transform = 'translate(-50%, -50%) scale(0.8)';
+      });
+      document.addEventListener('mouseup', () => {
+        cursorGlow.style.transform = 'translate(-50%, -50%) scale(1)';
+      });
+    }
+  </script>
+</body>
+
+</html>

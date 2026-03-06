@@ -347,44 +347,68 @@
     margin-top: 2px;
   }
 
-  /* ---- ENTERPRISE GRID ---- */
-  .ent-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 14px;
-    margin: 20px 0;
-  }
-
-  .ent-card {
-    padding: 16px;
-    background: #f8fafc;
-    border: 1px solid #e8ecf2;
-    border-radius: 10px;
+  /* ---- ENTERPRISE VERTICALS ---- */
+  .ent-verticals {
+    margin: 24px 0;
     display: flex;
     flex-direction: column;
+    gap: 0;
   }
 
-  .ent-logo-row {
+  .ent-vertical {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid #f0f0f0;
+    align-items: start;
+  }
+
+  .ent-vertical:last-child { border-bottom: none; }
+
+  .vert-label {
+    font-family: 'Urbanist', sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    color: #3b82f6;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    padding-top: 4px;
+  }
+
+  .vert-companies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .ent-chip {
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-bottom: 8px;
+    padding: 10px 16px;
+    background: #f8fafc;
+    border: 1px solid #e8ecf2;
+    border-radius: 10px;
+    flex: 1 1 auto;
+    min-width: 200px;
+    max-width: 340px;
   }
 
   .ent-logo {
-    width: 36px;
-    height: 36px;
+    width: 32px;
+    height: 32px;
     object-fit: contain;
     border-radius: 6px;
     background: #fff;
-    padding: 4px;
+    padding: 3px;
     border: 1px solid #e8ecf2;
     flex-shrink: 0;
   }
 
   .ent-logo-placeholder {
-    width: 36px;
-    height: 36px;
+    width: 32px;
+    height: 32px;
     border-radius: 6px;
     background: linear-gradient(135deg, #3b82f6, #60a5fa);
     display: flex;
@@ -393,32 +417,60 @@
     color: #fff;
     font-family: 'Urbanist', sans-serif;
     font-weight: 800;
-    font-size: 14px;
+    font-size: 12px;
     flex-shrink: 0;
+  }
+
+  .ent-info {
+    display: flex;
+    flex-direction: column;
   }
 
   .ent-name {
     font-family: 'Urbanist', sans-serif;
     font-weight: 700;
-    font-size: 14px;
+    font-size: 13px;
     color: #1a1a2e;
     line-height: 1.2;
   }
 
-  .ent-type {
-    font-size: 10px;
-    color: #3b82f6;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+  .ent-detail {
+    font-size: 11px;
+    color: #64748b;
+    line-height: 1.4;
+    margin-top: 2px;
   }
 
-  .ent-detail {
-    font-size: 12px;
+  .ent-status {
+    font-size: 9px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    padding: 2px 7px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-top: 3px;
+    width: fit-content;
+  }
+
+  .status-live {
+    color: #059669;
+    background: #ecfdf5;
+  }
+
+  .status-deployed {
+    color: #2563eb;
+    background: #eff6ff;
+  }
+
+  .status-pre {
+    color: #d97706;
+    background: #fffbeb;
+  }
+
+  .status-pipeline {
     color: #64748b;
-    margin-top: auto;
-    padding-top: 6px;
-    line-height: 1.45;
+    background: #f1f5f9;
   }
 
   /* ---- FOOTER ---- */
@@ -456,9 +508,11 @@
     .scale-num { font-size: 22px; }
     .scale-result { font-size: 26px; }
 
-    .ent-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
-    .ent-logo { width: 30px; height: 30px; }
-    .ent-logo-placeholder { width: 30px; height: 30px; font-size: 12px; }
+    .ent-vertical { grid-template-columns: 1fr; gap: 8px; }
+    .vert-label { padding-bottom: 4px; border-bottom: 1px solid #e8ecf2; margin-bottom: 4px; }
+    .ent-chip { min-width: unset; max-width: unset; }
+    .ent-logo { width: 28px; height: 28px; }
+    .ent-logo-placeholder { width: 28px; height: 28px; font-size: 11px; }
 
     .footer { padding: 20px 24px; }
   }
@@ -479,13 +533,13 @@
     .comp-amount { font-size: 28px; }
     .comp-context { font-size: 13px; }
 
-    .ent-grid { grid-template-columns: 1fr; }
+    .ent-chip { flex-direction: row; }
     .footer { padding: 16px 18px; flex-direction: column; gap: 4px; }
   }
 
   /* ---- PRINT ---- */
   @media print {
-    .hero, .comp-visual, .scale-box, .tier-card, .ent-card, .tier-margin,
+    .hero, .comp-visual, .scale-box, .tier-card, .ent-chip, .tier-margin, .ent-status,
     .points li::before {
       -webkit-print-color-adjust: exact;
       print-color-adjust: exact;
@@ -630,111 +684,127 @@
       Agency-first does not mean enterprise-last.<br><span class="accent">Both vectors, same platform, same team.</span><br>
       <span style="font-size: 0.7em; color: #64748b; font-weight: 400; line-height: 1.5; display: block; margin-top: 12px;">The two vectors reinforce each other: enterprise logos close agencies, agency scale attracts enterprise. The enterprise pipeline is already live and growing across Fortune 500, finance, healthcare, government, and logistics.</span>
     </div>
-    <div class="ent-grid">
-      <div class="ent-card">
-        <div class="ent-logo-row">
-          <img class="ent-logo" src="logos/verizon.png" alt="Verizon">
-          <div>
-            <div class="ent-name">Verizon</div>
-            <div class="ent-type">Fortune 500 Telecom</div>
+    <div class="ent-verticals">
+
+      <div class="ent-vertical">
+        <div class="vert-label">Telecom</div>
+        <div class="vert-companies">
+          <div class="ent-chip">
+            <img class="ent-logo" src="logos/verizon.png" alt="Verizon">
+            <div class="ent-info">
+              <div class="ent-name">Verizon</div>
+              <div class="ent-detail">Fortune 500. Deployed via TCC.</div>
+              <span class="ent-status status-live">Live</span>
+            </div>
+          </div>
+          <div class="ent-chip">
+            <img class="ent-logo" src="logos/tcc.png" alt="TCC">
+            <div class="ent-info">
+              <div class="ent-name">TCC</div>
+              <div class="ent-detail">25 locations live. 2,500 expansion requested.</div>
+              <span class="ent-status status-live">Live -- Expanding</span>
+            </div>
           </div>
         </div>
-        <div class="ent-detail">Deployed via TCC, Verizon's largest authorized retailer. National expansion underway.</div>
       </div>
-      <div class="ent-card">
-        <div class="ent-logo-row">
-          <img class="ent-logo" src="logos/tcc.png" alt="TCC">
-          <div>
-            <div class="ent-name">TCC</div>
-            <div class="ent-type">Verizon Authorized Retailer</div>
+
+      <div class="ent-vertical">
+        <div class="vert-label">Finance</div>
+        <div class="vert-companies">
+          <div class="ent-chip">
+            <img class="ent-logo" src="logos/banca-transilvania.png" alt="Banca Transilvania">
+            <div class="ent-info">
+              <div class="ent-name">Banca Transilvania</div>
+              <div class="ent-detail">~460K EUR + 144K EUR/yr managed service.</div>
+              <span class="ent-status status-pre">Pre-Deployment</span>
+            </div>
+          </div>
+          <div class="ent-chip">
+            <div class="ent-logo-placeholder">AP</div>
+            <div class="ent-info">
+              <div class="ent-name">Autopay</div>
+              <div class="ent-detail">US auto loan platform. Nationwide.</div>
+              <span class="ent-status status-live">Live</span>
+            </div>
+          </div>
+          <div class="ent-chip">
+            <img class="ent-logo" src="logos/aargon.png" alt="Aargon">
+            <div class="ent-info">
+              <div class="ent-name">Aargon</div>
+              <div class="ent-detail">$338K+ collected. 10x industry abandonment rate.</div>
+              <span class="ent-status status-live">Live</span>
+            </div>
           </div>
         </div>
-        <div class="ent-detail">25 locations live. Recently requested expansion to 2,500 locations.</div>
       </div>
-      <div class="ent-card">
-        <div class="ent-logo-row">
-          <img class="ent-logo" src="logos/banca-transilvania.png" alt="Banca Transilvania">
-          <div>
-            <div class="ent-name">Banca Transilvania</div>
-            <div class="ent-type">European Bank -- Pre-Deployment</div>
+
+      <div class="ent-vertical">
+        <div class="vert-label">Healthcare</div>
+        <div class="vert-companies">
+          <div class="ent-chip">
+            <div class="ent-logo-placeholder">R</div>
+            <div class="ent-info">
+              <div class="ent-name">Relatient</div>
+              <div class="ent-detail">Enterprise patient communication platform.</div>
+              <span class="ent-status status-live">Live</span>
+            </div>
           </div>
         </div>
-        <div class="ent-detail">~460K EUR implementation + 144K EUR/yr managed service.</div>
       </div>
-      <div class="ent-card">
-        <div class="ent-logo-row">
-          <img class="ent-logo" src="logos/aargon.png" alt="Aargon">
-          <div>
-            <div class="ent-name">Aargon</div>
-            <div class="ent-type">Debt Collection -- Live</div>
+
+      <div class="ent-vertical">
+        <div class="vert-label">Government</div>
+        <div class="vert-companies">
+          <div class="ent-chip">
+            <div class="ent-logo-placeholder">NL</div>
+            <div class="ent-info">
+              <div class="ent-name">National Legal Hotline</div>
+              <div class="ent-detail">100% call coverage. Zero missed calls.</div>
+              <span class="ent-status status-live">Live</span>
+            </div>
           </div>
         </div>
-        <div class="ent-detail">$338K+ collected through AI-handled calls. 10x better than industry abandonment rate.</div>
       </div>
-      <div class="ent-card">
-        <div class="ent-logo-row">
-          <div class="ent-logo-placeholder">NL</div>
-          <div>
-            <div class="ent-name">National Legal Hotline</div>
-            <div class="ent-type">Government</div>
+
+      <div class="ent-vertical">
+        <div class="vert-label">Logistics</div>
+        <div class="vert-companies">
+          <div class="ent-chip">
+            <div class="ent-logo-placeholder">LL</div>
+            <div class="ent-info">
+              <div class="ent-name">Langham Logistics</div>
+              <div class="ent-detail">3PL, cold chain, pharma. Indianapolis.</div>
+              <span class="ent-status status-live">Live</span>
+            </div>
           </div>
         </div>
-        <div class="ent-detail">Full production. 100% call coverage. Zero missed calls.</div>
       </div>
-      <div class="ent-card">
-        <div class="ent-logo-row">
-          <div class="ent-logo-placeholder">CC</div>
-          <div>
-            <div class="ent-name">Comms Channel</div>
-            <div class="ent-type">L4 API -- Just Deployed</div>
+
+      <div class="ent-vertical">
+        <div class="vert-label">Technology</div>
+        <div class="vert-companies">
+          <div class="ent-chip">
+            <div class="ent-logo-placeholder">CC</div>
+            <div class="ent-info">
+              <div class="ent-name">Comms Channel</div>
+              <div class="ent-detail">Network-scale L4 API deployment.</div>
+              <span class="ent-status status-deployed">Deployed</span>
+            </div>
+          </div>
+          <div class="ent-chip">
+            <div class="ent-logo-placeholder">P24</div>
+            <div class="ent-info">
+              <div class="ent-name">Property24 / OLX Group</div>
+              <div class="ent-detail">International property platform. AI for listings.</div>
+              <span class="ent-status status-pipeline">Selection Phase</span>
+            </div>
           </div>
         </div>
-        <div class="ent-detail">First network-scale API deployment. Multi-endpoint infrastructure.</div>
       </div>
-      <div class="ent-card">
-        <div class="ent-logo-row">
-          <div class="ent-logo-placeholder">R</div>
-          <div>
-            <div class="ent-name">Relatient</div>
-            <div class="ent-type">US Healthcare -- Live</div>
-          </div>
-        </div>
-        <div class="ent-detail">Enterprise healthcare platform. AI-powered patient communication.</div>
-      </div>
-      <div class="ent-card">
-        <div class="ent-logo-row">
-          <div class="ent-logo-placeholder">P24</div>
-          <div>
-            <div class="ent-name">Property24 / OLX Group</div>
-            <div class="ent-type">International Property Platform</div>
-          </div>
-        </div>
-        <div class="ent-detail">OLX Group property vertical. Selection phase for AI communication across listings platform.</div>
-      </div>
-      <div class="ent-card">
-        <div class="ent-logo-row">
-          <div class="ent-logo-placeholder">AP</div>
-          <div>
-            <div class="ent-name">Autopay</div>
-            <div class="ent-type">US Auto Finance -- Live</div>
-          </div>
-        </div>
-        <div class="ent-detail">Nationwide auto loan platform. AI-powered customer communication.</div>
-      </div>
-      <div class="ent-card">
-        <div class="ent-logo-row">
-          <div class="ent-logo-placeholder">LL</div>
-          <div>
-            <div class="ent-name">Langham Logistics</div>
-            <div class="ent-type">US 3PL / Pharma Logistics -- Live</div>
-          </div>
-        </div>
-        <div class="ent-detail">Indianapolis-based supply chain and cold chain logistics. AI communication deployed.</div>
-      </div>
+
     </div>
     <ul class="points">
-      <li><strong>Enterprise is proven, not theoretical:</strong> 10 active enterprise engagements across telecom, finance, banking, healthcare, debt collection, government, logistics, and property. Multiple live US deployments including Verizon/TCC (2,500 locations), Aargon ($338K+ collected), Relatient, Autopay, and Langham Logistics.</li>
-      <li>Regulated industry beachhead -- finance, legal, healthcare, government, debt collection -- means <strong>every easier vertical is already accessible</strong></li>
+      <li><strong>6 verticals, 10 companies, mostly live.</strong> Telecom, finance, healthcare, government, logistics, technology. The hardest verticals (regulated, compliance-heavy) are already cracked -- every easier vertical is accessible.</li>
     </ul>
   </div>
 

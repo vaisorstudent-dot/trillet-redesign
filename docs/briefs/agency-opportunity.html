@@ -340,16 +340,51 @@
   /* ---- ENTERPRISE GRID ---- */
   .ent-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 14px;
     margin: 20px 0;
   }
 
   .ent-card {
-    padding: 14px 16px;
+    padding: 16px;
     background: #f8fafc;
     border: 1px solid #e8ecf2;
-    border-radius: 8px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .ent-logo-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+
+  .ent-logo {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    border-radius: 6px;
+    background: #fff;
+    padding: 4px;
+    border: 1px solid #e8ecf2;
+    flex-shrink: 0;
+  }
+
+  .ent-logo-placeholder {
+    width: 36px;
+    height: 36px;
+    border-radius: 6px;
+    background: linear-gradient(135deg, #3b82f6, #60a5fa);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-family: 'Urbanist', sans-serif;
+    font-weight: 800;
+    font-size: 14px;
+    flex-shrink: 0;
   }
 
   .ent-name {
@@ -357,7 +392,7 @@
     font-weight: 700;
     font-size: 14px;
     color: #1a1a2e;
-    margin-bottom: 2px;
+    line-height: 1.2;
   }
 
   .ent-type {
@@ -371,7 +406,8 @@
   .ent-detail {
     font-size: 12px;
     color: #64748b;
-    margin-top: 4px;
+    margin-top: auto;
+    padding-top: 6px;
     line-height: 1.45;
   }
 
@@ -410,7 +446,9 @@
     .scale-num { font-size: 22px; }
     .scale-result { font-size: 26px; }
 
-    .ent-grid { grid-template-columns: 1fr; gap: 10px; }
+    .ent-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+    .ent-logo { width: 30px; height: 30px; }
+    .ent-logo-placeholder { width: 30px; height: 30px; font-size: 12px; }
 
     .footer { padding: 20px 24px; }
   }
@@ -431,6 +469,7 @@
     .comp-amount { font-size: 28px; }
     .comp-context { font-size: 13px; }
 
+    .ent-grid { grid-template-columns: 1fr; }
     .footer { padding: 16px 18px; flex-direction: column; gap: 4px; }
   }
 
@@ -585,28 +624,63 @@
     </div>
     <div class="ent-grid">
       <div class="ent-card">
-        <div class="ent-name">TCC / Verizon</div>
-        <div class="ent-type">Fortune 500 Telecom</div>
-        <div class="ent-detail">25 locations deployed. Expanding nationally across the network.</div>
+        <div class="ent-logo-row">
+          <img class="ent-logo" src="https://logo.clearbit.com/verizon.com" alt="Verizon">
+          <div>
+            <div class="ent-name">Verizon</div>
+            <div class="ent-type">Fortune 500 Telecom</div>
+          </div>
+        </div>
+        <div class="ent-detail">Deployed via TCC, Verizon's largest authorized retailer. National expansion underway.</div>
       </div>
       <div class="ent-card">
-        <div class="ent-name">Bank of Transylvania</div>
-        <div class="ent-type">European Bank</div>
+        <div class="ent-logo-row">
+          <img class="ent-logo" src="https://logo.clearbit.com/tccrocks.com" alt="TCC">
+          <div>
+            <div class="ent-name">TCC</div>
+            <div class="ent-type">Verizon Authorized Retailer</div>
+          </div>
+        </div>
+        <div class="ent-detail">25 locations live. Recently requested expansion to 2,500 locations.</div>
+      </div>
+      <div class="ent-card">
+        <div class="ent-logo-row">
+          <img class="ent-logo" src="https://logo.clearbit.com/bancatransilvania.ro" alt="Banca Transilvania">
+          <div>
+            <div class="ent-name">Banca Transilvania</div>
+            <div class="ent-type">European Bank</div>
+          </div>
+        </div>
         <div class="ent-detail">~460K EUR implementation + 144K EUR/yr managed service.</div>
       </div>
       <div class="ent-card">
-        <div class="ent-name">5 National Debt Collection Cos</div>
-        <div class="ent-type">Financial Services</div>
-        <div class="ent-detail">$338K+ collected through AI-handled calls. 10x industry abandonment rate.</div>
+        <div class="ent-logo-row">
+          <img class="ent-logo" src="https://logo.clearbit.com/aargon.com" alt="Aargon">
+          <div>
+            <div class="ent-name">Aargon</div>
+            <div class="ent-type">Debt Collection</div>
+          </div>
+        </div>
+        <div class="ent-detail">$338K+ collected through AI-handled calls. 10x better than industry abandonment rate.</div>
       </div>
       <div class="ent-card">
-        <div class="ent-name">National Legal Services Hotline</div>
-        <div class="ent-type">Government</div>
-        <div class="ent-detail">Full production deployment. 100% call coverage. Zero missed calls.</div>
+        <div class="ent-logo-row">
+          <div class="ent-logo-placeholder">NL</div>
+          <div>
+            <div class="ent-name">National Legal Hotline</div>
+            <div class="ent-type">Government</div>
+          </div>
+        </div>
+        <div class="ent-detail">Full production. 100% call coverage. Zero missed calls.</div>
       </div>
       <div class="ent-card">
-        <div class="ent-name">Comms Channel Network</div>
-        <div class="ent-type">L4 API Pilot</div>
+        <div class="ent-logo-row">
+          <div class="ent-logo-placeholder">CC</div>
+          <div>
+            <div class="ent-name">Comms Channel</div>
+            <div class="ent-type">L4 API Pilot</div>
+          </div>
+        </div>
         <div class="ent-detail">First network-scale API deployment. Multi-endpoint infrastructure.</div>
       </div>
     </div>
